@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page Not Found</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg: #f8f7f4; --text: #1a1a18; --text-2: #5a5750; --text-3: #8a8580; --border: #e2ddd7; }
+    [data-theme="dark"] { --bg: #111110; --text: #f0ede8; --text-2: #a8a49e; --text-3: #6b6762; --border: #2e2c2a; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-weight: 300; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 24px;
+      transition: background 0.3s, color 0.3s;
+    }
+    .wrap { max-width: 420px; }
+    .num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 120px; font-weight: 300; line-height: 1;
+      color: var(--border); margin-bottom: 16px;
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px; font-weight: 300;
+      color: var(--text); margin-bottom: 12px;
+    }
+    p { font-size: 14px; color: var(--text-2); margin-bottom: 32px; line-height: 1.6; }
+    a {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 22px; border: 1px solid var(--border);
+      border-radius: 4px; font-size: 12px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--text-2); text-decoration: none;
+      transition: all 0.2s;
+    }
+    a:hover { border-color: var(--text); color: var(--text); }
+  </style>
+</head>
+<body>
+  <script>
+    const t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', t);
+  </script>
+  <div class="wrap">
+    <div class="num">404</div>
+    <h1>Page Not Found</h1>
+    <p>The page you're looking for doesn't exist or may have been moved.</p>
+    <a href="/">← Back to Portfolio</a>
+  </div>
+</body>
+</html>
