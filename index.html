@@ -40,7 +40,6 @@
       background: var(--bg); color: var(--text);
       font-family: var(--font-body); font-size: 15px; line-height: 1.7; font-weight: 300;
       transition: background 0.3s, color 0.3s;
-      cursor: none;
     }
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
@@ -49,17 +48,7 @@
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 
-    /* CURSOR — simple cream dot, 10% larger than default */
-    .cursor {
-      position: fixed; width: 13px; height: 13px;
-      background: #e8e2d8; border-radius: 50%;
-      pointer-events: none; z-index: 9999;
-      transform: translate(-50%, -50%);
-      mix-blend-mode: difference;
-      transition: width 0.15s ease, height 0.15s ease;
-    }
-    .cursor.hovering { width: 18px; height: 18px; }
-    @media (hover: none) { .cursor { display: none; } body { cursor: auto; } }
+
 
     /* NAV */
     nav {
@@ -135,7 +124,7 @@
     .btn {
       padding: 10px 22px; font-family: var(--font-body);
       font-size: 11px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase;
-      border-radius: var(--radius); cursor: none; transition: all var(--transition);
+      border-radius: var(--radius); transition: all var(--transition);
       display: inline-flex; align-items: center; gap: 6px;
     }
     .btn-primary { background: var(--text); color: var(--bg); border: 1px solid var(--text); }
@@ -173,7 +162,12 @@
     .section-divider { flex: 1; height: 1px; background: var(--border); align-self: center; }
 
     /* ABOUT */
-    .about-wrap { display: flex; flex-direction: column; gap: 48px; }
+    #about { position: relative; overflow: hidden; }
+    #networkCanvas {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 0; opacity: 0.55;
+    }
+    .about-wrap { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 48px; }
     .about-grid { display: grid; grid-template-columns: 1fr 280px; gap: 72px; align-items: start; }
     .about-text p {
       font-size: 15px; color: var(--text-2); line-height: 1.85; margin-bottom: 18px; font-weight: 300;
@@ -188,13 +182,20 @@
     .sidebar-label { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); margin-bottom: 5px; }
     .sidebar-value { font-size: 13px; color: var(--text-2); line-height: 1.5; }
 
-    /* NETWORK CANVAS */
-    .network-wrap {
-      position: relative; width: 100%; height: 220px;
-      border: 1px solid var(--border); border-radius: var(--radius-lg);
-      overflow: hidden; background: var(--bg);
+    /* LOGO FRAMES — dark bg by design */
+    .timeline-logo-wrap {
+      width: 32px; height: 32px; border-radius: var(--radius);
+      background: #1a1a18;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 10px; overflow: hidden; flex-shrink: 0;
     }
-    #networkCanvas { width: 100%; height: 100%; display: block; }
+    .timeline-logo { width: 26px; height: 26px; object-fit: contain; }
+    .edu-logo-wrap {
+      width: 40px; height: 40px; flex-shrink: 0;
+      border-radius: var(--radius); background: #1a1a18;
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
+    .edu-logo { width: 32px; height: 32px; object-fit: contain; }
 
     /* TIMELINE */
     .timeline { position: relative; }
@@ -213,17 +214,6 @@
       transition: border-color var(--transition), background var(--transition);
     }
     .timeline-item:hover .timeline-right::before { border-color: var(--text); background: var(--text); }
-    .timeline-logo-wrap {
-      width: 32px; height: 32px; border-radius: var(--radius);
-      border: 1px solid var(--border); background: var(--surface);
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 10px; overflow: hidden;
-    }
-    .timeline-logo {
-      width: 28px; height: 28px; object-fit: contain;
-      mix-blend-mode: multiply;
-    }
-    [data-theme="dark"] .timeline-logo { mix-blend-mode: screen; }
     .timeline-role { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
     .timeline-company { font-size: 12px; color: var(--text-2); margin-bottom: 3px; }
     .timeline-type { font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 12px; }
@@ -245,13 +235,6 @@
     }
     .edu-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
     .edu-header { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px; }
-    .edu-logo-wrap {
-      width: 40px; height: 40px; flex-shrink: 0;
-      border: 1px solid var(--border); border-radius: var(--radius);
-      background: var(--surface); display: flex; align-items: center; justify-content: center; overflow: hidden;
-    }
-    .edu-logo { width: 34px; height: 34px; object-fit: contain; mix-blend-mode: multiply; }
-    [data-theme="dark"] .edu-logo { mix-blend-mode: screen; }
     .edu-institution { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
     .edu-degree { font-size: 12px; color: var(--text-2); }
     .edu-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
@@ -267,13 +250,13 @@
       padding: 5px 14px; border: 1px solid var(--border); border-radius: 20px;
       background: transparent; font-family: var(--font-body); font-size: 10px;
       letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--text-2); cursor: none; transition: all var(--transition);
+      color: var(--text-2); transition: all var(--transition);
     }
     .filter-btn:hover, .filter-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
     .activities-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .activity-card {
       border: 1px solid var(--border); border-radius: var(--radius-lg);
-      background: var(--surface); overflow: hidden; cursor: none;
+      background: var(--surface); overflow: hidden;
       transition: all var(--transition);
     }
     .activity-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); border-color: var(--text-3); }
@@ -321,7 +304,7 @@
     .pub-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
     .pub-card {
       border: 1px solid var(--border); border-radius: var(--radius-lg);
-      padding: 22px; background: var(--surface); cursor: none;
+      padding: 22px; background: var(--surface);
       transition: all var(--transition); display: flex; flex-direction: column;
     }
     .pub-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--text-3); }
@@ -395,7 +378,7 @@
       border: 1px solid var(--border); border-radius: var(--radius);
       font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
       color: var(--text-2); background: var(--surface);
-      transition: all var(--transition); cursor: none;
+      transition: all var(--transition);
     }
     .contact-link:hover { border-color: var(--text); color: var(--text); box-shadow: var(--shadow); }
 
@@ -440,9 +423,6 @@
   </style>
 </head>
 <body>
-
-<!-- CURSOR -->
-<div class="cursor" id="cursor"></div>
 
 <!-- PDF MODAL -->
 <div class="pdf-modal" id="pdfModal">
@@ -499,6 +479,7 @@
 
 <!-- ABOUT -->
 <section id="about" class="section">
+  <canvas id="networkCanvas"></canvas>
   <div class="section-inner">
     <div class="section-header">
       <h2 class="section-title">About</h2>
@@ -521,9 +502,6 @@
             <div class="sidebar-value" style="font-size:12px;line-height:1.7;">Digital Economy · Platform Labor · AI Policy · Regulatory Affairs</div>
           </div>
         </div>
-      </div>
-      <div class="network-wrap fade-up">
-        <canvas id="networkCanvas"></canvas>
       </div>
     </div>
   </div>
