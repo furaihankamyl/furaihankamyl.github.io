@@ -2,11 +2,9 @@ const PORTFOLIO_DATA = {
   personal: {
     name: "Furaihan Kamyl Arnazaye",
     tagline: "Public Policy and Government Relations Analyst | Digital Economy, Transport, and AI",
-    about: `I am a Public Policy and Government Relations Analyst with 2+ years of experience at GoTo Group, Indonesia's leading digital ecosystem. My work sits at the intersection of policy, technology, and society — translating complex regulatory landscapes into strategic advocacy, and turning stakeholder networks into actionable outcomes.
+    about: `I'm known for turning complex regulatory landscapes into clear advocacy — bridging government, industry, and civil society to shape policy that works for everyone.
 
-My academic background in Public Administration from Universitas Indonesia, complemented by a student exchange at Universitas Gadjah Mada, gave me a rigorous foundation in governance, research methods, and policy analysis. I have contributed to over 60 writing projects, published 6 research papers, engaged 10+ institutions, and contributed to Indonesia's National AI Roadmap 2025–2045.
-
-Beyond the professional sphere, I am drawn to questions that sit at the edge of disciplines — how AI reshapes labor markets, how networks govern institutions, and how public trust erodes or builds in digital services. I approach these questions with the same rigor I bring to the policy table.`,
+Currently at GoTo Group, I work across legislative monitoring, stakeholder engagement, and policy communication — contributing to national conversations on digital economy, platform labor, and AI governance.`,
     contact: {
       email: "furaihankamyl.arnazaye@gmail.com",
       whatsapp: "6285159691922",
@@ -24,10 +22,9 @@ Beyond the professional sphere, I am drawn to questions that sit at the edge of 
       location: "Jakarta, Indonesia",
       logo: "images/logos/goto.png",
       bullets: [
-        "Spearheaded Sahabat-AI LLM development initiative in collaboration with 7 universities across Indonesia to build capabilities for 5 regional languages.",
-        "Managed 5+ policy communication projects through cross-institutional coordination with media, academia, NGOs, and government agencies.",
-        "Drafted 10+ strategic communication materials and policy briefs targeted at parliamentary stakeholders, ministries, and regional governments for 6 national priority bills (RUU).",
-        "Orchestrated GoTo's advocacy strategy utilizing various channels to enhance stakeholder engagement around pivotal policy developments."
+        "Led university partnership program for Sahabat-AI LLM across 7 institutions, supporting regional language AI development.",
+        "Coordinated cross-institutional advocacy on 6 national priority bills, engaging parliament, ministries, and civil society.",
+        "Produced policy briefs and communication materials translating regulatory developments into strategic positioning."
       ]
     },
     {
@@ -39,9 +36,9 @@ Beyond the professional sphere, I am drawn to questions that sit at the edge of 
       location: "Jakarta, Indonesia",
       logo: "images/logos/goto.png",
       bullets: [
-        "Developed robust advocacy strategies for 5 policy initiatives by drafting 10+ policy briefs that balanced business sustainability with welfare protection for 9+ million driver-partners and merchants.",
-        "Executed 10+ stakeholder engagement initiatives including FGDs, workshops, and digital campaigns to foster regulatory support for GoTo's digital transportation ecosystem.",
-        "Managed strategic engagement networks with Kemenkominfo, Kemenaker, and Jakarta Provincial Government to proactively mitigate regulatory risks."
+        "Drafted advocacy strategies and policy briefs balancing business sustainability with driver-partner welfare.",
+        "Executed stakeholder engagement initiatives including FGDs, workshops, and digital campaigns.",
+        "Maintained engagement networks with Kemenkominfo, Kemenaker, and Jakarta Provincial Government."
       ]
     },
     {
@@ -53,9 +50,8 @@ Beyond the professional sphere, I am drawn to questions that sit at the edge of 
       location: "Depok, Indonesia",
       logo: "images/logos/ui.png",
       bullets: [
-        "Assisted in developing and delivering Administrative Behavior lecture content to 30+ students, covering motivation, leadership, group dynamics, and organizational culture.",
-        "Managed classroom administration including attendance tracking and learning material distribution via the Emas UI e-learning platform.",
-        "Conducted objective assessments of student assignments and presentations, providing constructive and personalized feedback."
+        "Co-delivered Administrative Behavior course to 30+ students covering leadership, group dynamics, and organizational culture.",
+        "Managed assessments and class administration via Emas UI e-learning platform."
       ]
     },
     {
@@ -67,8 +63,8 @@ Beyond the professional sphere, I am drawn to questions that sit at the edge of 
       location: "Jakarta, Indonesia",
       logo: "images/logos/asean-youth.png",
       bullets: [
-        "Produced 6 social media posts and 2 long-form articles on Medium, reaching 4,000+ readers cumulatively.",
-        "Analyzed content performance using quantitative tools (SPSS and Excel) to inform content strategy and marketing materials."
+        "Produced social media content and long-form articles reaching 4,000+ readers.",
+        "Used SPSS and Excel to analyze content performance and inform campaign strategy."
       ]
     }
   ],
@@ -81,8 +77,8 @@ Beyond the professional sphere, I am drawn to questions that sit at the edge of 
       period: "Oct 2023 – Jan 2024",
       logo: "images/logos/pemira-fia.png",
       bullets: [
-        "Directed a 100+ member cross-functional team to execute the faculty-level democratic student general election end to end.",
-        "Achieved 97% voter data verification accuracy and 100% compliance with university governance policies throughout the full election cycle."
+        "Directed 100+ member team executing the faculty-level student general election end to end.",
+        "Achieved 97% voter data verification accuracy with full compliance to university governance policies."
       ]
     },
     {
@@ -92,8 +88,8 @@ Beyond the professional sphere, I am drawn to questions that sit at the edge of 
       period: "Jan 2023 – Jan 2024",
       logo: "images/logos/himanera.png",
       bullets: [
-        "Led a 6-member team in producing 8+ policy analysis articles published across Instagram, LinkedIn, and national media including Kumparan.",
-        "Managed strategic publication partnerships generating 2,000+ impressions and 250+ stakeholder engagements across digital platforms."
+        "Led team producing 8+ policy analysis articles across Instagram, LinkedIn, and national media.",
+        "Built publication partnerships generating 2,000+ impressions across digital platforms."
       ]
     },
     {
@@ -103,8 +99,7 @@ Beyond the professional sphere, I am drawn to questions that sit at the edge of 
       period: "Mar 2022 – Mar 2023",
       logo: "images/logos/himanera.png",
       bullets: [
-        "Contributed to policy research and studies publications under the Science division.",
-        "Supported production of analytical content for internal and external stakeholder audiences."
+        "Contributed to policy research publications under the Science division."
       ]
     },
     {
@@ -114,8 +109,8 @@ Beyond the professional sphere, I am drawn to questions that sit at the edge of 
       period: "Aug 2021 – May 2022",
       logo: "images/logos/ui.png",
       bullets: [
-        "Contributed to research and development initiatives within BEM UI's learning house program.",
-        "Awarded Best Staff of the Year and Best Staff of the Month for outstanding contributions."
+        "Supported research initiatives within BEM UI's learning house program.",
+        "Recognized as Best Staff of the Year and Best Staff of the Month."
       ]
     }
   ],
@@ -139,83 +134,88 @@ Beyond the professional sphere, I am drawn to questions that sit at the edge of 
       gpa: "4.00 / 4.00",
       honor: "",
       logo: "images/logos/ugm.png",
-      note: "Student exchange for one semester under the Merdeka Belajar Kampus Merdeka (MBKM) program."
+      note: "One-semester exchange under the Merdeka Belajar Kampus Merdeka (MBKM) program."
     }
   ],
 
   awards: [
-    { year: 2024, title: "Dean's Award for Academic Achievement", issuer: "Fakultas Ilmu Administrasi, Universitas Indonesia" },
-    { year: 2024, title: "Silver Medalist, Research Poster", issuer: "Pekan Ilmiah Mahasiswa Nasional (PIMNAS), Pusat Prestasi Nasional" },
-    { year: 2024, title: "Finalist", issuer: "Pekan Ilmiah Mahasiswa Nasional (PIMNAS), Pusat Prestasi Nasional" },
-    { year: 2024, title: "1st Place, Best Paper – National Conference", issuer: "Temu Administrator Muda Indonesia 2024" },
-    { year: 2024, title: "1st Place, Best Presentation – National Conference", issuer: "Temu Administrator Muda Indonesia 2024" },
-    { year: 2024, title: "Most Creative and Highest Score in Research", issuer: "PKM-RSH, Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi" },
-    { year: 2024, title: "Research Incentive Awardee", issuer: "PKM-AI, Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi" },
-    { year: 2024, title: "Research Fund Grantee", issuer: "PKM-RSH, Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi" },
+    { year: 2024, title: "Dean's Award for Academic Achievement", issuer: "FIA Universitas Indonesia" },
+    { year: 2024, title: "Silver Medalist, Research Poster", issuer: "PIMNAS, Pusat Prestasi Nasional" },
+    { year: 2024, title: "Finalist", issuer: "PIMNAS, Pusat Prestasi Nasional" },
+    { year: 2024, title: "1st Place, Best Paper", issuer: "Temu Administrator Muda Indonesia" },
+    { year: 2024, title: "1st Place, Best Presentation", issuer: "Temu Administrator Muda Indonesia" },
+    { year: 2024, title: "Most Creative and Highest Score in Research", issuer: "PKM-RSH, Kemendikbudristek" },
+    { year: 2024, title: "Research Incentive Awardee", issuer: "PKM-AI, Kemendikbudristek" },
+    { year: 2024, title: "Research Fund Grantee", issuer: "PKM-RSH, Kemendikbudristek" },
     { year: 2024, title: "Top 10, National Essay", issuer: "Liberthi III" },
-    { year: 2023, title: "Dean's Award for Academic Achievement", issuer: "Fakultas Ilmu Administrasi, Universitas Indonesia" },
-    { year: 2023, title: "Best Pitch, National Essay", issuer: "Publician Fair 2023, Universitas Indonesia" },
-    { year: 2023, title: "4th Place, National Essay", issuer: "Semarak Bidik Misi dan KIPK Prestatif (SBMP), Universitas Diponegoro" },
-    { year: 2023, title: "1st Place, National Scientific Writing Competition", issuer: "Brawijaya National Student Conference" },
-    { year: 2022, title: "Best Speaker", issuer: "Silaturahmi Administrasi Publik Jawa Barat (SIAP JABAR) 2022" },
-    { year: 2022, title: "2nd Place, Faculty Essay Competition", issuer: "Pesta Rakyat FIA UI 2022" },
-    { year: 2022, title: "Best Staff of the Year, RnD Division", issuer: "Rumah Belajar BEM UI" },
-    { year: 2021, title: "1st Place, Best Instagram Caption – Toxic Positivity Campaign", issuer: "Affection Angel" },
-    { year: 2021, title: "Best Volunteer, Toxic Positivity Campaign", issuer: "Affection Angel" },
-    { year: 2021, title: "Best Staff of the Month, RnD Division", issuer: "Rumah Belajar BEM UI" }
+    { year: 2023, title: "Dean's Award for Academic Achievement", issuer: "FIA Universitas Indonesia" },
+    { year: 2023, title: "Best Pitch, National Essay", issuer: "Publician Fair, Universitas Indonesia" },
+    { year: 2023, title: "4th Place, National Essay", issuer: "SBMP, Universitas Diponegoro" },
+    { year: 2023, title: "1st Place, National Scientific Writing", issuer: "Brawijaya National Student Conference" },
+    { year: 2022, title: "Best Speaker", issuer: "SIAP JABAR 2022" },
+    { year: 2022, title: "2nd Place, Faculty Essay", issuer: "Pesta Rakyat FIA UI" },
+    { year: 2022, title: "Best Staff of the Year, RnD", issuer: "Rumah Belajar BEM UI" },
+    { year: 2021, title: "1st Place, Best Caption", issuer: "Affection Angel" },
+    { year: 2021, title: "Best Volunteer", issuer: "Affection Angel" },
+    { year: 2021, title: "Best Staff of the Month, RnD", issuer: "Rumah Belajar BEM UI" }
   ],
 
   publications: [
     {
       title: "Comparing the Effectiveness of Network Governance of LPKA Kelas II Jakarta",
       venue: "Thesis, Universitas Indonesia",
+      author: "Furaihan Kamyl Arnazaye",
       year: 2025,
-      url: "https://drive.google.com/file/d/1j93NVB_mjsn-bNK-CFbOk2SduqtdxA4A/view"
+      driveId: "1j93NVB_mjsn-bNK-CFbOk2SduqtdxA4A"
     },
     {
       title: "Membandingkan Intensi Keterlibatan Publik Antargender dan Antargenerasi Muda dalam Fitur JakLapor",
       venue: "Jurnal Ilmu Wacana Politik (JIWP)",
+      author: "Furaihan Kamyl Arnazaye et al.",
       year: 2024,
-      url: "https://jurnal.peneliti.net/index.php/JIWP/article/download/7553/6520/"
+      driveId: "1z1gBBxb5rXhj09Y2sip8b4HjUtxFU8E_"
     },
     {
       title: "Simplification of Limited Liability Company Registration Procedures Through Notaries",
       venue: "Temu Administrator Muda Indonesia (TemuAdMI)",
+      author: "Furaihan Kamyl Arnazaye et al.",
       year: 2024,
-      url: "https://drive.google.com/file/d/1erXwQba8S_rnZGv_VKod7KJeNRWG17o1/view"
+      driveId: "1erXwQba8S_rnZGv_VKod7KJeNRWG17o1"
     },
     {
       title: "Comprehensive Analysis of Public Trust Levels Among Young Individuals in the JakLapor Feature",
       venue: "PKM-AI, Jurnal Ilmiah Administrasi (JIA), STIA LAN Bandung",
+      author: "Furaihan Kamyl Arnazaye et al.",
       year: 2024,
-      url: "https://jia.stialanbandung.ac.id/index.php/jia/article/view/1175"
+      driveId: "1j36itRC-S7fGPdxOZeQpO_IfelPIaI2k"
     },
     {
       title: "Network Governance in Supporting Subjective Well-being of Juvenile Inmates in LPKA",
-      venue: "PKM-RSH, Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi",
+      venue: "PKM-RSH, Kemendikbudristek",
+      author: "Furaihan Kamyl Arnazaye et al.",
       year: 2024,
-      url: "https://drive.google.com/file/d/1j36itRC-S7fGPdxOZeQpO_IfelPIaI2k/view"
+      driveId: "1s3_HDObWfezzZ66EawVExvmT0P4zNF8T"
     },
     {
       title: "Analisis Faktor Motivasi Mahasiswa untuk Menjadi Pegawai Pemerintah",
-      venue: "Jurnal Publik, Jurnal Ilmiah Bidang Ilmu Administrasi Negara",
+      venue: "Jurnal Publik, Ilmu Administrasi Negara",
+      author: "Furaihan Kamyl Arnazaye et al.",
       year: 2023,
-      url: "https://jurnal.pps.uniga.ac.id/index.php/jurnalpublik/article/view/190"
+      driveId: "1wO8RnysxKz1jnaWXA4RNa4wU3bdE7uTg"
     },
     {
       title: "Efektivitas Pengangkatan Penjabat Kepala Daerah dalam Perspektif Demokrasi dan Teknokrasi",
       venue: "Jurnal Ilmiah Bidang Ilmu Administrasi Negara",
+      author: "Furaihan Kamyl Arnazaye et al.",
       year: 2023,
-      url: "https://jurnal.pps.uniga.ac.id/index.php/jurnalpublik/article/view/188"
+      driveId: "1UNDMfo_Py_ZNIiG7yTbqku95hXig-jvK"
     }
   ],
 
   skills: {
-    "Policy and Advocacy": ["Public Policy Analysis", "Government Relations", "Legislative Monitoring", "Regulatory Research", "Policy Brief Writing", "Stakeholder Engagement", "Advocacy Strategy"],
-    "Research and Analysis": ["Social Network Analysis (SNA)", "Quantitative Research", "Statistical Analysis (SPSS)", "Computational Social Science", "Data Visualization", "Academic Writing"],
-    "Communication and Writing": ["Strategic Communication", "Copywriting", "Content Strategy", "Transmedia Storytelling", "Negotiation", "Cross-functional Collaboration"],
-    "Data and Technical Tools": ["Microsoft Office Suite (Advanced)", "Python (Basic)", "Gephi", "SPSS", "Prompt Engineering", "Data Analytics"],
-    "Languages": ["Indonesian (Native)", "English (Professional)"]
+    "Policy and Advocacy": ["Policy Analysis", "Government Relations", "Legislative Monitoring", "Stakeholder Engagement", "Advocacy Strategy"],
+    "Research and Analysis": ["Social Network Analysis", "Quantitative Methods", "Statistical Analysis", "Academic Writing", "Data Visualization"],
+    "Communication and Tools": ["Strategic Communication", "Policy Brief Writing", "Content Strategy", "Microsoft Office Suite", "SPSS"]
   },
 
   activities: [
@@ -225,7 +225,7 @@ Beyond the professional sphere, I am drawn to questions that sit at the edge of 
       date: "2024",
       category: "Research and Analysis",
       thumbnail: "images/activity-indonesia-emas-2.png",
-      description: "Four research accomplishments across three projects contributing to Indonesia's national development goals, targeting the Ministry of Law and Human Rights, DKI Jakarta Provincial Government, and Ministry of Investment.",
+      description: "Four research accomplishments across three projects contributing to Indonesia's national development goals.",
       slug: "indonesia-emas-2045"
     }
   ]
