@@ -49,25 +49,17 @@
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 
-    /* CURSOR */
+    /* CURSOR — simple cream dot, 10% larger than default */
     .cursor {
-      position: fixed; width: 8px; height: 8px;
-      background: var(--text); border-radius: 50%;
+      position: fixed; width: 13px; height: 13px;
+      background: #e8e2d8; border-radius: 50%;
       pointer-events: none; z-index: 9999;
       transform: translate(-50%, -50%);
-      transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+      mix-blend-mode: difference;
+      transition: width 0.15s ease, height 0.15s ease;
     }
-    .cursor-ring {
-      position: fixed; width: 32px; height: 32px;
-      border: 1px solid var(--text-3); border-radius: 50%;
-      pointer-events: none; z-index: 9998;
-      transform: translate(-50%, -50%);
-      transition: transform 0.18s ease, width 0.25s ease, height 0.25s ease, border-color 0.2s ease;
-      opacity: 0.6;
-    }
-    .cursor.hovering { width: 4px; height: 4px; }
-    .cursor-ring.hovering { width: 48px; height: 48px; border-color: var(--text-2); opacity: 0.4; }
-    @media (hover: none) { .cursor, .cursor-ring { display: none; } body { cursor: auto; } }
+    .cursor.hovering { width: 18px; height: 18px; }
+    @media (hover: none) { .cursor { display: none; } body { cursor: auto; } }
 
     /* NAV */
     nav {
@@ -181,18 +173,28 @@
     .section-divider { flex: 1; height: 1px; background: var(--border); align-self: center; }
 
     /* ABOUT */
+    .about-wrap { display: flex; flex-direction: column; gap: 48px; }
     .about-grid { display: grid; grid-template-columns: 1fr 280px; gap: 72px; align-items: start; }
     .about-text p {
       font-size: 15px; color: var(--text-2); line-height: 1.85; margin-bottom: 18px; font-weight: 300;
     }
     .about-text p:first-child {
-      font-family: var(--font-display); font-size: 20px; color: var(--text);
+      font-family: var(--font-display); font-size: 22px; color: var(--text);
       font-weight: 300; line-height: 1.5;
     }
+    .about-text strong { color: var(--text); font-weight: 500; }
     .about-sidebar { border-left: 1px solid var(--border); padding-left: 28px; }
     .sidebar-item { margin-bottom: 24px; }
     .sidebar-label { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); margin-bottom: 5px; }
     .sidebar-value { font-size: 13px; color: var(--text-2); line-height: 1.5; }
+
+    /* NETWORK CANVAS */
+    .network-wrap {
+      position: relative; width: 100%; height: 220px;
+      border: 1px solid var(--border); border-radius: var(--radius-lg);
+      overflow: hidden; background: var(--bg);
+    }
+    #networkCanvas { width: 100%; height: 100%; display: block; }
 
     /* TIMELINE */
     .timeline { position: relative; }
@@ -441,7 +443,6 @@
 
 <!-- CURSOR -->
 <div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
 
 <!-- PDF MODAL -->
 <div class="pdf-modal" id="pdfModal">
@@ -478,8 +479,6 @@
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-bg-line" style="left:33.3%"></div>
-  <div class="hero-bg-line" style="left:66.6%"></div>
   <div class="hero-inner">
     <div>
       <p class="hero-eyebrow">Jakarta, Indonesia</p>
@@ -505,21 +504,26 @@
       <h2 class="section-title">About</h2>
       <div class="section-divider"></div>
     </div>
-    <div class="about-grid fade-up">
-      <div class="about-text" id="aboutText"></div>
-      <div class="about-sidebar">
-        <div class="sidebar-item">
-          <div class="sidebar-label">Current Role</div>
-          <div class="sidebar-value">PPGR Analyst, GoTo Group</div>
+    <div class="about-wrap">
+      <div class="about-grid fade-up">
+        <div class="about-text" id="aboutText"></div>
+        <div class="about-sidebar">
+          <div class="sidebar-item">
+            <div class="sidebar-label">Current Role</div>
+            <div class="sidebar-value">PPGR Analyst, GoTo Group</div>
+          </div>
+          <div class="sidebar-item">
+            <div class="sidebar-label">Education</div>
+            <div class="sidebar-value">S.I.A, Universitas Indonesia<br><span style="font-size:11px;color:var(--text-3)">Cum Laude · GPA 3.69</span></div>
+          </div>
+          <div class="sidebar-item">
+            <div class="sidebar-label">Focus Areas</div>
+            <div class="sidebar-value" style="font-size:12px;line-height:1.7;">Digital Economy · Platform Labor · AI Policy · Regulatory Affairs</div>
+          </div>
         </div>
-        <div class="sidebar-item">
-          <div class="sidebar-label">Education</div>
-          <div class="sidebar-value">B.P.A, Universitas Indonesia<br><span style="font-size:11px;color:var(--text-3)">Cum Laude · GPA 3.69</span></div>
-        </div>
-        <div class="sidebar-item">
-          <div class="sidebar-label">Focus Areas</div>
-          <div class="sidebar-value" style="font-size:12px;line-height:1.7;">Digital Economy · Platform Labor · AI Policy · Regulatory Affairs</div>
-        </div>
+      </div>
+      <div class="network-wrap fade-up">
+        <canvas id="networkCanvas"></canvas>
       </div>
     </div>
   </div>
