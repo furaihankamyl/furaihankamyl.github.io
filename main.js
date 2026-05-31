@@ -84,7 +84,7 @@ function initNetwork() {
   const nodes = [];
 
   // Central hub
-  nodes.push({ x: 0.5, y: 0.5, r: 6, isHub: true, label: 'Kamyl', vx: 0, vy: 0 });
+  nodes.push({ x: 0.5, y: 0.5, r: 6, isHub: true, label: 'FKA', vx: 0, vy: 0 });
 
   // Satellite nodes with initial positions
   const angles = labels.map((_, i) => (i / labels.length) * Math.PI * 2);
@@ -193,16 +193,19 @@ function initNetwork() {
 function renderTimeline(id, items, isOrg = false) {
   document.getElementById(id).innerHTML = items.map(item => {
     const isDarkLogo = item.logo && item.logo.includes('goto');
+    const company = isOrg ? item.org : item.company;
+    const initials = company.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
     return `
     <div class="timeline-item">
       <div class="timeline-left"><div class="timeline-period">${item.period}</div></div>
       <div class="timeline-right">
-        <div class="timeline-logo-wrap${isDarkLogo ? ' logo-dark' : ''}">
-          <img src="${item.logo}" alt="${isOrg ? item.org : item.company}" class="timeline-logo"
-            onerror="this.parentElement.style.display='none'" />
+        <div class="timeline-logo-wrap${isDarkLogo ? ' logo-dark' : ''}" id="wrap-${item.id}">
+          <img src="${item.logo}" alt="${company}" class="timeline-logo"
+            onerror="this.style.display='none';this.parentElement.querySelector('.logo-fallback').style.display='flex'" />
+          <span class="logo-fallback" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:10px;font-weight:500;color:var(--text-3);">${initials}</span>
         </div>
         <div class="timeline-role">${item.role}</div>
-        <div class="timeline-company">${isOrg ? item.org : item.company}</div>
+        <div class="timeline-company">${company}</div>
         ${item.type ? `<div class="timeline-type">${item.type}</div>` : ''}
         <ul class="timeline-bullets">${(item.bullets||[]).map(b => `<li>${b}</li>`).join('')}</ul>
       </div>
