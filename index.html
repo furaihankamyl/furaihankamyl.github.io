@@ -92,6 +92,10 @@
       padding: 80px 48px 64px; border-bottom: 1px solid var(--border);
       position: relative; overflow: hidden;
     }
+    #networkCanvas {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 0; opacity: 0.45;
+    }
     .hero-bg-line {
       position: absolute; top: 0; bottom: 0; width: 1px;
       background: var(--border); pointer-events: none;
@@ -162,12 +166,7 @@
     .section-divider { flex: 1; height: 1px; background: var(--border); align-self: center; }
 
     /* ABOUT */
-    #about { position: relative; overflow: hidden; }
-    #networkCanvas {
-      position: absolute; inset: 0; width: 100%; height: 100%;
-      pointer-events: none; z-index: 0; opacity: 0.55;
-    }
-    .about-wrap { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 48px; }
+    .about-wrap { display: flex; flex-direction: column; gap: 48px; }
     .about-grid { display: grid; grid-template-columns: 1fr 280px; gap: 72px; align-items: start; }
     .about-text p {
       font-size: 15px; color: var(--text-2); line-height: 1.85; margin-bottom: 18px; font-weight: 300;
@@ -182,20 +181,23 @@
     .sidebar-label { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); margin-bottom: 5px; }
     .sidebar-value { font-size: 13px; color: var(--text-2); line-height: 1.5; }
 
-    /* LOGO FRAMES — dark bg by design */
+    /* LOGO FRAMES — neutral bg, works for both dark and light logos */
     .timeline-logo-wrap {
       width: 32px; height: 32px; border-radius: var(--radius);
-      background: #1a1a18;
+      background: var(--surface); border: 1px solid var(--border);
       display: flex; align-items: center; justify-content: center;
       margin-bottom: 10px; overflow: hidden; flex-shrink: 0;
     }
     .timeline-logo { width: 26px; height: 26px; object-fit: contain; }
+    /* GoTo logo needs dark bg since it's green on black */
+    .timeline-logo-wrap.logo-dark { background: #111110; border-color: #2c2a28; }
     .edu-logo-wrap {
       width: 40px; height: 40px; flex-shrink: 0;
-      border-radius: var(--radius); background: #1a1a18;
+      border-radius: var(--radius); background: var(--surface); border: 1px solid var(--border);
       display: flex; align-items: center; justify-content: center; overflow: hidden;
     }
     .edu-logo { width: 32px; height: 32px; object-fit: contain; }
+    .edu-logo-wrap.logo-dark { background: #111110; border-color: #2c2a28; }
 
     /* TIMELINE */
     .timeline { position: relative; }
@@ -459,6 +461,7 @@
 
 <!-- HERO -->
 <section id="hero">
+  <canvas id="networkCanvas"></canvas>
   <div class="hero-inner">
     <div>
       <p class="hero-eyebrow">Jakarta, Indonesia</p>
@@ -479,7 +482,6 @@
 
 <!-- ABOUT -->
 <section id="about" class="section">
-  <canvas id="networkCanvas"></canvas>
   <div class="section-inner">
     <div class="section-header">
       <h2 class="section-title">About</h2>
