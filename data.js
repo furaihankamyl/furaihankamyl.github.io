@@ -2,9 +2,9 @@ const PORTFOLIO_DATA = {
   personal: {
     name: "Furaihan Kamyl Arnazaye",
     tagline: "Public Policy and Government Relations Analyst | Digital Economy, Transport, and AI",
-    about: `I'm known for turning complex regulatory landscapes into clear advocacy — bridging government, industry, and civil society to shape policy that works for everyone.
+    about: `I'm known for my ability to translate regulatory complexity into strategic action — building the networks that make policy move.
 
-Currently at GoTo Group, I work across legislative monitoring, stakeholder engagement, and policy communication — contributing to national conversations on digital economy, platform labor, and AI governance.`,
+At GoTo Group, I work at the intersection of government, industry, and civil society. My work spans <strong>legislative monitoring</strong>, <strong>stakeholder engagement</strong>, and <strong>policy communication</strong> — contributing to national conversations on digital economy, platform labor, and AI governance. Before that, published research on network governance, public trust, and administrative reform gave me the analytical foundation this work demands.`,
     contact: {
       email: "furaihankamyl.arnazaye@gmail.com",
       whatsapp: "6285159691922",
