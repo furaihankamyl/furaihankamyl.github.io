@@ -84,7 +84,7 @@ function initNetwork() {
   const nodes = [];
 
   // Central hub
-  nodes.push({ x: 0.5, y: 0.5, r: 6, isHub: true, label: 'FKA', vx: 0, vy: 0 });
+  nodes.push({ x: 0.5, y: 0.5, r: 6, isHub: true, label: 'Kamyl', vx: 0, vy: 0 });
 
   // Satellite nodes with initial positions
   const angles = labels.map((_, i) => (i / labels.length) * Math.PI * 2);
