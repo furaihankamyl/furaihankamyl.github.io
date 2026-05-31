@@ -59,12 +59,12 @@ let networkAnim = null;
 function initNetwork() {
   const canvas = document.getElementById('networkCanvas');
   if (!canvas) return;
-  const wrap = canvas.parentElement;
+  const section = document.getElementById('hero');
   const ctx = canvas.getContext('2d');
 
   function resize() {
-    canvas.width = wrap.offsetWidth;
-    canvas.height = wrap.offsetHeight;
+    canvas.width = section.offsetWidth;
+    canvas.height = section.offsetHeight;
   }
   resize();
   window.addEventListener('resize', () => { resize(); });
@@ -191,11 +191,13 @@ function initNetwork() {
 
 /* ===================== TIMELINE ===================== */
 function renderTimeline(id, items, isOrg = false) {
-  document.getElementById(id).innerHTML = items.map(item => `
+  document.getElementById(id).innerHTML = items.map(item => {
+    const isDarkLogo = item.logo && item.logo.includes('goto');
+    return `
     <div class="timeline-item">
       <div class="timeline-left"><div class="timeline-period">${item.period}</div></div>
       <div class="timeline-right">
-        <div class="timeline-logo-wrap">
+        <div class="timeline-logo-wrap${isDarkLogo ? ' logo-dark' : ''}">
           <img src="${item.logo}" alt="${isOrg ? item.org : item.company}" class="timeline-logo"
             onerror="this.parentElement.style.display='none'" />
         </div>
@@ -205,7 +207,7 @@ function renderTimeline(id, items, isOrg = false) {
         <ul class="timeline-bullets">${(item.bullets||[]).map(b => `<li>${b}</li>`).join('')}</ul>
       </div>
     </div>
-  `).join('');
+  `}).join('');
 }
 
 /* ===================== EDUCATION ===================== */
