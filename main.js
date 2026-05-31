@@ -18,22 +18,6 @@ function toggleTheme() {
 document.getElementById('themeToggle').addEventListener('click', toggleTheme);
 document.getElementById('themeToggleMobile').addEventListener('click', toggleTheme);
 
-/* ===================== CURSOR — simple, no animation ===================== */
-const cursor = document.getElementById('cursor');
-document.addEventListener('mousemove', e => {
-  cursor.style.left = e.clientX + 'px';
-  cursor.style.top = e.clientY + 'px';
-});
-document.addEventListener('mouseenter', () => cursor.style.opacity = '1');
-document.addEventListener('mouseleave', () => cursor.style.opacity = '0');
-
-function addCursorHover(selector) {
-  document.querySelectorAll(selector).forEach(el => {
-    el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
-  });
-}
-
 /* ===================== NAV ===================== */
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
@@ -274,7 +258,7 @@ function renderActivities(filter = 'All') {
       </div>
     </div>
   `).join('');
-  addCursorHover('.activity-card');
+  
 }
 
 function renderFilterBar() {
@@ -288,7 +272,7 @@ function renderFilterBar() {
       renderActivities(activeFilter);
     });
   });
-  addCursorHover('.filter-btn');
+  
 }
 
 /* ===================== AWARDS ===================== */
@@ -343,7 +327,7 @@ function renderPublications() {
       </div>
     `;
   }).join('');
-  addCursorHover('.pub-card');
+  
 }
 
 /* ===================== SKILLS ===================== */
@@ -364,21 +348,13 @@ function renderContact() {
     <a href="https://wa.me/${whatsapp}" target="_blank" rel="noopener" class="contact-link">💬 WhatsApp</a>
     <a href="https://linkedin.com/in/${linkedin}" target="_blank" rel="noopener" class="contact-link">in LinkedIn</a>
   `;
-  addCursorHover('.contact-link');
+  
 }
 
 /* ===================== SCROLL ANIMATIONS ===================== */
 function initFadeUp() {
   const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        obs.unobserve(e.target);
-        if (e.target.contains(document.getElementById('networkCanvas'))) {
-          setTimeout(initNetwork, 100);
-        }
-      }
-    });
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
   }, { threshold: 0.06 });
   document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 }
@@ -396,5 +372,5 @@ document.addEventListener('DOMContentLoaded', () => {
   renderSkills();
   renderContact();
   initFadeUp();
-  addCursorHover('a, button, .edu-card');
+  initNetwork();
 });
