@@ -24,12 +24,12 @@ My direct responsibility in this initiative was leading the university collabora
 
 The universities involved included:
 
-- Universitas Indonesia
-- Universitas Gadjah Mada
+- Universitas Indonesia (UI)
+- Universitas Gadjah Mada (UGM)
 - Institut Pertanian Bogor (IPB)
 - Institut Teknologi Bandung (ITB)
-- Universitas Sumatera Utara
-- Universitas Hasanuddin
+- Universitas Sumatera Utara (USU)
+- Universitas Hasanuddin (Unhas)
 - Universitas Udayana
 
 Each partnership was structured around several forms of collaboration: **training data contribution** by faculty and students, **student internship programs** for AI data training work, **knowledge-sharing sessions** paired with MOU or PKS signings, and in the case of Universitas Indonesia, an **AI research grant** program.
