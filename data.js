@@ -170,29 +170,29 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
     },
     {
       title: "Membandingkan Intensi Keterlibatan Publik Antargender dan Antargenerasi Muda dalam Fitur JakLapor",
-      venue: "Jurnal Ilmiah Wahana Pendidikan (JIWP)",
-      author: "Furaihan Kamyl Arnazaye and Kezsya Tesalonika",
+      venue: "Jurnal Ilmu Wacana Politik (JIWP)",
+      author: "Furaihan Kamyl Arnazaye et al.",
       year: 2024,
       driveId: "1z1gBBxb5rXhj09Y2sip8b4HjUtxFU8E_"
     },
     {
       title: "Simplification of Limited Liability Company Registration Procedures Through Notaries",
       venue: "Temu Administrator Muda Indonesia (TemuAdMI)",
-      author: "Furaihan Kamyl Arnazaye and Adinda Puspita Ningrum",
+      author: "Furaihan Kamyl Arnazaye et al.",
       year: 2024,
       driveId: "1erXwQba8S_rnZGv_VKod7KJeNRWG17o1"
     },
     {
       title: "Comprehensive Analysis of Public Trust Levels Among Young Individuals in the JakLapor Feature",
       venue: "PKM-AI, Jurnal Ilmiah Administrasi (JIA), STIA LAN Bandung",
-      author: "Furaihan Kamyl Arnazaye, Bunga Fayza Setiawan, and Gavrel Antonio Togarma",
+      author: "Furaihan Kamyl Arnazaye et al.",
       year: 2024,
       driveId: "1j36itRC-S7fGPdxOZeQpO_IfelPIaI2k"
     },
     {
       title: "Network Governance in Supporting Subjective Well-being of Juvenile Inmates in LPKA",
       venue: "PKM-RSH, Kemendikbudristek",
-      author: "Adinda Puspita Ningrum, Furaihan Kamyl Arnazaye, and Muhammad Rafli Gebrena",
+      author: "Furaihan Kamyl Arnazaye et al.",
       year: 2024,
       driveId: "1s3_HDObWfezzZ66EawVExvmT0P4zNF8T"
     },
@@ -206,7 +206,7 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
     {
       title: "Efektivitas Pengangkatan Penjabat Kepala Daerah dalam Perspektif Demokrasi dan Teknokrasi",
       venue: "Jurnal Ilmiah Bidang Ilmu Administrasi Negara",
-      author: "Furaihan Kamyl Arnazaye, Ariq Nabil Sulaiman, and Muh Imam Kastholani",
+      author: "Furaihan Kamyl Arnazaye et al.",
       year: 2023,
       driveId: "1UNDMfo_Py_ZNIiG7yTbqku95hXig-jvK"
     }
@@ -219,6 +219,15 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
   },
 
   activities: [
+    {
+      id: "sahabat-ai",
+      title: "Building Sahabat AI: How GoTo Brought an Open-Source LLM to Seven Indonesian Universities",
+      date: "2024–2025",
+      category: "Collaboration",
+      thumbnail: "images/sahabat-ai-3.jpg",
+      description: "Leading GoTo's university partnership program for Sahabat-AI — an open-source LLM built for Indonesian and regional languages.",
+      slug: "sahabat-ai"
+    },
     {
       id: "indonesia-emas-2045",
       title: "Towards Indonesia Emas 2045 from the Tip of the Pen",
