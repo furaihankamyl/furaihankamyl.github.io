@@ -42,7 +42,7 @@ Before entering the field, we spent considerable time on stakeholder mapping, id
 
 What we found at LPKA itself was not what the headlines about juvenile detention in Indonesia might suggest. The institution was genuinely trying. Staff had designed structured daily programs for the Anak Binaan: vocational training, educational sessions, recreational activities, religious programming. There was real planning behind what they were doing, real intention to give these children something to hold onto. That was important context, our research was not an indictment of the institution. It was an attempt to help it work better.
 
-![Anak Binaan LPKA Kelas II Jakarta](images/pimnas-5.jpg)
+![Anak Binaan LPKA Kelas II Jakarta](images/pimnas-5.jpeg)
 
 Then we interviewed the children.
 
