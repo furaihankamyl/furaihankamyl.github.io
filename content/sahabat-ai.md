@@ -1,5 +1,3 @@
-# Building Sahabat AI: How GoTo Brought an Open-Source LLM to Seven Indonesian Universities
-
 **Category:** Collaboration | **Year:** 2024–2025
 
 Indonesia has hundreds of living languages, millions of daily text conversations in slang and regional dialects, and a digital economy that runs on informal communication. Yet most large language models are trained predominantly on English-language data — and when they do support Indonesian, they often miss the texture of how people actually speak.
