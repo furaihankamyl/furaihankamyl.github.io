@@ -170,7 +170,7 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
     },
     {
       title: "Membandingkan Intensi Keterlibatan Publik Antargender dan Antargenerasi Muda dalam Fitur JakLapor",
-      venue: "Jurnal Ilmu Wacana Politik (JIWP)",
+      venue: "Jurnal Ilmiah Wahana Pendidikan (JIWP)",
       author: "Furaihan Kamyl Arnazaye et al.",
       year: 2024,
       driveId: "1z1gBBxb5rXhj09Y2sip8b4HjUtxFU8E_"
@@ -229,7 +229,15 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       slug: "sahabat-ai"
     },
     {
-      id: "indonesia-emas-2045",
+      id: "pimnas",
+      title: "PIMNAS: What Competing at Indonesia's Largest Student Research Competition Taught Me",
+      date: "2024",
+      category: "Research and Analysis",
+      thumbnail: "images/pimnas-4.jpg",
+      description: "A Silver Medal, a policy brief to Ditjenpas, and research that began inside a juvenile correctional institution on International Children's Day.",
+      slug: "pimnas"
+    },
+    {
       title: "Towards Indonesia Emas 2045 from the Tip of the Pen",
       date: "2024",
       category: "Research and Analysis",
