@@ -10,7 +10,7 @@ I had heard about Program Kreativitas Mahasiswa (PKM) since my first semester at
 
 What changed was competition. The more I joined academic contests, the more I understood that I was capable of competing at a higher level than I had previously assumed. From Best Speaker at SIAP JABAR 2022 to first place at Brawijaya National Student Conference, each achievement recalibrated what I thought was possible. Losing early on was part of that too.
 
-When my colleague Adinda Puspita Ningrum invited me to take PKM seriously at the end of 2023. _I said yes without fully understanding what I was saying yes to, lol._ I knew PKM as a framework for competitive research funding. What I did not yet understand was PIMNAS (the Pekan Ilmiah Mahasiswa Nasional), the national final stage where the top PKM teams from universities across Indonesia compete. PIMNAS is not just a competition. It is the most prestigious platform for undergraduate research in the country, organized by Pusat Prestasi Nasional under the Ministry of Education. Reaching it means your research has survived multiple rounds of national evaluation. That understanding came later. At the start, my focus was simply on doing the research well.
+When my colleague Adinda Puspita Ningrum invited me to take PKM seriously at the end of 2023. *I said yes without fully understanding what I was saying yes to, lol.* I knew PKM as a framework for competitive research funding. What I did not yet understand was PIMNAS (the Pekan Ilmiah Mahasiswa Nasional), the national final stage where the top PKM teams from universities across Indonesia compete. PIMNAS is not just a competition. It is the most prestigious platform for undergraduate research in the country, organized by Pusat Prestasi Nasional under the Ministry of Education. Reaching it means your research has survived multiple rounds of national evaluation. That understanding came later. At the start, my focus was simply on doing the research well.
 
 ![The team with our supervisor, Dr. Lina Miftahul Jannah](images/pimnas-1.jpg)
 
@@ -20,7 +20,7 @@ We assembled a three-person team: myself, Adinda, and Gebrena, after one member 
 
 ## The Research Question: Why LPKA?
 
-The topic came from Adinda's direct experience. Her time teaching children through Rumah Belajar BEM UI had left her with a persistent and uncomfortable question: what happens to children whose right to grow, learn, and develop is not just disrupted, but systematically constrained, specifically those inside LPKA, Indonesia's Lembaga Pembinaan Khusus Anak, the special correctional institutions for juvenile offenders?
+The topic came from Adinda's direct experience. Her time teaching children through Rumah Belajar BEM UI had left her with a persistent and uncomfortable question: **what happens to children whose right to grow, learn, and develop is not just disrupted, but systematically constrained, specifically those inside LPKA, Indonesia's Lembaga Pembinaan Khusus Anak, the special correctional institutions for juvenile offenders?**
 
 The question was easy to ask. Finding a research angle that was both meaningful and tractable was harder.
 
@@ -46,21 +46,21 @@ What we found at LPKA itself was not what the headlines about juvenile detention
 
 Then we interviewed the children.
 
-There is no neutral way to write about this. We sat with them, listened to them, and asked them about their lives — what brought them to LPKA, what their days looked like, what they hoped for. What emerged across many of those conversations was a pattern that our data would later confirm: the absence of family as a stabilizing force was a near-constant thread. Absent parents, family breakdown, economic hardship that had left children without the basic structures that most people never think about because they have always had them. These were not complicated stories analytically. They were devastating personally.
+There is no neutral way to write about this. We sat with them, listened to them, and asked them about their lives: **what brought them to LPKA, what their days looked like, what they hoped for.** What emerged across many of those conversations was a pattern that our data would later confirm: the absence of family as a stabilizing force was a near-constant thread. Absent parents, family breakdown, economic hardship that had left children without the basic structures that most people never think about because they have always had them. These were not complicated stories analytically. They were devastating personally.
 
 And yet the hopes were intact. One wanted to become a pilot. Another spoke about making his parents proud. Others described futures with a specificity and sincerity that made it impossible to engage with them as mere data points. That is a tension that good research has to hold — being rigorous about what the data shows while never losing sight of the human stakes behind it.
 
 ![Presenting preliminary findings to Minister of Women's Empowerment and Child Protection, Ibu Bintang Puspayoga, during her visit to LPKA Kelas II Jakarta](images/pimnas-3.jpg)
 
-The visit happened to coincide with International Children's Day on July 23. The Minister of Women's Empowerment and Child Protection, Ibu Bintang Puspayoga, was visiting LPKA that day. We had the opportunity to share our preliminary findings directly with her — early interview results, initial observations, and the direction of our research. She was supportive and gave us a specific instruction: translate this into a policy brief and get it to the relevant parties. We did not take that lightly.
+The visit happened to coincide with International Children's Day on July 23. The Minister of Women's Empowerment and Child Protection, Ibu Bintang Puspayoga, was visiting LPKA that day. We had the opportunity to share our preliminary findings directly with her, early interview results, initial observations, and the direction of our research. She was supportive and gave us a specific instruction: translate this into a policy brief and get it to the relevant parties. We did not take that lightly.
 
 ---
 
 ## What the Data Showed
 
-Our findings were consistent across every data source — SNA, interviews, field observation, and desk study — which gave us confidence in what we were seeing.
+Our findings were consistent across every data source: SNA, interviews, field observation, and desk study, which gave us confidence in what we were seeing.
 
-The central finding was structural: institutional collaborations at LPKA were initiated primarily out of a general willingness to cooperate rather than out of alignment with specific program objectives. Partnerships existed, and some of them were genuinely valuable. But they had not been built around a systematic analysis of what the Anak Binaan actually needed from those partnerships. The result was a collaboration network that looked active on the surface but was not optimally directed toward outcomes.
+The central finding was structural: **institutional collaborations at LPKA were initiated primarily out of a general willingness to cooperate rather than out of alignment with specific program objectives.** Partnerships existed, and some of them were genuinely valuable. But they had not been built around a systematic analysis of what the Anak Binaan actually needed from those partnerships. The result was a collaboration network that looked active on the surface but was not optimally directed toward outcomes.
 
 This is a common failure mode in institutional networks, and it is an important one to name precisely — because the solution is different depending on whether the problem is a lack of partners or a misalignment of existing partnerships. In LPKA's case, it was the latter.
 
