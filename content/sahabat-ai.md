@@ -40,11 +40,9 @@ What made this work operationally complex was the end-to-end nature of each enga
 
 ## The Language Community Innovation: Lentera App
 
-One of the more unconventional parts of Sahabat-AI's data strategy involved a collaboration with **Lentera App**, a local literary platform, to collect informal Indonesian language data.
-
 <p>
   <img src="images/sahabat-ai-2.jpg" alt="GoTo as supporter for Lomba Nulis Lentera — collecting urban language data through essay competition" width="200px" style="float: right; margin-left: 15px; margin-bottom: 10px;">
-  One of the more unconventional parts of Sahabat-AI's data strategy involved a collaboration with **Lentera App**, a local literary platform, to collect informal Indonesian language data.
+  One of the more unconventional parts of Sahabat-AI's data strategy involved a collaboration with <strong>Lentera App</strong>, a local literary platform, to collect informal Indonesian language data.
 </p>
 
 The problem we were solving is straightforward but underappreciated: slang, abbreviations, and natural conversational Indonesian are extremely difficult to source from existing publications and academic literature. Phrases like *"Kalo gw liat-liat, si. Gk ada, ya."* or *"Gak begitu, njir."* — the kind of language that fills every Indonesian's text messages, simply don't appear in formal corpora.
