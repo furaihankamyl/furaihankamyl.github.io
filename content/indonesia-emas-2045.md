@@ -1,5 +1,3 @@
-# Towards Indonesia Emas 2045 from the Tip of the Pen
-
 **Category:** Research and Analysis | **Year:** 2024
 
 This post showcases our academic contribution efforts for Indonesia. We successfully attained 4 accomplishments across 3 research projects throughout 2024. Our research targeted the Ministry of Law and Human Rights, the Special Capital Region of Jakarta Provincial Government, and the Ministry of Investment/BKPM.
