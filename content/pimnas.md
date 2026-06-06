@@ -26,6 +26,8 @@ The question was easy to ask. Finding a research angle that was both meaningful 
 
 We approached it through a public administration lens rather than a purely social work or legal one. What we observed in the literature and in preliminary data was a structural tension: the LPKA population was growing, the complexity of needs among Anak Binaan was increasing, but institutional budgets were not keeping pace. The standard policy response would be to argue for more funding. We were more interested in a different question "could the existing network of institutional collaborations be made more efficient, and if so, what would that require?"
 
+![Anak Binaan LPKA Kelas II Jakarta](images/pimnas-5.jpeg)
+
 That reframing led directly to Social Network Analysis as our primary methodology. SNA is well-suited to questions about institutional relationships: it allows you to map not just which actors are involved, but the directionality of ties, the density of connections, who occupies central or peripheral positions in a network, and critically, whether the pattern of collaboration reflects the actual objectives of a program or simply reflects historical relationships and convenience. For a context like LPKA, where dozens of government agencies, NGOs, universities, and private actors may have some form of engagement, this kind of structural analysis surfaces things that interviews and surveys alone cannot.
 
 We combined SNA with a single case study approach, triangulating across qualitative interviews, field observation, and desk study. Gebrena designed the administrative framework for the study and managed ethics clearance, which we filed immediately, given that our research subjects included juvenile offenders, a category that requires additional protections under Indonesian research ethics guidelines.
@@ -41,8 +43,6 @@ Data collection was the part of this project that I did not fully anticipate, an
 Before entering the field, we spent considerable time on stakeholder mapping, identifying which institutional actors had relationships with LPKA Kelas II Jakarta and determining interview priorities. The list was long. Not everyone was accessible. Some declined. Some did not respond. Some agreed initially and later withdrew. We reprioritized as we went, and ultimately completed thirteen interviews with priority actors across government, civil society, and the institution itself. The process of navigating that (building trust, managing expectations, handling refusals without losing momentum) taught me more about stakeholder management in a research context than any coursework had.
 
 What we found at LPKA itself was not what the headlines about juvenile detention in Indonesia might suggest. The institution was genuinely trying. Staff had designed structured daily programs for the Anak Binaan: vocational training, educational sessions, recreational activities, religious programming. There was real planning behind what they were doing, real intention to give these children something to hold onto. That was important context, our research was not an indictment of the institution. It was an attempt to help it work better.
-
-![Anak Binaan LPKA Kelas II Jakarta](images/pimnas-5.jpeg)
 
 Then we interviewed the children.
 
@@ -64,7 +64,7 @@ The central finding was structural: institutional collaborations at LPKA were in
 
 This is a common failure mode in institutional networks, and it is an important one to name precisely — because the solution is different depending on whether the problem is a lack of partners or a misalignment of existing partnerships. In LPKA's case, it was the latter.
 
-Our core recommendation to the Directorate General of Corrections (Ditjenpas) followed directly from that finding: begin by mapping existing programs and initiatives at LPKA and defining their specific objectives. Then, working from those objectives, identify and engage the institutional partners best suited to support them — rather than building partnerships based on availability or prior relationships. We structured this as a formal policy brief, presented it to Ditjenpas, and received confirmation that it would be considered as substantive input for an upcoming legislative review of the SPPA Law — the primary legal framework governing juvenile justice in Indonesia in coordination with the DPR.
+Our core recommendation to the Directorate General of Corrections (Ditjenpas) followed directly from that finding: begin by mapping existing programs and initiatives at LPKA and defining their specific objectives. Then, working from those objectives, identify and engage the institutional partners best suited to support them, rather than building partnerships based on availability or prior relationships. We structured this as a formal policy brief, presented it to Ditjenpas, and received confirmation that it would be considered as substantive input for an upcoming legislative review of the SPPA Law, the primary legal framework governing juvenile justice in Indonesia in coordination with the DPR.
 
 That was the moment the work felt like it had weight beyond the academic exercise.
 
@@ -72,21 +72,21 @@ That was the moment the work felt like it had weight beyond the academic exercis
 
 ## PIMNAS 37, Surabaya
 
+![UI delegation at PIMNAS 37, Universitas Airlangga, Surabaya](images/pimnas-2.jpg)
+
 We cleared every PKM selection stage. When the final results were announced, we learned two things simultaneously: our team had been selected for PIMNAS 37 at Universitas Airlangga in Surabaya, and we had received the highest score in the PKM Riset Sosial Humaniora category nationally.
 
 To understand what that meant contextually: PKM receives thousands of proposals from universities across Indonesia each year. The selection process runs over multiple stages, with each round eliminating the majority of teams. The teams that reach PIMNAS represent a small fraction of the original applicant pool — and within that group, the competition is tight. Every university with serious research programs sends its best.
 
 We traveled to Surabaya as part of the UI delegation. The atmosphere at PIMNAS is difficult to describe to someone who has not been there — thousands of students from hundreds of universities, all in institutional jackets, all carrying months of work into a few days of competition. There is a particular kind of energy at an event like that, equal parts anxiety and pride.
 
-![UI delegation at PIMNAS 37, Universitas Airlangga, Surabaya](images/pimnas-2.jpg)
-
 We presented our poster, fielded questions from evaluators, and waited. The closing ceremony brought the results. Our team was awarded the **Silver Medal for Research Poster** at PIMNAS 37.
-
-![Receiving the Silver Medal on stage at PIMNAS 37](images/pimnas-4.jpg)
 
 ---
 
 ## What I Took From It
+
+![Receiving the Silver Medal on stage at PIMNAS 37](images/pimnas-4.jpg)
 
 Research is not finished when the methodology is sound or the paper is written. It is finished — if it can ever be finished — when it reaches the people who have the standing to act on it.
 
