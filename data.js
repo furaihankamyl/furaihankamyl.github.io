@@ -217,13 +217,13 @@ const PORTFOLIO_DATA = {
   },
 
   activities: [
-    {
+     {
       id: "resep-ayam-kecap-spesial",
       title: "Resep Ayam Kecap Spesial",
-      date: "Whenever",
+      date: "2025",
       category: "Research and Analysis",
       thumbnail: "images/ayam-kecap.jpg",
-      description: "A special recipe that has absolutely nothing to do with chicken.",
+      description: "Resep rahasia yang sudah teruji dan diakui keluarga. Tidak ada yang lebih penting dari ini.",
       slug: "resep-ayam-kecap-spesial"
     },
     {
