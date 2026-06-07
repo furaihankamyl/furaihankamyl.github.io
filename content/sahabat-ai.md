@@ -41,7 +41,7 @@ What made this work operationally complex was the end-to-end nature of each enga
 ## The Language Community Innovation: Lentera App
 
 <p>
-  <img src="/images/images/sahabat-ai-2.jpg" alt="Poster of GoTo-Lentera App essay competition" style="width: 220px !important; float: right; margin-left: 20px; margin-bottom: 10px; height: auto;">
+  <img src="/images/sahabat-ai-2.jpg" alt="Poster of GoTo-Lentera App essay competition" style="width: 220px !important; float: right; margin-left: 20px; margin-bottom: 10px; height: auto;">
   One of the more unconventional parts of Sahabat-AI's data strategy involved a collaboration with <strong>Lentera App</strong>, a local literary platform, to collect informal Indonesian language data.
 </p>
 
