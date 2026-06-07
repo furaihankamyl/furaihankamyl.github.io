@@ -2,7 +2,9 @@ const PORTFOLIO_DATA = {
   personal: {
     name: "Furaihan Kamyl Arnazaye",
     tagline: "Public Policy and Government Relations Analyst | Digital Economy, Transport, and AI",
-    about: `I'm known for my ability to translate regulatory complexity into strategic action — building the networks that make policy move.\n\nAt GoTo Group, I work at the intersection of government, industry, and civil society. My work spans <strong>legislative monitoring</strong>, <strong>stakeholder engagement</strong>, and <strong>policy communication</strong> — contributing to national conversations on digital economy, platform labor, and AI governance. Before that, published research on network governance, public trust, and administrative reform gave me the analytical foundation this work demands.`,
+    about: `I'm known for my ability to translate regulatory complexity into strategic action — building the networks that make policy move.
+
+At GoTo Group, I work at the intersection of government, industry, and civil society. My work spans <strong>legislative monitoring</strong>, <strong>stakeholder engagement</strong>, and <strong>policy communication</strong> — contributing to national conversations on digital economy, platform labor, and AI governance. Before that, published research on network governance, public trust, and administrative reform gave me the analytical foundation this work demands.`,
     contact: {
       email: "furaihankamyl.arnazaye@gmail.com",
       whatsapp: "6285159691922",
@@ -217,13 +219,13 @@ const PORTFOLIO_DATA = {
   },
 
   activities: [
-     {
+    {
       id: "resep-ayam-kecap-spesial",
       title: "Resep Ayam Kecap Spesial",
-      date: "2025",
+      date: "Whenever",
       category: "Research and Analysis",
       thumbnail: "images/ayam-kecap.jpg",
-      description: "Resep rahasia yang sudah teruji dan diakui keluarga. Tidak ada yang lebih penting dari ini.",
+      description: "A special recipe that has absolutely nothing to do with chicken.",
       slug: "resep-ayam-kecap-spesial"
     },
     {
@@ -236,14 +238,7 @@ const PORTFOLIO_DATA = {
       slug: "sahabat-ai"
     },
     {
-      id: "resep-ayam-kecap-spesial",
-      title: "Resep Ayam Kecap Spesial",
-      date: "2025",
-      category: "Research and Analysis",
-      thumbnail: "images/ayam-kecap.jpg",
-      description: "Resep rahasia yang sudah teruji dan diakui keluarga. Tidak ada yang lebih penting dari ini.",
-      slug: "resep-ayam-kecap-spesial"
-    },
+      id: "pimnas",
       title: "From Classroom to PIMNAS: What Competing at Indonesia's Largest Student Research Competition Taught Me",
       date: "2024",
       category: "Research and Analysis",
@@ -252,6 +247,7 @@ const PORTFOLIO_DATA = {
       slug: "pimnas"
     },
     {
+      id: "indonesia-emas-2045",
       title: "Towards Indonesia Emas 2045 from the Tip of the Pen",
       date: "2024",
       category: "Research and Analysis",
