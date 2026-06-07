@@ -220,6 +220,15 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
 
   activities: [
     {
+      id: "resep-ayam-kecap-spesial",
+      title: "Resep Ayam Kecap Spesial",
+      date: "Whenever",
+      category: "Research and Analysis",
+      thumbnail: "images/ayam-kecap.jpg",
+      description: "A special recipe that has absolutely nothing to do with chicken.",
+      slug: "resep-ayam-kecap-spesial"
+    },
+    {
       id: "sahabat-ai",
       title: "Building Sahabat AI: How GoTo Brought an Open-Source LLM to Seven Indonesian Universities",
       date: "2024–2025",
@@ -229,8 +238,15 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       slug: "sahabat-ai"
     },
     {
-      id: "pimnas",
-      title: "PIMNAS: What Competing at Indonesia's Largest Student Research Competition Taught Me",
+      id: "resep-ayam-kecap-spesial",
+      title: "Resep Ayam Kecap Spesial",
+      date: "2025",
+      category: "Research and Analysis",
+      thumbnail: "images/ayam-kecap.jpg",
+      description: "Resep rahasia yang sudah teruji dan diakui keluarga. Tidak ada yang lebih penting dari ini.",
+      slug: "resep-ayam-kecap-spesial"
+    },
+      title: "From Classroom to PIMNAS: What Competing at Indonesia's Largest Student Research Competition Taught Me",
       date: "2024",
       category: "Research and Analysis",
       thumbnail: "images/pimnas-4.jpg",
