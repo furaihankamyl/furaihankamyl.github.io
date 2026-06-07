@@ -244,7 +244,7 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       category: "Research and Analysis",
       thumbnail: "images/pimnas-4.jpg",
       description: "A Silver Medal, a policy brief to Ditjenpas, and research that began inside a juvenile correctional institution on International Children's Day.",
-      slug: "pimnas"
+      slug: "pimnas",
     },
     {
       id: "indonesia-emas-2045",
