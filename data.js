@@ -252,7 +252,7 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       date: "2026",
       category: "Research and Analysis",
       thumbnail: "images/ayam-kecap.jpg",
-      description: "Bahan-bahan · 1/2 kg sayap ayam · Bumbu Halus: · 5 siung bawang putih · 3 siung bawang merah · 11 bh cabe · 1 ibu jari lengkuas (memarkan)...",
+      description: "Bahan-bahan · 1/2 kg sayap ayam · Bumbu Halus: · 5 siung bawang putih · 3 siung bawang merah · 11 bh cabe · 1 ibu jari lengkuas ...",
       slug: "resep-ayam-kecap-spesial"
     }
   ]
