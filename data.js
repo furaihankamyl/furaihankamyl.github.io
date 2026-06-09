@@ -225,7 +225,7 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       date: "Whenever",
       category: "Research and Analysis",
       thumbnail: "images/ayam-kecap.jpg",
-      description: "A special recipe that has absolutely nothing to do with chicken.",
+      description: "Bahan-bahan · 1/2 kg sayap ayam · Bumbu Halus: · 5 siung bawang putih · 3 siung bawang merah · 11 bh cabe · 1 ibu jari lengkuas (memarkan)...",
       slug: "resep-ayam-kecap-spesial"
     },
     {
@@ -239,7 +239,7 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
     },
     {
       id: "pimnas",
-      title: "From Classroom to PIMNAS: What Competing at Indonesia's Largest Student Research Competition Taught Me",
+      title: "PIMNAS: What Competing at Indonesia's Largest Student Research Competition Taught Me",
       date: "2024",
       category: "Research and Analysis",
       thumbnail: "images/pimnas-4.jpg",
