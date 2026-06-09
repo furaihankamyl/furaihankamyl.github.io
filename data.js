@@ -220,15 +220,6 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
 
   activities: [
     {
-      id: "resep-ayam-kecap-spesial",
-      title: "Resep Ayam Kecap Spesial",
-      date: "Whenever",
-      category: "Research and Analysis",
-      thumbnail: "images/ayam-kecap.jpg",
-      description: "Bahan-bahan · 1/2 kg sayap ayam · Bumbu Halus: · 5 siung bawang putih · 3 siung bawang merah · 11 bh cabe · 1 ibu jari lengkuas (memarkan)...",
-      slug: "resep-ayam-kecap-spesial"
-    },
-    {
       id: "sahabat-ai",
       title: "Building Sahabat AI: How GoTo Brought an Open-Source LLM to Seven Indonesian Universities",
       date: "2024–2025",
@@ -254,6 +245,15 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       thumbnail: "images/activity-indonesia-emas-2.png",
       description: "Four research accomplishments across three projects contributing to Indonesia's national development goals.",
       slug: "indonesia-emas-2045"
+    },
+        {
+      id: "resep-ayam-kecap-spesial",
+      title: "Resep Ayam Kecap Spesial",
+      date: "2026",
+      category: "Research and Analysis",
+      thumbnail: "images/ayam-kecap.jpg",
+      description: "Bahan-bahan · 1/2 kg sayap ayam · Bumbu Halus: · 5 siung bawang putih · 3 siung bawang merah · 11 bh cabe · 1 ibu jari lengkuas (memarkan)...",
+      slug: "resep-ayam-kecap-spesial"
     }
   ]
 };
