@@ -229,6 +229,15 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       slug: "sahabat-ai"
     },
     {
+      id: "workflow-automation",
+      title: "I Automated My Own Job (Here's Why That Made Me Better at It)",
+      date: "2026",
+      category: "Research and Analysis",
+      thumbnail: "images/google-alert-automation.jpg",
+      description: "From an Excel statistics dashboard in 2020 to AI-powered workflow automation at GoTo — the obsession with making work run itself.",
+      slug: "workflow-automation"
+    },
+    {
       id: "pimnas",
       title: "PIMNAS: What Competing at Indonesia's Largest Student Research Competition Taught Me",
       date: "2024",
