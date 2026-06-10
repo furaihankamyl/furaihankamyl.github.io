@@ -1,5 +1,3 @@
-# I Automated My Own Job (And Here's Why That Made Me Better at It)
-
 **Category:** Research and Analysis | **Year:** 2025
 
 The dream is simple. Work calmly, with AI agents handling the repetitive parts, while I occasionally glance at the screen to check the output. That is where I am trying to get to. This is the story of how that obsession started.
