@@ -12,8 +12,6 @@ I'm allergic to alcohol. Fully. Can't drink at all. So if you've ever talked to 
 
 Give me a boba or an energy drink and I will send voice notes that go nowhere, photograph myself in random places and send it with zero context, and come up with jokes that only land if you were there for the setup.
 
-![This is one of those photos. I sent this to someone. I don't remember why.](images/selfie-lift.jpg)
-
 Outside of work I run. Like, actually run — not the "I jog sometimes" kind. My PRs are 4:32 for 1k, 24:10 for 5k, 51:25 for 10k, and 2:05:43 for the half marathon. I'm working on all of them. It never ends.
 
 Probably that I am a normal person who does serious work, wakes up early to run, and has a chaotic side that only activates under specific sugary conditions.
