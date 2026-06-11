@@ -220,6 +220,15 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
 
   activities: [
     {
+      id: "workflow-automation",
+      title: "I Automated My Own Job (And Here's Why That Made Me Better at It)",
+      date: "2025",
+      category: "Research and Analysis",
+      thumbnail: "images/google-alert-automation.jpg",
+      description: "From an Excel statistics dashboard in 2020 to AI-powered workflow automation at GoTo — the obsession with making work run itself.",
+      slug: "workflow-automation"
+    },
+    {
       id: "sahabat-ai",
       title: "Building Sahabat AI: How GoTo Brought an Open-Source LLM to Seven Indonesian Universities",
       date: "2024–2025",
@@ -229,22 +238,13 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       slug: "sahabat-ai"
     },
     {
-      id: "workflow-automation",
-      title: "I Automated My Own Job (Here's Why That Made Me Better at It)",
-      date: "2026",
-      category: "Research and Analysis",
-      thumbnail: "images/google-alert-automation.jpg",
-      description: "From an Excel statistics dashboard in 2020 to AI-powered workflow automation at GoTo — the obsession with making work run itself.",
-      slug: "workflow-automation"
-    },
-    {
       id: "pimnas",
-      title: "PIMNAS: What Competing at Indonesia's Largest Student Research Competition Taught Me",
+      title: "From Classroom to PIMNAS: What Competing at Indonesia's Largest Student Research Competition Taught Me",
       date: "2024",
       category: "Research and Analysis",
       thumbnail: "images/pimnas-4.jpg",
       description: "A Silver Medal, a policy brief to Ditjenpas, and research that began inside a juvenile correctional institution on International Children's Day.",
-      slug: "pimnas",
+      slug: "pimnas"
     },
     {
       id: "indonesia-emas-2045",
