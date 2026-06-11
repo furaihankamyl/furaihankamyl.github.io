@@ -255,7 +255,7 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       description: "Four research accomplishments across three projects contributing to Indonesia's national development goals.",
       slug: "indonesia-emas-2045"
     },
-        {
+<!--{
       id: "resep-ayam-kecap-spesial",
       title: "Resep Ayam Kecap Spesial",
       date: "2026",
@@ -263,6 +263,6 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       thumbnail: "images/ayam-kecap.jpg",
       description: "Bahan-bahan · 1/2 kg sayap ayam · Bumbu Halus: · 5 siung bawang putih · 3 siung bawang merah · 11 bh cabe · 1 ibu jari lengkuas ...",
       slug: "resep-ayam-kecap-spesial"
-    }
+    }-->
   ]
 };
