@@ -239,7 +239,7 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
     },
     {
       id: "pimnas",
-      title: "From Classroom to PIMNAS: What Competing at Indonesia's Largest Student Research Competition Taught Me",
+      title: "PIMNAS: What Competing at Indonesia's Largest Student Research Competition Taught Me",
       date: "2024",
       category: "Research and Analysis",
       thumbnail: "images/pimnas-4.jpg",
