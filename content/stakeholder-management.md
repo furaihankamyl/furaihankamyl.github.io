@@ -30,7 +30,7 @@ Public communication operates on a parallel track. Media coverage serves a diffe
 
 At a wider scale, this work sometimes involves building coalitions with industry peers around shared issues — recognizing that some positions carry more weight collectively than individually, and that alignment with other actors facing the same regulatory questions can shift how an issue is received.
 
-![Sharing session and stakeholder engagement with university partners](images/sahabat-ai-3.jpg)
+![Sharing session and stakeholder engagement with university partners](images/sahabat-ai-1.jpg)
 
 ---
 
