@@ -229,15 +229,6 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       slug: "workflow-automation"
     },
     {
-      id: "pimnas",
-      title: "PIMNAS: What Competing at Indonesia's Largest Student Research Competition Taught Me",
-      date: "2024",
-      category: "Research and Analysis",
-      thumbnail: "images/pimnas-4.jpg",
-      description: "A Silver Medal, a policy brief to Ditjenpas, and research that began inside a juvenile correctional institution on International Children's Day.",
-      slug: "pimnas"
-    },
-    {
       id: "stakeholder-management",
       title: "How I Think About Stakeholder Management in High-Stakes Policy Environments",
       date: "2025",
