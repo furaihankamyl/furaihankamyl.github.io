@@ -229,15 +229,6 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       slug: "workflow-automation"
     },
     {
-      id: "sahabat-ai",
-      title: "Building Sahabat AI: How GoTo Brought an Open-Source LLM to Seven Indonesian Universities",
-      date: "2024–2025",
-      category: "Collaboration",
-      thumbnail: "images/sahabat-ai-3.jpg",
-      description: "Leading GoTo's university partnership program for Sahabat-AI — an open-source LLM built for Indonesian and regional languages.",
-      slug: "sahabat-ai"
-    },
-    {
       id: "pimnas",
       title: "PIMNAS: What Competing at Indonesia's Largest Student Research Competition Taught Me",
       date: "2024",
@@ -247,6 +238,15 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       slug: "pimnas"
     },
     {
+      id: "stakeholder-management",
+      title: "The Art of the Room: How I Think About Stakeholder Management in High-Stakes Policy Environments",
+      date: "2025",
+      category: "Speaking and Presentation",
+      thumbnail: "images/sahabat-ai-3.jpg",
+      description: "Most of what determines whether a policy conversation goes well happens before anyone enters the room.",
+      slug: "stakeholder-management"
+    },
+    {
       id: "indonesia-emas-2045",
       title: "Towards Indonesia Emas 2045 from the Tip of the Pen",
       date: "2024",
@@ -254,6 +254,15 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       thumbnail: "images/activity-indonesia-emas-2.png",
       description: "Four research accomplishments across three projects contributing to Indonesia's national development goals.",
       slug: "indonesia-emas-2045"
+    },
+    {
+      id: "pimnas",
+      title: "PIMNAS: What Competing at Indonesia's Largest Student Research Competition Taught Me",
+      date: "2024",
+      category: "Research and Analysis",
+      thumbnail: "images/pimnas-4.jpg",
+      description: "A Silver Medal, a policy brief to Ditjenpas, and research that began inside a juvenile correctional institution on International Children's Day.",
+      slug: "pimnas"
     }
   ]
 };
