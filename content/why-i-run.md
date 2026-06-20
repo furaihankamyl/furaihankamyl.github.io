@@ -48,10 +48,6 @@ When I am with friends, it looks completely different. We end up at GI, or at on
 
 ![Catching up with university friends over coffee](images/friends-cafe.jpg)
 
----
-
-## The Point of All This
-
 None of this is separate from the work I do. It is what keeps me sharp enough to do it well. Running taught me something about consistency that shows up in how I approach long projects at work. Weekends with friends remind me that not everything needs to be optimized or productive to be worth doing.
 
 If you are also into running and want to compare notes or just run together sometime, my Strava is open: [strava.app.link/tPdtyecM73b](https://strava.app.link/tPdtyecM73b)
