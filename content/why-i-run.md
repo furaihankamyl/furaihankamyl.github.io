@@ -34,10 +34,6 @@ Current personal bests:
 
 No full marathon yet. That is the goal for next year. Let's go.
 
----
-
-## Gym, for Practical Reasons
-
 My gym routine is less consistent than my running, and I will not pretend otherwise. The motivation is simple. It reduces injury risk from running and helps with the stiffness that comes from sitting through long workdays. Not glamorous. Just practical.
 
 ---
