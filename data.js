@@ -239,12 +239,21 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
     },
     {
       id: "stakeholder-management",
-      title: "The Art of the Room: How I Think About Stakeholder Management in High-Stakes Policy Environments",
+      title: "How I Think About Stakeholder Management in High-Stakes Policy Environments",
       date: "2025",
       category: "Speaking and Presentation",
       thumbnail: "images/sahabat-ai-3.jpg",
       description: "Most of what determines whether a policy conversation goes well happens before anyone enters the room.",
       slug: "stakeholder-management"
+    },
+    {
+      id: "deliberately-unfinished",
+      title: "Deliberately Unfinished: On Continuous Growth as a Professional Practice",
+      date: "2025",
+      category: "Research and Analysis",
+      thumbnail: "images/presenting-sahabat-ai.jpg",
+      description: "Growth as a professional practice is iterative and undramatic. It does not announce itself.",
+      slug: "deliberately-unfinished"
     },
     {
       id: "indonesia-emas-2045",
