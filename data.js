@@ -248,7 +248,7 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
     },
     {
       id: "why-i-run",
-      title: "Why I Run? Notes on Running, Recovery, and Weekends in Jakarta",
+      title: "Runningggg (and Cafe Hopping)",
       date: "2025",
       category: "Research and Analysis",
       thumbnail: "images/jakim-racepack.jpg",
