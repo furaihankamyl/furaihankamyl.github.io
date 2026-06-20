@@ -191,12 +191,12 @@ function initNetwork() {
 
 /* ===================== TIMELINE ===================== */
 function renderTimeline(id, items, isOrg = false) {
-  document.getElementById(id).innerHTML = items.map(item => {
+  document.getElementById(id).innerHTML = items.map((item, i) => {
     const isDarkLogo = item.logo && item.logo.includes('goto');
     const company = isOrg ? item.org : item.company;
     const initials = company.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
     return `
-    <div class="timeline-item">
+    <div class="timeline-item fade-up" style="--d:${Math.min(i, 6) * 70}">
       <div class="timeline-left"><div class="timeline-period">${item.period}</div></div>
       <div class="timeline-right">
         <div class="timeline-logo-wrap${isDarkLogo ? ' logo-dark' : ''}" id="wrap-${item.id}">
@@ -215,8 +215,8 @@ function renderTimeline(id, items, isOrg = false) {
 
 /* ===================== EDUCATION ===================== */
 function renderEducation() {
-  document.getElementById('eduGrid').innerHTML = PORTFOLIO_DATA.education.map(e => `
-    <div class="edu-card">
+  document.getElementById('eduGrid').innerHTML = PORTFOLIO_DATA.education.map((e, i) => `
+    <div class="edu-card fade-up" style="--d:${i * 70}">
       <div class="edu-header">
         <div class="edu-logo-wrap">
           <img src="${e.logo}" alt="${e.institution}" class="edu-logo" onerror="this.parentElement.style.display='none'" />
@@ -246,8 +246,8 @@ function renderActivities(filter = 'All') {
     el.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:48px;color:var(--text-3);font-size:13px;">No activities in this category yet.</div>`;
     return;
   }
-  el.innerHTML = items.map(item => `
-    <div class="activity-card" onclick="window.location.href='article.html?slug=${item.slug}'">
+  el.innerHTML = items.map((item, i) => `
+    <div class="activity-card fade-up" style="--d:${i * 70}" onclick="window.location.href='article.html?slug=${item.slug}'">
       <div class="activity-thumb-wrap">
         <img src="${item.thumbnail}" alt="${item.title}" class="activity-thumb"
           onerror="this.parentElement.style.minHeight='120px';this.style.display='none'" />
@@ -263,7 +263,7 @@ function renderActivities(filter = 'All') {
       </div>
     </div>
   `).join('');
-  
+  observeFadeUps(el);
 }
 
 function renderFilterBar() {
@@ -318,10 +318,10 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closePdf(); 
 
 function renderPublications() {
   const el = document.getElementById('pubList');
-  el.innerHTML = PORTFOLIO_DATA.publications.map(pub => {
+  el.innerHTML = PORTFOLIO_DATA.publications.map((pub, i) => {
     const safeTitle = pub.title.replace(/'/g, '&#39;').replace(/"/g, '&quot;');
     return `
-      <div class="pub-card" role="button" tabindex="0"
+      <div class="pub-card fade-up" style="--d:${Math.min(i, 6) * 70}" role="button" tabindex="0"
         onclick="openPdf('${pub.driveId}', '${safeTitle}')"
         onkeydown="if(event.key==='Enter')openPdf('${pub.driveId}','${safeTitle}')">
         <div class="pub-year">${pub.year}</div>
@@ -357,11 +357,44 @@ function renderContact() {
 }
 
 /* ===================== SCROLL ANIMATIONS ===================== */
+let fadeObserver = null;
+
 function initFadeUp() {
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  fadeObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); fadeObserver.unobserve(e.target); } });
   }, { threshold: 0.06 });
-  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+}
+
+function observeFadeUps(container) {
+  if (!fadeObserver) return;
+  container.querySelectorAll('.fade-up').forEach(el => {
+    if (!el.classList.contains('visible')) fadeObserver.observe(el);
+  });
+}
+
+/* ===================== SCROLL SPY (active nav) ===================== */
+function initScrollSpy() {
+  const links = Array.from(document.querySelectorAll('.nav-links a'));
+  const map = new Map();
+  links.forEach(a => {
+    const id = a.getAttribute('href').slice(1);
+    const sec = document.getElementById(id);
+    if (sec) map.set(sec, a);
+  });
+  if (!map.size) return;
+
+  const spy = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(a => a.classList.remove('active'));
+        const active = map.get(e.target);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+  map.forEach((_, sec) => spy.observe(sec));
 }
 
 /* ===================== INIT ===================== */
@@ -377,5 +410,6 @@ document.addEventListener('DOMContentLoaded', () => {
   renderSkills();
   renderContact();
   initFadeUp();
+  initScrollSpy();
   initNetwork();
 });
