@@ -247,7 +247,7 @@ function renderActivities(filter = 'All') {
     return;
   }
   el.innerHTML = items.map((item, i) => `
-    <div class="activity-card fade-up" style="--d:${i * 70}" onclick="window.location.href='article.html?slug=${item.slug}'">
+    <div class="activity-card fade-up" style="--d:${(i % 3) * 80}" onclick="window.location.href='article.html?slug=${item.slug}'">
       <div class="activity-thumb-wrap">
         <img src="${item.thumbnail}" alt="${item.title}" class="activity-thumb"
           onerror="this.parentElement.style.minHeight='120px';this.style.display='none'" />
@@ -264,6 +264,7 @@ function renderActivities(filter = 'All') {
     </div>
   `).join('');
   observeFadeUps(el);
+  if (el._resetSlider) el._resetSlider();
 }
 
 function renderFilterBar() {
@@ -356,6 +357,33 @@ function renderContact() {
   
 }
 
+/* ===================== ACTIVITIES SLIDER ===================== */
+function initActivitiesSlider() {
+  const track = document.getElementById('activitiesGrid');
+  const prev = document.getElementById('actPrev');
+  const next = document.getElementById('actNext');
+  const nav = document.getElementById('sliderNav');
+  if (!track || !prev || !next) return;
+
+  const pageStep = () => Math.max(track.clientWidth * 0.92, 240);
+
+  prev.addEventListener('click', () => track.scrollBy({ left: -pageStep(), behavior: 'smooth' }));
+  next.addEventListener('click', () => track.scrollBy({ left: pageStep(), behavior: 'smooth' }));
+
+  function update() {
+    const fits = track.scrollWidth <= track.clientWidth + 2;
+    if (nav) nav.style.display = fits ? 'none' : 'flex';
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+  }
+
+  track.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+
+  track._resetSlider = () => { track.scrollLeft = 0; update(); };
+  update();
+}
+
 /* ===================== SCROLL ANIMATIONS ===================== */
 let fadeObserver = null;
 
@@ -410,6 +438,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderSkills();
   renderContact();
   initFadeUp();
+  initActivitiesSlider();
   initScrollSpy();
   initNetwork();
 });
