@@ -233,7 +233,7 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       title: "How I Think About Stakeholder Management in High-Stakes Policy Environments",
       date: "2025",
       category: "Speaking and Presentation",
-      thumbnail: "images/sahabat-ai-3.jpg",
+      thumbnail: "images/sahabat-ai-1.jpg",
       description: "Most of what determines whether a policy conversation goes well happens before anyone enters the room.",
       slug: "stakeholder-management"
     },
