@@ -269,7 +269,35 @@
       color: var(--text-2); transition: all var(--transition);
     }
     .filter-btn:hover, .filter-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
-    .activities-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+    /* ACTIVITIES SLIDER */
+    .activities-controls {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; margin-bottom: 28px; flex-wrap: wrap;
+    }
+    .activities-controls .filter-bar { margin-bottom: 0; }
+    .slider-nav { display: flex; gap: 8px; flex-shrink: 0; }
+    .slider-btn {
+      width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--text-2); cursor: pointer; font-size: 15px; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color var(--transition), color var(--transition), opacity var(--transition);
+    }
+    .slider-btn:hover:not(:disabled) { border-color: var(--text); color: var(--text); }
+    .slider-btn:disabled { opacity: 0.3; cursor: default; }
+
+    .activities-track {
+      display: flex; gap: 20px; overflow-x: auto;
+      scroll-snap-type: x mandatory; scroll-behavior: smooth;
+      padding-bottom: 6px; margin: 0 -2px;
+      scrollbar-width: none; -ms-overflow-style: none;
+    }
+    .activities-track::-webkit-scrollbar { display: none; }
+    .activities-track .activity-card {
+      flex: 0 0 calc((100% - 40px) / 3);
+      scroll-snap-align: start;
+    }
     .activity-card {
       border: 1px solid var(--border); border-radius: var(--radius-lg);
       background: var(--surface); overflow: hidden; cursor: pointer;
@@ -431,8 +459,12 @@
       .timeline-right { padding-left: 14px; }
       .edu-grid, .pub-grid, .awards-grid, .skills-grid { grid-template-columns: 1fr; }
       .award-item:nth-child(odd) { border-right: none; }
-      .activities-grid { grid-template-columns: 1fr; }
+      .activities-track .activity-card { flex-basis: calc((100% - 20px) / 2); }
       footer { flex-direction: column; gap: 6px; text-align: center; }
+    }
+    @media (max-width: 600px) {
+      .activities-track .activity-card { flex-basis: 84%; }
+      .activities-controls { gap: 12px; }
     }
   </style>
 </head>
@@ -454,10 +486,10 @@
   <span class="nav-logo">FKA</span>
   <div class="nav-links" id="navLinks">
     <a href="#about">About</a>
+    <a href="#activities">Activities</a>
     <a href="#experience">Experience</a>
     <a href="#organizations">Leadership</a>
     <a href="#education">Education</a>
-    <a href="#activities">Activities</a>
     <a href="#awards">Awards</a>
     <a href="#publications">Research</a>
     <a href="#skills">Skills</a>
@@ -522,8 +554,26 @@
   </div>
 </section>
 
+<!-- ACTIVITIES -->
+<section id="activities" class="section" style="background:var(--bg-2);">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2 class="section-title">Activities</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="activities-controls">
+      <div class="filter-bar" id="filterBar"></div>
+      <div class="slider-nav" id="sliderNav">
+        <button class="slider-btn" id="actPrev" aria-label="Previous activities">←</button>
+        <button class="slider-btn" id="actNext" aria-label="Next activities">→</button>
+      </div>
+    </div>
+    <div class="activities-track" id="activitiesGrid"></div>
+  </div>
+</section>
+
 <!-- EXPERIENCE -->
-<section id="experience" class="section" style="background:var(--bg-2);">
+<section id="experience" class="section">
   <div class="section-inner">
     <div class="section-header">
       <h2 class="section-title">Experience</h2>
@@ -534,7 +584,7 @@
 </section>
 
 <!-- ORGANIZATIONS -->
-<section id="organizations" class="section">
+<section id="organizations" class="section" style="background:var(--bg-2);">
   <div class="section-inner">
     <div class="section-header">
       <h2 class="section-title">Leadership &amp; Organizations</h2>
@@ -545,25 +595,13 @@
 </section>
 
 <!-- EDUCATION -->
-<section id="education" class="section" style="background:var(--bg-2);">
+<section id="education" class="section">
   <div class="section-inner">
     <div class="section-header">
       <h2 class="section-title">Education</h2>
       <div class="section-divider"></div>
     </div>
     <div class="edu-grid" id="eduGrid"></div>
-  </div>
-</section>
-
-<!-- ACTIVITIES -->
-<section id="activities" class="section">
-  <div class="section-inner">
-    <div class="section-header">
-      <h2 class="section-title">Activities</h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="filter-bar" id="filterBar"></div>
-    <div class="activities-grid" id="activitiesGrid"></div>
   </div>
 </section>
 
