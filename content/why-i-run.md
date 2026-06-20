@@ -1,5 +1,3 @@
-# Why I Run: Notes on Running, Recovery, and Weekends in Jakarta
-
 **Category:** Research and Analysis | **Year:** 2025
 
 On weekdays I almost always make time to run or hit the gym. The plan is usually before work. The reality is usually after work, because I am, admittedly, someone who wakes up late more often than I would like to admit. The gym in the evening has become my honest default.
