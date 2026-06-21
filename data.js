@@ -222,7 +222,7 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
     {
       id: "workflow-automation",
       title: "I Automated My Own Job (And Here's Why That Made Me Better at It)",
-      date: "2025",
+      date: "2026",
       category: "Research and Analysis",
       thumbnail: "images/google-alert-automation.jpg",
       description: "From an Excel statistics dashboard in 2020 to AI-powered workflow automation at GoTo — the obsession with making work run itself.",
@@ -231,7 +231,7 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
     {
       id: "stakeholder-management",
       title: "How I Think About Stakeholder Management in High-Stakes Policy Environments",
-      date: "2025",
+      date: "2026",
       category: "Speaking and Presentation",
       thumbnail: "images/sahabat-ai-1.jpg",
       description: "Most of what determines whether a policy conversation goes well happens before anyone enters the room.",
@@ -240,7 +240,7 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
     {
       id: "deliberately-unfinished",
       title: "Deliberately Unfinished: On Continuous Growth as a Professional Practice",
-      date: "2025",
+      date: "2026",
       category: "Research and Analysis",
       thumbnail: "images/presenting-sahabat-ai.jpg",
       description: "Growth as a professional practice is iterative and undramatic. It does not announce itself.",
@@ -249,8 +249,8 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
     {
       id: "why-i-run",
       title: "Runningggg (and Cafe Hopping)",
-      date: "2025",
-      category: "Research and Analysis",
+      date: "2026",
+      category: "Collaboration",
       thumbnail: "images/jakim-racepack.jpg",
       description: "It started as return on investment for a watch and a pair of shoes. It became something I actually love.",
       slug: "why-i-run"
