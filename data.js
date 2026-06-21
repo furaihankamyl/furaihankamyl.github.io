@@ -1,10 +1,10 @@
 const PORTFOLIO_DATA = {
   personal: {
     name: "Furaihan Kamyl Arnazaye",
-    tagline: "Public Affairs and Research | Quantitative Analyst | Economy, Transport, and AI",
+    tagline: "Public Affairs and Research | Quantitative Analyst | Digital Economy, Transport, and AI",
     about: `I'm known for my ability to translate regulatory complexity into strategic action — building the networks that make policy move.
 
-At GoTo Group, I work at the intersection of government, industry, and civil society. My work spans <strong>research</strong>, <strong>stakeholder management</strong>, and <strong>policy communication</strong> — contributing to national conversations on digital economy, platform labor, and AI governance. Before that, published research on network governance, public trust, and administrative reform gave me the analytical foundation this work demands.`,
+At GoTo Group, I work at the intersection of government, industry, and civil society. My work spans <strong>regulatory monitoring</strong>, <strong>stakeholder management</strong>, and <strong>policy communication</strong> — contributing to national conversations on digital economy, platform labor, and AI governance. Before that, published research on network governance, public trust, and administrative reform gave me the analytical foundation this work demands.`,
     contact: {
       email: "furaihankamyl.arnazaye@gmail.com",
       whatsapp: "6285159691922",
@@ -225,7 +225,7 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       date: "2025",
       category: "Research and Analysis",
       thumbnail: "images/google-alert-automation.jpg",
-      description: "From an Excel statistics dashboard in 2020 to AI-powered workflow automation at GoTo, the obsession with making work run itself.",
+      description: "From an Excel statistics dashboard in 2020 to AI-powered workflow automation at GoTo — the obsession with making work run itself.",
       slug: "workflow-automation"
     },
     {
@@ -258,20 +258,11 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
     {
       id: "sahabat-ai",
       title: "Building Sahabat AI: How GoTo Brought an Open-Source LLM to Seven Indonesian Universities",
-      date: "2024-2025",
+      date: "2024–2025",
       category: "Collaboration",
       thumbnail: "images/sahabat-ai-3.jpg",
-      description: "Leading GoTo's university partnership program for Sahabat-AI, an open-source LLM built for Indonesian and regional languages.",
+      description: "Leading GoTo's university partnership program for Sahabat-AI — an open-source LLM built for Indonesian and regional languages.",
       slug: "sahabat-ai"
-    },
-    {
-      id: "indonesia-emas-2045",
-      title: "Towards Indonesia Emas 2045 from the Tip of the Pen",
-      date: "2024",
-      category: "Research and Analysis",
-      thumbnail: "images/activity-indonesia-emas-2.png",
-      description: "Four research accomplishments across three projects contributing to Indonesia's national development goals.",
-      slug: "indonesia-emas-2045"
     },
     {
       id: "pimnas",
@@ -281,6 +272,15 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       thumbnail: "images/pimnas-4.jpg",
       description: "A Silver Medal, a policy brief to Ditjenpas, and research that began inside a juvenile correctional institution on International Children's Day.",
       slug: "pimnas"
+    },
+    {
+      id: "indonesia-emas-2045",
+      title: "Towards Indonesia Emas 2045 from the Tip of the Pen",
+      date: "2024",
+      category: "Research and Analysis",
+      thumbnail: "images/activity-indonesia-emas-2.png",
+      description: "Four research accomplishments across three projects contributing to Indonesia's national development goals.",
+      slug: "indonesia-emas-2045"
     }
   ]
 };
