@@ -442,3 +442,22 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   initNetwork();
 });
+/* ===================== LIQUID GLASS GLARE ===================== */
+(function () {
+  const sel = '.activity-card, .pub-card, .edu-card, .btn-outline, .slider-btn, .contact-link, .theme-toggle';
+  let raf = null, pending = null;
+  document.addEventListener('pointermove', (e) => {
+    const el = e.target.closest(sel);
+    if (!el) return;
+    pending = { el, x: e.clientX, y: e.clientY };
+    if (!raf) raf = requestAnimationFrame(apply);
+  }, { passive: true });
+  function apply() {
+    raf = null;
+    if (!pending) return;
+    const { el, x, y } = pending;
+    const r = el.getBoundingClientRect();
+    el.style.setProperty('--mx', ((x - r.left) / r.width) * 100 + '%');
+    el.style.setProperty('--my', ((y - r.top) / r.height) * 100 + '%');
+  }
+})();
