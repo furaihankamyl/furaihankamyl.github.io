@@ -468,6 +468,80 @@
       .activities-track .activity-card { flex-basis: 84%; }
       .activities-controls { gap: 12px; }
     }
+
+    /* ============ GLASSMORPHISM ============ */
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-hi: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(120, 118, 111, 0.18);
+  --glass-shadow: 0 8px 30px rgba(26, 26, 24, 0.10);
+  --glass-blur: 12px;
+}
+[data-theme="dark"] {
+  --glass-bg: rgba(31, 30, 29, 0.48);
+  --glass-hi: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.10);
+  --glass-shadow: 0 8px 30px rgba(0, 0, 0, 0.38);
+}
+
+/* Nav jadi bar frosted */
+nav#nav {
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.4);
+  backdrop-filter: blur(var(--glass-blur)) saturate(1.4);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+/* Kartu jadi panel kaca */
+.activity-card,
+.pub-card,
+.edu-card {
+  background:
+    linear-gradient(180deg, var(--glass-hi), transparent 60%),
+    var(--glass-bg);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.2);
+  backdrop-filter: blur(var(--glass-blur)) saturate(1.2);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+/* Cahaya lembut di belakang hero supaya kaca dan jaringan terbaca */
+#hero { position: relative; overflow: hidden; }
+#hero::before,
+#hero::after {
+  content: ""; position: absolute; border-radius: 50%;
+  filter: blur(70px); pointer-events: none; z-index: 0;
+}
+#hero::before {
+  width: 44vw; height: 44vw; max-width: 560px; max-height: 560px;
+  top: -8%; left: -6%;
+  background: rgba(178, 118, 96, 0.24);
+}
+#hero::after {
+  width: 40vw; height: 40vw; max-width: 520px; max-height: 520px;
+  bottom: -14%; right: -6%;
+  background: rgba(120, 141, 130, 0.20);
+}
+[data-theme="dark"] #hero::before { background: rgba(178, 118, 96, 0.18); }
+[data-theme="dark"] #hero::after  { background: rgba(120, 141, 130, 0.16); }
+
+/* Jaringan di atas cahaya, teks di atas keduanya, plus jaringan lebih terlihat */
+#networkCanvas { z-index: 1; opacity: 0.72; }
+.hero-inner { position: relative; z-index: 2; }
+
+/* Cadangan untuk browser tanpa dukungan blur */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  nav#nav { background: var(--bg); }
+  .activity-card, .pub-card, .edu-card { background: var(--surface); }
+}
+
+/* Jaga performa di ponsel: matikan blur, tetap rapi */
+@media (max-width: 768px) {
+  .activity-card, .pub-card, .edu-card {
+    -webkit-backdrop-filter: none; backdrop-filter: none;
+    background: var(--surface);
+  }
+}
   </style>
 <link rel="icon" type="image/png" sizes="96x96" href="icon-96.png" />
 <link rel="icon" type="image/png" sizes="48x48" href="icon-48.png" />
