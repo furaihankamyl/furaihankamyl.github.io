@@ -542,6 +542,65 @@ nav#nav {
     background: var(--surface);
   }
 }
+    /* ============ LIQUID GLASS (interaktif) ============ */
+:root {
+  --glass-edge: rgba(255,255,255,0.55);
+  --glass-edge-strong: rgba(255,255,255,0.72);
+  --glass-border-strong: rgba(120,118,111,0.30);
+}
+[data-theme="dark"] {
+  --glass-edge: rgba(255,255,255,0.14);
+  --glass-edge-strong: rgba(255,255,255,0.24);
+  --glass-border-strong: rgba(255,255,255,0.18);
+}
+
+/* Bahasa kaca yang sama untuk semua elemen aksi */
+.activity-card, .pub-card, .edu-card,
+.btn-outline, .slider-btn, .contact-link, .theme-toggle {
+  position: relative;
+  background:
+    radial-gradient(150px circle at var(--mx, 50%) var(--my, 0%),
+      rgba(255,255,255,0.28), transparent 60%),
+    linear-gradient(180deg, var(--glass-hi), transparent 55%),
+    var(--glass-bg);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.35);
+  backdrop-filter: blur(var(--glass-blur)) saturate(1.35);
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 var(--glass-edge), var(--glass-shadow);
+  transition: box-shadow .25s ease, transform .25s ease, border-color .25s ease;
+}
+
+/* Saat kursor melayang, kilau menguat dan tepi makin bercahaya */
+.activity-card:hover, .pub-card:hover, .edu-card:hover {
+  background:
+    radial-gradient(170px circle at var(--mx, 50%) var(--my, 0%),
+      rgba(255,255,255,0.42), transparent 60%),
+    linear-gradient(180deg, var(--glass-hi), transparent 55%),
+    var(--glass-bg);
+  box-shadow: inset 0 1px 0 var(--glass-edge-strong), 0 14px 44px rgba(26,26,24,0.16);
+  border-color: var(--glass-border-strong);
+}
+.btn-outline:hover, .slider-btn:hover,
+.contact-link:hover, .theme-toggle:hover {
+  box-shadow: inset 0 1px 0 var(--glass-edge-strong), 0 10px 30px rgba(26,26,24,0.14);
+  border-color: var(--glass-border-strong);
+}
+
+/* Tombol utama tetap padat untuk hierarki, hanya diberi kilau tepi */
+.btn-primary {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.22), 0 6px 20px rgba(26,26,24,0.12);
+}
+.btn-primary:hover {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.32), 0 10px 30px rgba(26,26,24,0.18);
+}
+
+/* Jaga performa di ponsel: tanpa blur, tetap rapi */
+@media (max-width: 768px) {
+  .activity-card, .pub-card, .edu-card {
+    -webkit-backdrop-filter: none; backdrop-filter: none;
+    background: linear-gradient(180deg, var(--glass-hi), transparent 55%), var(--surface);
+  }
+}
   </style>
 <link rel="icon" type="image/png" sizes="96x96" href="icon-96.png" />
 <link rel="icon" type="image/png" sizes="48x48" href="icon-48.png" />
