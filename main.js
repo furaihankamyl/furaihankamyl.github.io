@@ -72,10 +72,10 @@ function initNetwork() {
   function getColors() {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     return {
-      node: isDark ? 'rgba(160,155,148,0.8)' : 'rgba(90,87,80,0.6)',
-      edge: isDark ? 'rgba(160,155,148,0.2)' : 'rgba(90,87,80,0.15)',
-      hub: isDark ? 'rgba(240,237,232,0.85)' : 'rgba(26,26,24,0.65)',
-      label: isDark ? 'rgba(160,155,148,0.75)' : 'rgba(90,87,80,0.6)'
+      node: isDark ? 'rgba(170,164,156,0.92)' : 'rgba(74,71,64,0.78)',
+      edge: isDark ? 'rgba(170,164,156,0.32)' : 'rgba(74,71,64,0.24)',
+      hub: isDark ? 'rgba(245,241,234,0.98)' : 'rgba(26,26,24,0.85)',
+      label: isDark ? 'rgba(180,174,166,0.85)' : 'rgba(74,71,64,0.72)'
     };
   }
 
