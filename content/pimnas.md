@@ -62,7 +62,7 @@ Our findings were consistent across every data source: SNA, interviews, field ob
 
 The central finding was structural: **institutional collaborations at LPKA were initiated primarily out of a general willingness to cooperate rather than out of alignment with specific program objectives.** Partnerships existed, and some of them were genuinely valuable. But they had not been built around a systematic analysis of what the Anak Binaan actually needed from those partnerships. The result was a collaboration network that looked active on the surface but was not optimally directed toward outcomes.
 
-This is a common failure mode in institutional networks, and it is an important one to name precisely — because the solution is different depending on whether the problem is a lack of partners or a misalignment of existing partnerships. In LPKA's case, it was the latter.
+This is a common failure mode in institutional networks, and it is an important one to name precisely, because the solution is different depending on whether the problem is a lack of partners or a misalignment of existing partnerships. In LPKA's case, it was the latter.
 
 Our core recommendation to the Directorate General of Corrections (Ditjenpas) followed directly from that finding: begin by mapping existing programs and initiatives at LPKA and defining their specific objectives. Working from those objectives, identify and engage the institutional partners best suited to support them, rather than building partnerships based on availability or prior relationships. 
 
@@ -80,7 +80,7 @@ We cleared every PKM selection stage. When the final results were announced, we 
 
 To understand what that meant contextually, PKM receives thousands of proposals from universities across Indonesia each year. The selection process runs over multiple stages, with each round eliminating the majority of teams. The teams that reach PIMNAS represent a small fraction of the original applicant pool. Within that group, the competition is tight. Every university with serious research programs sends its best.
 
-We traveled to Surabaya as part of the UI delegation. The atmosphere at PIMNAS is difficult to describe to someone who has not been there — thousands of students from hundreds of universities, all in institutional jackets, all carrying months of work into a few days of competition. There is a particular kind of energy at an event like that, equal parts anxiety and pride.
+We traveled to Surabaya as part of the UI delegation. The atmosphere at PIMNAS is difficult to describe to someone who has not been there. Thousands of students from hundreds of universities, all in institutional jackets, all carrying months of work into a few days of competition. There is a particular kind of energy at an event like that, equal parts anxiety and pride.
 
 We presented our poster, fielded questions from evaluators, and waited. The closing ceremony brought the results. Our team was awarded the **Silver Medal** for research poster at PIMNAS 37.
 
@@ -90,7 +90,7 @@ We presented our poster, fielded questions from evaluators, and waited. The clos
 
 ![Receiving the Silver Medal on stage at PIMNAS 37](images/pimnas-4.jpg)
 
-Research is not finished when the methodology is sound or the paper is written. It is finished — if it can ever be finished — when it reaches the people who have the standing to act on it.
+Research is not finished when the methodology is sound or the paper is written. It is finished, if it can ever be finished, when it reaches the people who have the standing to act on it.
 
 The part of this project that I return to most is the policy brief sitting with Ditjenpas, and the children we interviewed at LPKA who spoke about their futures with a sincerity that I hope the Indonesian juvenile justice system will one day match.
 
