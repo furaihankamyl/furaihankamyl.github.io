@@ -1,10 +1,10 @@
 **Category:** Research and Analysis | **Year:** 2026
 
-My manager once asked me a question I did not have a good answer to. "So what are you doing about your public speaking?"
+I have a folder of certificates. Seminars attended, online courses completed, credentials added to a LinkedIn profile. All of them are real, and none of them is what I mean when I talk about growth.
 
-I could have listed things. I have attended seminars. I have finished online courses. I have certifications sitting on a LinkedIn profile. None of that answered what he was actually asking, which was not about credentials. He was asking whether I was doing anything deliberate about a gap I already knew I had.
+The question I find more useful is not what I have collected. It is whether I am doing anything deliberate about the gaps I already know I have.
 
-That question is where this article starts. Development that looks good on paper is easy to accumulate. Development that closes a real gap, holds up over months, and accepts that **the work is never fully done** is a different thing entirely.
+That is where this article starts. Development that looks good on paper is easy to accumulate. Development that closes a real gap, holds up over months, and accepts that **the work is never fully done** is a different thing entirely.
 
 ---
 
