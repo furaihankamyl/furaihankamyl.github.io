@@ -2,9 +2,9 @@ const PORTFOLIO_DATA = {
   personal: {
     name: "Furaihan Kamyl Arnazaye",
     tagline: "Public Affairs and Research | Quantitative Analyst | Digital Economy, Transport, and AI",
-    about: `I'm known for my ability to translate regulatory complexity into strategic action — building the networks that make policy move.
+    about: `I'm known for my ability to translate regulatory complexity into strategic action that makes policy move.
 
-At GoTo Group, I work at the intersection of government, industry, and civil society. My work spans <strong>social research</strong>, <strong>stakeholder management</strong>, and <strong>policy communication</strong> — contributing to national conversations on digital economy, platform labor, and AI governance. Before that, published research on network governance, public trust, and administrative reform gave me the analytical foundation this work demands.`,
+At GoTo Group, I work at the intersection of government, industry, and civil society. My work spans <strong>social research</strong>, <strong>stakeholder management</strong>, and <strong>policy communication</strong>. I build national conversations on digital economy, platform labor, and AI governance. Published research on network governance, public trust, and administrative reform gives me the analytical foundation this work demands.`,
     contact: {
       email: "furaihankamyl.arnazaye@gmail.com",
       whatsapp: "6285159691922",
@@ -21,11 +21,7 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       period: "Jul 2025 – Present",
       location: "Jakarta, Indonesia",
       logo: "images/logos/goto.png",
-      bullets: [
-        "Led university partnership program for Sahabat-AI LLM across 7 institutions, supporting regional language AI development.",
-        "Coordinated cross-institutional advocacy on 6 national priority bills, engaging parliament, ministries, and civil society.",
-        "Produced policy briefs and communication materials translating regulatory developments into strategic positioning."
-      ]
+      summary: "Led the Sahabat-AI university partnership program across 7 institutions to support regional language AI development. Coordinated advocacy on 6 national priority bills with parliament, ministries, and civil society. Produced policy briefs translating regulatory developments into strategic positioning."
     },
     {
       id: "goto-intern",
@@ -35,11 +31,7 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       period: "Feb 2024 – Jun 2025",
       location: "Jakarta, Indonesia",
       logo: "images/logos/goto.png",
-      bullets: [
-        "Drafted advocacy strategies and policy briefs balancing business sustainability with driver-partner welfare.",
-        "Executed stakeholder engagement initiatives including FGDs, workshops, and digital campaigns.",
-        "Maintained engagement networks with Kemenkominfo, Kemenaker, and Jakarta Provincial Government."
-      ]
+      summary: "Drafted advocacy strategies and policy briefs balancing business sustainability with driver-partner welfare. Ran FGDs, workshops, and digital campaigns with Kemenkominfo, Kemenaker, and the Jakarta Provincial Government."
     },
     {
       id: "ui-lecturer",
@@ -49,23 +41,17 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       period: "Jul 2024 – Dec 2024",
       location: "Depok, Indonesia",
       logo: "images/logos/ui.png",
-      bullets: [
-        "Co-delivered Administrative Behavior course to 30+ students covering leadership, group dynamics, and organizational culture.",
-        "Managed assessments and class administration via Emas UI e-learning platform."
-      ]
+      summary: "Co-delivered the Administrative Behavior course to 30+ students, covering leadership, group dynamics, and organizational culture. Managed assessments and class administration on the Emas UI platform."
     },
     {
       id: "ayo-copywriter",
       company: "ASEAN Youth Organization",
-      role: "Marketing and Communication – Copywriter",
+      role: "Marketing and Communication Copywriter",
       type: "Part-time",
       period: "Jul 2023 – Jan 2024",
       location: "Jakarta, Indonesia",
       logo: "images/logos/asean-youth.png",
-      bullets: [
-        "Produced social media content and long-form articles reaching 4,000+ readers.",
-        "Used SPSS and Excel to analyze content performance and inform campaign strategy."
-      ]
+      summary: "Produced social media content and long-form articles reaching 4,000+ readers. Analyzed content performance in SPSS and Excel to inform campaign strategy."
     }
   ],
 
@@ -76,10 +62,7 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       role: "Vice Project Officer",
       period: "Oct 2023 – Jan 2024",
       logo: "images/logos/pemira-fia.png",
-      bullets: [
-        "Directed 100+ member team executing the faculty-level student general election end to end.",
-        "Achieved 97% voter data verification accuracy with full compliance to university governance policies."
-      ]
+      summary: "Directed a 100+ member team running the faculty student general election end to end. Reached 97% voter data verification accuracy with full compliance to university governance policies."
     },
     {
       id: "himanera-deputy",
@@ -87,10 +70,7 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       role: "Deputy Head of Science",
       period: "Jan 2023 – Jan 2024",
       logo: "images/logos/himanera.png",
-      bullets: [
-        "Led team producing 8+ policy analysis articles across Instagram, LinkedIn, and national media.",
-        "Built publication partnerships generating 2,000+ impressions across digital platforms."
-      ]
+      summary: "Led a team producing 8+ policy analysis articles across Instagram, LinkedIn, and national media. Built publication partnerships generating 2,000+ impressions."
     },
     {
       id: "himanera-staff",
@@ -98,9 +78,7 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       role: "Research and Studies Staff",
       period: "Mar 2022 – Mar 2023",
       logo: "images/logos/himanera.png",
-      bullets: [
-        "Contributed to policy research publications under the Science division."
-      ]
+      summary: "Contributed to policy research publications under the Science division."
     },
     {
       id: "bemui-rnd",
@@ -108,33 +86,7 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       role: "Research and Development Staff",
       period: "Aug 2021 – May 2022",
       logo: "images/logos/ui.png",
-      bullets: [
-        "Supported research initiatives within BEM UI's learning house program.",
-        "Recognized as Best Staff of the Year and Best Staff of the Month."
-      ]
-    }
-  ],
-
-  education: [
-    {
-      institution: "Universitas Indonesia",
-      degree: "Bachelor of Public Administration",
-      field: "Public Administration",
-      period: "2021 – 2025",
-      gpa: "3.69 / 4.00",
-      honor: "Cum Laude",
-      logo: "images/logos/ui.png",
-      note: "Thesis: Comparing the Effectiveness of Network Governance of the Lembaga Pembinaan Khusus Anak Kelas II Jakarta's Relocation"
-    },
-    {
-      institution: "Universitas Gadjah Mada",
-      degree: "Non-degree, Management and Public Policy",
-      field: "MBKM Student Exchange Program",
-      period: "Aug 2023 – Dec 2023",
-      gpa: "4.00 / 4.00",
-      honor: "",
-      logo: "images/logos/ugm.png",
-      note: "One-semester exchange under the Merdeka Belajar Kampus Merdeka (MBKM) program."
+      summary: "Supported research initiatives in BEM UI's learning house program. Named Best Staff of the Year and Best Staff of the Month."
     }
   ],
 
@@ -225,7 +177,7 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       date: "2026",
       category: "Research and Analysis",
       thumbnail: "images/google-alert-automation.jpg",
-      description: "From an Excel statistics dashboard in 2020 to AI-powered workflow automation at GoTo — the obsession with making work run itself.",
+      description: "From an Excel statistics dashboard in 2020 to AI-powered workflow automation at GoTo. The obsession with making work run itself.",
       slug: "workflow-automation"
     },
     {
@@ -261,7 +213,7 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       date: "2024–2025",
       category: "Collaboration",
       thumbnail: "images/sahabat-ai-3.jpg",
-      description: "Leading GoTo's university partnership program for Sahabat-AI — an open-source LLM built for Indonesian and regional languages.",
+      description: "Leading GoTo's university partnership program for Sahabat-AI, an open-source LLM built for Indonesian and regional languages.",
       slug: "sahabat-ai"
     },
     {

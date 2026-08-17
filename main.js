@@ -53,187 +53,167 @@ function renderAbout() {
   el.innerHTML = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
 }
 
-/* ===================== NETWORK ANIMATION ===================== */
+/* ===================== NETWORK ANIMATION (fixed hero backdrop) =====================
+   Full-viewport constellation on the always-dark hero. Independent of theme.
+   Pauses (and hides the fixed layer) once the page content fully covers the hero. */
 let networkAnim = null;
 
 function initNetwork() {
   const canvas = document.getElementById('networkCanvas');
-  if (!canvas) return;
-  const section = document.getElementById('hero');
+  const heroFixed = document.getElementById('heroFixed');
+  const hero = document.getElementById('hero');
+  if (!canvas || !heroFixed || !hero) return;
   const ctx = canvas.getContext('2d');
 
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+  const COUNT = isMobile ? 26 : 60;
+  const LINK = isMobile ? 110 : 150;
+
+  let W = 0, H = 0;
   function resize() {
-    canvas.width = section.offsetWidth;
-    canvas.height = section.offsetHeight;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth; H = window.innerHeight;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
   resize();
-  window.addEventListener('resize', () => { resize(); });
 
-  function getColors() {
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    return {
-      node: isDark ? 'rgba(170,164,156,0.92)' : 'rgba(74,71,64,0.78)',
-      edge: isDark ? 'rgba(170,164,156,0.32)' : 'rgba(74,71,64,0.24)',
-      hub: isDark ? 'rgba(245,241,234,0.98)' : 'rgba(26,26,24,0.85)',
-      label: isDark ? 'rgba(180,174,166,0.85)' : 'rgba(74,71,64,0.72)'
-    };
+  const nodes = Array.from({ length: COUNT }, () => ({
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight,
+    vx: (Math.random() - 0.5) * 0.22,
+    vy: (Math.random() - 0.5) * 0.22,
+    r: 1 + Math.random() * 1.5
+  }));
+
+  const mouse = { x: -9999, y: -9999 };
+  window.addEventListener('pointermove', e => { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
+  window.addEventListener('pointerleave', () => { mouse.x = -9999; mouse.y = -9999; });
+  window.addEventListener('resize', () => {
+    resize();
+    nodes.forEach(n => { n.x = Math.min(n.x, W); n.y = Math.min(n.y, H); });
+    if (reduced) drawFrame(false);
+  });
+
+  const NODE_COLOR = 'rgba(242,242,242,0.7)';
+  const EDGE_RGB = '242,242,242';
+
+  function drawFrame(move) {
+    ctx.clearRect(0, 0, W, H);
+
+    if (move) {
+      nodes.forEach(n => {
+        n.x += n.vx; n.y += n.vy;
+        if (n.x < -10) n.x = W + 10; else if (n.x > W + 10) n.x = -10;
+        if (n.y < -10) n.y = H + 10; else if (n.y > H + 10) n.y = -10;
+
+        // Gentle repulsion around the cursor (desktop feel; harmless on touch)
+        const dx = n.x - mouse.x, dy = n.y - mouse.y;
+        const d2 = dx * dx + dy * dy;
+        if (d2 < 14400 && d2 > 0.01) {
+          const d = Math.sqrt(d2);
+          const f = ((120 - d) / 120) * 0.6;
+          n.x += (dx / d) * f;
+          n.y += (dy / d) * f;
+        }
+      });
+    }
+
+    // Edges by proximity
+    for (let i = 0; i < COUNT; i++) {
+      for (let j = i + 1; j < COUNT; j++) {
+        const dx = nodes[i].x - nodes[j].x;
+        const dy = nodes[i].y - nodes[j].y;
+        const d2 = dx * dx + dy * dy;
+        if (d2 < LINK * LINK) {
+          const alpha = (1 - Math.sqrt(d2) / LINK) * 0.3;
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.strokeStyle = `rgba(${EDGE_RGB},${alpha.toFixed(3)})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Nodes
+    ctx.fillStyle = NODE_COLOR;
+    nodes.forEach(n => {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.fill();
+    });
   }
 
-  // Nodes: hub + satellites
-  const labels = ['Policy', 'Research', 'Governance', 'Networks', 'AI', 'Advocacy', 'Data', 'Communication'];
-  const nodes = [];
+  let rafId = null;
+  function loop() {
+    drawFrame(true);
+    rafId = requestAnimationFrame(loop);
+  }
 
-  // Central hub
-  nodes.push({ x: 0.5, y: 0.5, r: 6, isHub: true, label: 'Kamyl', vx: 0, vy: 0 });
+  if (reduced) {
+    drawFrame(false); // static constellation, no motion
+  } else {
+    loop();
+  }
 
-  // Satellite nodes with initial positions
-  const angles = labels.map((_, i) => (i / labels.length) * Math.PI * 2);
-  labels.forEach((label, i) => {
-    const spread = 0.28 + Math.random() * 0.12;
-    nodes.push({
-      x: 0.5 + Math.cos(angles[i]) * spread,
-      y: 0.5 + Math.sin(angles[i]) * spread * 0.65,
-      r: 3.5,
-      isHub: false,
-      label,
-      vx: (Math.random() - 0.5) * 0.0003,
-      vy: (Math.random() - 0.5) * 0.0003,
-      baseX: 0.5 + Math.cos(angles[i]) * spread,
-      baseY: 0.5 + Math.sin(angles[i]) * spread * 0.65,
-      phase: Math.random() * Math.PI * 2
-    });
-  });
-
-  // Edges: hub to all, and a few cross-connections
-  const edges = [];
-  nodes.slice(1).forEach((_, i) => edges.push([0, i + 1]));
-  // Some lateral connections
-  [[1,3],[2,5],[4,7],[6,2],[1,8],[5,7]].forEach(([a,b]) => {
-    if (nodes[a] && nodes[b]) edges.push([a, b]);
-  });
-
-  let mouse = { x: -999, y: -999 };
-  canvas.addEventListener('mousemove', e => {
-    const rect = canvas.getBoundingClientRect();
-    mouse.x = (e.clientX - rect.left) / canvas.width;
-    mouse.y = (e.clientY - rect.top) / canvas.height;
-  });
-  canvas.addEventListener('mouseleave', () => { mouse.x = -999; mouse.y = -999; });
-
-  let t = 0;
-  let colors = getColors();
-
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    t += 0.008;
-
-    const W = canvas.width, H = canvas.height;
-
-    // Update satellite positions with gentle drift
-    nodes.slice(1).forEach((n, i) => {
-      n.x = n.baseX + Math.cos(t + n.phase) * 0.018;
-      n.y = n.baseY + Math.sin(t * 0.7 + n.phase) * 0.012;
-
-      // Mouse repulsion
-      const dx = n.x - mouse.x, dy = n.y - mouse.y;
-      const dist = Math.sqrt(dx*dx + dy*dy);
-      if (dist < 0.15) {
-        const force = (0.15 - dist) / 0.15 * 0.04;
-        n.x += (dx / dist) * force;
-        n.y += (dy / dist) * force;
+  // Pause + hide the fixed layer once content fully covers the hero
+  const visObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        heroFixed.classList.remove('is-hidden');
+        if (!reduced && rafId === null) loop();
+      } else {
+        heroFixed.classList.add('is-hidden');
+        if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
       }
     });
+  }, { threshold: 0 });
+  visObserver.observe(hero);
 
-    // Draw edges
-    edges.forEach(([a, b]) => {
-      const na = nodes[a], nb = nodes[b];
-      const ax = na.x * W, ay = na.y * H;
-      const bx = nb.x * W, by = nb.y * H;
-      const dist = Math.sqrt((ax-bx)**2 + (ay-by)**2);
-      const alpha = Math.max(0, 1 - dist / (W * 0.5));
-      ctx.beginPath();
-      ctx.moveTo(ax, ay);
-      ctx.lineTo(bx, by);
-      ctx.strokeStyle = colors.edge;
-      ctx.globalAlpha = alpha * 0.8;
-      ctx.lineWidth = 1;
-      ctx.stroke();
-      ctx.globalAlpha = 1;
-    });
+  // Hero is always dark; theme toggle doesn't affect it
+  networkAnim = { updateColors: () => {} };
+}
 
-    // Draw nodes
-    nodes.forEach(n => {
-      const nx = n.x * W, ny = n.y * H;
-      const pulse = n.isHub ? 1 + Math.sin(t * 1.5) * 0.12 : 1;
-
-      ctx.beginPath();
-      ctx.arc(nx, ny, n.r * pulse, 0, Math.PI * 2);
-      ctx.fillStyle = n.isHub ? colors.hub : colors.node;
-      ctx.fill();
-
-      // Label
-      ctx.font = `${n.isHub ? '500' : '300'} ${n.isHub ? 11 : 10}px 'DM Sans', sans-serif`;
-      ctx.fillStyle = colors.label;
-      ctx.textAlign = 'center';
-      const labelY = ny + n.r * pulse + 14;
-      ctx.fillText(n.label, nx, labelY);
-    });
-
-    requestAnimationFrame(draw);
+/* ===================== NAV OVER HERO ===================== */
+function initHeroNav() {
+  const nav = document.getElementById('nav');
+  const hero = document.getElementById('hero');
+  if (!nav || !hero) return;
+  function update() {
+    const threshold = hero.offsetTop + hero.offsetHeight - 80;
+    nav.classList.toggle('on-hero', window.scrollY < threshold);
   }
-
-  draw();
-
-  networkAnim = {
-    updateColors: () => { colors = getColors(); }
-  };
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
 }
 
-/* ===================== TIMELINE ===================== */
-function renderTimeline(id, items, isOrg = false) {
+/* ===================== EXPERIENCE & LEADERSHIP ===================== */
+function renderExpList(id, items, isOrg = false) {
   document.getElementById(id).innerHTML = items.map((item, i) => {
+    const org = isOrg ? item.org : item.company;
     const isDarkLogo = item.logo && item.logo.includes('goto');
-    const company = isOrg ? item.org : item.company;
-    const initials = company.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+    const initials = org.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
     return `
-    <div class="timeline-item fade-up" style="--d:${Math.min(i, 6) * 70}">
-      <div class="timeline-left"><div class="timeline-period">${item.period}</div></div>
-      <div class="timeline-right">
-        <div class="timeline-logo-wrap${isDarkLogo ? ' logo-dark' : ''}" id="wrap-${item.id}">
-          <img src="${item.logo}" alt="${company}" class="timeline-logo"
+    <div class="exp-item fade-up" style="--d:${Math.min(i, 5) * 60}">
+      <div class="exp-head">
+        <div class="exp-logo-wrap${isDarkLogo ? ' logo-dark' : ''}">
+          <img src="${item.logo}" alt="${org}" class="exp-logo"
             onerror="this.style.display='none';this.parentElement.querySelector('.logo-fallback').style.display='flex'" />
-          <span class="logo-fallback" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:10px;font-weight:500;color:var(--text-3);">${initials}</span>
+          <span class="logo-fallback" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:9px;font-weight:500;color:var(--text-3);">${initials}</span>
         </div>
-        <div class="timeline-role">${item.role}</div>
-        <div class="timeline-company">${company}</div>
-        ${item.type ? `<div class="timeline-type">${item.type}</div>` : ''}
-        <ul class="timeline-bullets">${(item.bullets||[]).map(b => `<li>${b}</li>`).join('')}</ul>
-      </div>
-    </div>
-  `}).join('');
-}
-
-/* ===================== EDUCATION ===================== */
-function renderEducation() {
-  document.getElementById('eduGrid').innerHTML = PORTFOLIO_DATA.education.map((e, i) => `
-    <div class="edu-card fade-up" style="--d:${i * 70}">
-      <div class="edu-header">
-        <div class="edu-logo-wrap">
-          <img src="${e.logo}" alt="${e.institution}" class="edu-logo" onerror="this.parentElement.style.display='none'" />
+        <div class="exp-head-main">
+          <div class="exp-role">${item.role}</div>
+          <div class="exp-org">${org}${item.type ? ` · ${item.type}` : ''}</div>
         </div>
-        <div>
-          <div class="edu-institution">${e.institution}</div>
-          <div class="edu-degree">${e.degree}</div>
-        </div>
+        <div class="exp-period">${item.period}</div>
       </div>
-      <div class="edu-meta">
-        <span class="edu-badge">${e.period}</span>
-        <span class="edu-badge">GPA ${e.gpa}</span>
-        ${e.honor ? `<span class="edu-badge">${e.honor}</span>` : ''}
-      </div>
-      ${e.note ? `<p class="edu-note">${e.note}</p>` : ''}
-    </div>
-  `).join('');
+      <p class="exp-summary">${item.summary}</p>
+    </div>`;
+  }).join('');
 }
 
 /* ===================== ACTIVITIES ===================== */
@@ -282,9 +262,12 @@ function renderFilterBar() {
 }
 
 /* ===================== AWARDS ===================== */
+const AWARDS_VISIBLE = 8;
+
 function renderAwards() {
-  document.getElementById('awardsList').innerHTML = PORTFOLIO_DATA.awards.map(a => `
-    <div class="award-item">
+  const list = PORTFOLIO_DATA.awards;
+  document.getElementById('awardsList').innerHTML = list.map((a, i) => `
+    <div class="award-item${i >= AWARDS_VISIBLE ? ' is-hidden' : ''}">
       <div class="award-year">${a.year}</div>
       <div>
         <div class="award-title">${a.title}</div>
@@ -292,6 +275,24 @@ function renderAwards() {
       </div>
     </div>
   `).join('');
+
+  const wrap = document.getElementById('awardsToggle');
+  const btn = document.getElementById('awardsToggleBtn');
+  if (!wrap || !btn) return;
+  if (list.length <= AWARDS_VISIBLE) { wrap.style.display = 'none'; return; }
+
+  let expanded = false;
+  const label = () => { btn.textContent = expanded ? 'Show less' : `Show all ${list.length}`; };
+  label();
+  btn.onclick = () => {
+    expanded = !expanded;
+    document.querySelectorAll('#awardsList .award-item').forEach((el, i) => {
+      el.classList.toggle('is-hidden', !expanded && i >= AWARDS_VISIBLE);
+    });
+    btn.setAttribute('aria-expanded', String(expanded));
+    label();
+    if (!expanded) document.getElementById('awards').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 }
 
 /* ===================== PUBLICATIONS + PDF MODAL ===================== */
@@ -428,9 +429,8 @@ function initScrollSpy() {
 /* ===================== INIT ===================== */
 document.addEventListener('DOMContentLoaded', () => {
   renderAbout();
-  renderTimeline('experienceTimeline', PORTFOLIO_DATA.experience);
-  renderTimeline('orgTimeline', PORTFOLIO_DATA.organizations, true);
-  renderEducation();
+  renderExpList('experienceList', PORTFOLIO_DATA.experience);
+  renderExpList('orgList', PORTFOLIO_DATA.organizations, true);
   renderFilterBar();
   renderActivities();
   renderAwards();
@@ -441,10 +441,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initActivitiesSlider();
   initScrollSpy();
   initNetwork();
+  initHeroNav();
 });
 /* ===================== LIQUID GLASS GLARE ===================== */
 (function () {
-  const sel = '.activity-card, .pub-card, .edu-card, .btn-outline, .slider-btn, .contact-link, .theme-toggle';
+  const sel = '.activity-card, .pub-card, .slider-btn, .contact-link, .theme-toggle';
   let raf = null, pending = null;
   document.addEventListener('pointermove', (e) => {
     const el = e.target.closest(sel);

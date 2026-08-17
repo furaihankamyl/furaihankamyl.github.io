@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "IG Following Scraper (SNA Media Mapping)",
+  "version": "1.0.0",
+  "description": "Scrape daftar following akun publik untuk pipeline Social Network Analysis (Gephi/NetworkX).",
+  "permissions": ["activeTab", "scripting", "storage", "tabs"],
+  "host_permissions": ["https://www.instagram.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "IG Following Scraper"
+  }
+}
