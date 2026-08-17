@@ -199,20 +199,17 @@
       font-family: var(--font-display); font-weight: 300;
       font-size: clamp(38px, 6.4vw, 82px); line-height: 1.08;
       letter-spacing: -0.01em; color: var(--hero-text);
-      max-width: 15ch; margin-bottom: 28px;
+      max-width: 15ch; margin-bottom: 44px;
     }
     .hero-headline em { font-style: italic; color: var(--hero-dim); }
-    .hero-sub {
-      font-size: 14px; color: var(--hero-dim); line-height: 1.8;
-      max-width: 480px; font-weight: 300; margin-bottom: 44px;
-    }
     .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 72px; }
     .hero-chip {
-      padding: 8px 16px; border: 1px solid var(--hero-line); border-radius: var(--radius);
-      font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--hero-dim); transition: border-color var(--transition), color var(--transition);
+      padding: 8px 16px; border: 1px solid var(--hero-shape); border-radius: var(--radius);
+      background: var(--hero-shape); color: #0a0a0a;
+      font-size: 10px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase;
+      transition: background var(--transition), border-color var(--transition);
     }
-    .hero-chip:hover { border-color: var(--hero-dim); color: var(--hero-text); }
+    .hero-chip:hover { background: #ffffff; border-color: #ffffff; }
     .hero-meta {
       display: flex; flex-wrap: wrap;
       justify-content: space-between; gap: 28px 40px;
@@ -224,6 +221,12 @@
     }
     .hero-meta-value { font-size: 13px; color: var(--hero-text); font-weight: 300; word-break: break-word; }
     .hero-meta-sub { display: block; font-size: 11px; color: var(--hero-faint); margin-top: 2px; }
+    .hero-edu { display: inline-flex; align-items: center; gap: 8px; }
+    .hero-edu-logo {
+      width: 20px; height: 20px; object-fit: contain; flex-shrink: 0;
+      background: var(--hero-shape); border-radius: 3px; padding: 2px;
+    }
+    .hero-meta > div:first-child { padding-top: 21px; }
     .hero-meta-value a { border-bottom: 1px solid var(--hero-line); transition: border-color var(--transition); }
     .hero-meta-value a:hover { border-color: var(--hero-text); }
 
@@ -691,7 +694,6 @@ nav#nav {
   </div>
   <div class="hero-view2">
     <h2 class="hero-headline">Translating regulatory complexity into <em>strategic action.</em></h2>
-    <p class="hero-sub">7 university partnerships, 6 national priority bills, and 7 published studies shape how I work.</p>
     <div class="hero-chips">
       <span class="hero-chip">Public Policy</span>
       <span class="hero-chip">Government Relations</span>
@@ -701,12 +703,14 @@ nav#nav {
     </div>
     <div class="hero-meta">
       <div>
-        <div class="hero-meta-label">Analyst</div>
         <div class="hero-meta-value">Furaihan Kamyl Arnazaye</div>
       </div>
       <div>
         <div class="hero-meta-label">Education</div>
-        <div class="hero-meta-value">Universitas Indonesia<span class="hero-meta-sub">Public Administration · Cum Laude · GPA 3.69</span></div>
+        <div class="hero-meta-value">
+          <span class="hero-edu"><img src="images/logos/ui.png" alt="Universitas Indonesia" class="hero-edu-logo" onerror="this.style.display='none'" />Universitas Indonesia</span>
+          <span class="hero-meta-sub">Public Administration · Cum Laude · GPA 3.69</span>
+        </div>
       </div>
       <div>
         <div class="hero-meta-label">Location</div>
