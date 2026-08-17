@@ -15,6 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script>document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");</script>
 
   <style>
     :root {
@@ -252,7 +253,7 @@
 
     /* ABOUT */
     .about-wrap { display: flex; flex-direction: column; gap: 48px; }
-    .about-grid { display: grid; grid-template-columns: 1fr 280px; gap: 72px; align-items: start; }
+    .about-grid { max-width: 760px; }
     .about-text p {
       font-size: 15px; color: var(--text-2); line-height: 1.85; margin-bottom: 18px; font-weight: 300;
     }
@@ -261,10 +262,6 @@
       font-weight: 300; line-height: 1.5;
     }
     .about-text strong { color: var(--text); font-weight: 500; }
-    .about-sidebar { border-left: 1px solid var(--border); padding-left: 28px; }
-    .sidebar-item { margin-bottom: 24px; }
-    .sidebar-label { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); margin-bottom: 5px; }
-    .sidebar-value { font-size: 13px; color: var(--text-2); line-height: 1.5; }
 
 
     /* EXPERIENCE & LEADERSHIP (two columns) */
@@ -494,8 +491,6 @@
       .hero-view2 { padding: 6vh 24px 12vh; }
       .hero-meta { display: grid; grid-template-columns: 1fr 1fr; justify-content: start; }
       .section { padding: 64px 24px; }
-      .about-grid { grid-template-columns: 1fr; gap: 36px; }
-      .about-sidebar { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 20px; }
       .exp-columns { grid-template-columns: 1fr; gap: 56px; }
       .pub-grid, .awards-grid, .skills-grid { grid-template-columns: 1fr; }
       .award-item:nth-child(odd) { border-right: none; }
@@ -672,7 +667,7 @@ nav#nav {
   <div class="hero-view1">
     <div class="hero-intro">
       <div class="hero-intro-label">Who I am</div>
-      <p>Public affairs analyst at GoTo Group. I translate regulatory complexity into strategic action across government, industry, and civil society.</p>
+      <p>Public Policy and Government Relations Analyst at GoTo Group, Jakarta.</p>
     </div>
     <h1 class="hero-title">
       <span class="hero-hey">Hey, I'm</span>
@@ -682,7 +677,7 @@ nav#nav {
   </div>
   <div class="hero-view2">
     <h2 class="hero-headline">Translating regulatory complexity into <em>strategic action.</em></h2>
-    <p class="hero-sub">Public Policy and Government Relations Analyst at GoTo Group. I work across digital economy, platform labor, and AI governance in Indonesia.</p>
+    <p class="hero-sub">7 university partnerships, 6 national priority bills, and 7 published studies shape how I work.</p>
     <div class="hero-chips">
       <span class="hero-chip">Public Policy</span>
       <span class="hero-chip">Government Relations</span>
@@ -697,7 +692,7 @@ nav#nav {
       </div>
       <div>
         <div class="hero-meta-label">Education</div>
-        <div class="hero-meta-value">Universitas Indonesia<span class="hero-meta-sub">Public Administration, Cum Laude</span></div>
+        <div class="hero-meta-value">Universitas Indonesia<span class="hero-meta-sub">Public Administration · Cum Laude · GPA 3.69</span></div>
       </div>
       <div>
         <div class="hero-meta-label">Location</div>
@@ -727,20 +722,6 @@ nav#nav {
     <div class="about-wrap">
       <div class="about-grid fade-up">
         <div class="about-text" id="aboutText"></div>
-        <div class="about-sidebar">
-          <div class="sidebar-item">
-            <div class="sidebar-label">Current Role</div>
-            <div class="sidebar-value">PPGR Analyst, GoTo Group</div>
-          </div>
-          <div class="sidebar-item">
-            <div class="sidebar-label">Education</div>
-            <div class="sidebar-value">S.I.A, Universitas Indonesia<br><span style="font-size:11px;color:var(--text-3)">Cum Laude · GPA 3.69</span></div>
-          </div>
-          <div class="sidebar-item">
-            <div class="sidebar-label">Focus Areas</div>
-            <div class="sidebar-value" style="font-size:12px;line-height:1.7;">Digital Economy · Platform Labor · AI Policy · Regulatory Affairs</div>
-          </div>
-        </div>
       </div>
     </div>
   </div>

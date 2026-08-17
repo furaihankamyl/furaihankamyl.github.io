@@ -1,6 +1,5 @@
 /* ===================== THEME ===================== */
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-const savedTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
+const savedTheme = localStorage.getItem('theme') || 'dark';
 document.documentElement.setAttribute('data-theme', savedTheme);
 
 function updateThemeIcons(t) {

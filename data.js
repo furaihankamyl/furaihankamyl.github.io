@@ -2,9 +2,9 @@ const PORTFOLIO_DATA = {
   personal: {
     name: "Furaihan Kamyl Arnazaye",
     tagline: "Public Affairs and Research | Quantitative Analyst | Digital Economy, Transport, and AI",
-    about: `I'm known for my ability to translate regulatory complexity into strategic action that makes policy move.
+    about: `I build the networks that make policy move.
 
-At GoTo Group, I work at the intersection of government, industry, and civil society. My work spans <strong>social research</strong>, <strong>stakeholder management</strong>, and <strong>policy communication</strong>. I build national conversations on digital economy, platform labor, and AI governance. Published research on network governance, public trust, and administrative reform gives me the analytical foundation this work demands.`,
+At GoTo Group, I work at the intersection of government, industry, and civil society. My work spans <strong>social research</strong>, <strong>stakeholder management</strong>, and <strong>policy communication</strong>. Published research on network governance, public trust, and administrative reform gives me the analytical foundation this work demands.`,
     contact: {
       email: "furaihankamyl.arnazaye@gmail.com",
       whatsapp: "6285159691922",

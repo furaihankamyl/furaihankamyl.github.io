@@ -43,7 +43,7 @@
 </head>
 <body>
   <script>
-    const t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const t = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', t);
   </script>
   <div class="wrap">
