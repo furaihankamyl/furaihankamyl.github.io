@@ -4,13 +4,13 @@ I started running in April 2025 for a reason I am not proud of.
 
 A coworker invited me along, and I said yes. Then I bought the gear that comes with deciding to take something seriously. Running shoes, proper clothes, a Garmin 165. And the moment I paid, a question appeared in my head that had nothing to do with fitness. What is the return on this?
 
-There is exactly one way to get a return on a running watch. You have to run.
+**There is exactly one way to get a return on a running watch. You have to run.**
 
 ---
 
 ## How It Actually Kept Going
 
-So I ran. Not because I loved it, but because some part of my brain refused to let the purchase go to waste. That was the entire motivation for the first stretch, and I would rather say that plainly than invent a better origin story.
+So I ran. Not because I loved it, but because some part of my brain refused to let the purchase go to waste.
 
 Somewhere in that process, something shifted. I started feeling alive every time I ran. Free, in a way that is hard to describe properly. Car Free Day became the clearest version of that feeling. Watching Jakarta's streets fill with people running, walking, and just being outside, all at once, was something I looked forward to every week. I also got good at finding freebies near FX Senayan, which is its own small joy.
 
@@ -24,7 +24,7 @@ Once Car Free Day was not enough, I started signing up for actual events. Crysta
 
 ![Race bib at BTN Jakarta International Marathon 2026, ready to conquer Jakarta](images/jakim-racepack.jpg)
 
-What keeps me coming back is not the race pack, although that helps. It is the personal records. Every event so far has given me a new one, and that small proof of progress is addictive in the best way.
+What keeps me coming back is not the race pack, although that helps. It is the personal records. **Every event so far has given me a new one**, and that small proof of progress is addictive in the best way.
 
 Current personal bests:
 
@@ -52,7 +52,7 @@ When I am with friends, it looks completely different. We end up at GI, or at on
 
 ---
 
-None of this is separate from the work I do. It is what keeps me sharp enough to do it well. Running taught me something about consistency that shows up in how I approach long projects. Weekends with friends remind me that not everything needs to be optimized or productive to be worth doing.
+None of this is separate from the work I do. Running taught me something about consistency that shows up in how I approach long projects. Weekends with friends remind me that not everything needs to be optimized or productive to be worth doing.
 
 If you are also into running and want to compare notes or just run together sometime, my Strava is open: [strava.app.link/tPdtyecM73b](https://strava.app.link/tPdtyecM73b)
 

@@ -2,9 +2,9 @@
 
 *"Gak begitu, njir."*
 
-That sentence is completely ordinary. Some version of it is sitting in almost every Indonesian's phone right now. It also appears in almost no formal corpus, no academic publication, and no dataset that a large language model would ordinarily be trained on.
+Some version of that sentence is sitting in almost every Indonesian's phone right now. It also appears in almost no formal corpus, no academic publication, and no dataset that a large language model would ordinarily be trained on.
 
-Indonesia has hundreds of living languages, millions of daily conversations in slang and regional dialects, and a digital economy that runs on informal communication. Most large language models are trained predominantly on English data. When they do support Indonesian, they support the written, formal version of it, which is not the version most people actually use.
+Indonesia has hundreds of living languages, millions of daily conversations in slang and regional dialects, and a digital economy that runs on informal communication. Most large language models are trained predominantly on English data, and when they do support Indonesian, they support the formal written version of it.
 
 Sahabat-AI was GoTo's answer to that gap. My part in it was the university collaboration program.
 
@@ -22,7 +22,7 @@ The premise was clear from the start. Indonesia's AI future should be built from
 
 ## The University Program: What I Actually Did
 
-I led the university collaboration program, which meant building and managing the partnerships that contributed training data, research capacity, and digital talent to the project.
+**I led the university collaboration program**, which meant building and managing the partnerships that contributed training data, research capacity, and digital talent to the project.
 
 The universities involved were:
 
@@ -34,11 +34,11 @@ The universities involved were:
 * Universitas Hasanuddin (Unhas)
 * Universitas Udayana
 
-Each partnership was structured around several forms of collaboration. **Training data contribution** by faculty and students. **Student internship programs** for AI data training work. **Knowledge-sharing sessions** paired with MOU or PKS signings. At Universitas Indonesia, an **AI research grant** program on top of that.
+Each partnership was structured around several forms of collaboration. Training data contribution by faculty and students. Student internship programs for AI data training work. Knowledge-sharing sessions paired with MOU or PKS signings. At Universitas Indonesia, an AI research grant program on top of that.
 
 ![Sharing session and MOU signing with university partners at Universitas Indonesia](images/sahabat-ai-3.jpg)
 
-What made this complex was that each engagement ran end to end. Account management, negotiation, and then event project management, which was the part I had the least preparation for. I learned the technical nuances on the job. Invitation management, university crowd coordination, session design for a mixed student and faculty audience, and hospitality standards that do not get noticed when they are met and get noticed immediately when they are not. Every touchpoint had to reflect both GoTo's institutional standing and the genuine value of the partnership for the university.
+What made this complex was that every engagement ran end to end. Account management, then negotiation, then event project management, which was the part I had the least preparation for. I learned the technical nuances on the job. Invitation management, university crowd coordination, session design for a mixed student and faculty audience, and hospitality standards that nobody notices when they are met and everybody notices when they are not. **A campus that feels used by a company does not sign the next agreement.**
 
 ---
 
@@ -49,9 +49,9 @@ What made this complex was that each engagement ran end to end. Account manageme
   The most unconventional part of Sahabat-AI's data strategy was a collaboration with <strong>Lentera App</strong>, a local literary platform, built to collect informal Indonesian language data that formal sources could not provide.
 </p>
 
-The problem is straightforward and underappreciated. Slang, abbreviations, and natural conversational Indonesian are extremely difficult to source from existing publications and academic literature. Phrases like *"Kalo gw liat-liat, si. Gk ada, ya."* fill every Indonesian's text messages and appear nowhere in a formal corpus.
+Slang, abbreviations, and natural conversational Indonesian are extremely difficult to source from existing publications and academic literature. Phrases like *"Kalo gw liat-liat, si. Gk ada, ya."* fill every Indonesian's text messages and appear nowhere in a formal corpus.
 
-So we went looking for them somewhere else. The solution was a writing competition with Lentera App focused on urban short stories written in conversational, dialogue-heavy language. Participants submitted work that naturally produced the informal, textured Indonesian the model needed. GoTo served as a supporter, and the collected works, with creator consent, became part of the training dataset.
+So we went looking for them somewhere else. The solution was **a writing competition focused on urban short stories written in conversational, dialogue-heavy language.** Participants submitted work that naturally produced the informal, textured Indonesian the model needed. GoTo served as a supporter, and the collected works, with creator consent, became part of the training dataset.
 
 To my knowledge, that was one of the more creative approaches to the data sourcing problem in Indonesian AI development.
 
@@ -59,7 +59,7 @@ To my knowledge, that was one of the more creative approaches to the data sourci
 
 ## The Part That Was Not Relationship Work
 
-As a PPGR professional embedded in this initiative, my responsibility extended into policy compliance. Specifically, ensuring that the training data used in Sahabat-AI's development did not infringe intellectual property rights.
+As a PPGR professional embedded in this initiative, my responsibility extended into policy compliance. Specifically, **ensuring that the training data used in Sahabat-AI's development did not infringe intellectual property rights.**
 
 That meant working through the legal frameworks around data consent and verifying that university and community contributions were rights-free, openly licensed, or explicitly consented to by their creators. AI training data ethics is still an evolving conversation, and there was no settled standard to copy. Building the check into the process from the start was a legal necessity, and I think it was also the right way to build something meant to serve Indonesian society.
 
@@ -67,6 +67,8 @@ That meant working through the legal frameworks around data consent and verifyin
 
 ## What This Initiative Means
 
-Sahabat-AI is not just a technical product. It is an argument that Indonesian language, regional diversity, and local talent are sufficient and necessary inputs for building AI that actually works for Indonesia. What our team built was a small piece of infrastructure for a larger claim, that **Indonesia's AI sovereignty should be built from within.**
+Sahabat-AI is an argument that Indonesian language, regional diversity, and local talent are sufficient and necessary inputs for building AI that actually works for Indonesia.
+
+> ***Indonesia's AI sovereignty should be built from within.***
 
 I am glad to have been part of building that foundation.

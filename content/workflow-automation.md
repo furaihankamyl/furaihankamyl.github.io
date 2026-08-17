@@ -2,7 +2,7 @@
 
 The dream is simple. Work calmly, with AI agents handling the repetitive parts, while I occasionally glance at the screen to check the output.
 
-That is where I am trying to get to. It did not start with AI, and it did not start with code.
+That is where I am trying to get to. This is how the obsession started, and it started in a spreadsheet.
 
 ---
 
@@ -10,7 +10,7 @@ That is where I am trying to get to. It did not start with AI, and it did not st
 
 In 2020 I spent a year at Universitas Brawijaya studying management before transferring to Universitas Indonesia. That year mattered more than I expected, and not because of the management curriculum. The coursework demanded real Excel proficiency. Accounting calculations, financial modeling, data tables. I started learning formulas on my own, and somewhere in the process I realized I genuinely enjoyed it.
 
-What I was falling for was not Excel. It was the logic underneath it. If this input, then that output. Conditional thinking. Structured problem-solving. I did not have a name for it then. I just knew I liked building things that worked automatically.
+What I was falling for was not Excel. **It was the logic underneath it. If this input, then that output.** Conditional thinking. Structured problem-solving. I did not have a name for it then. I just knew I liked building things that worked automatically.
 
 When I moved to Public Administration at UI the following year, I assumed that chapter was closed. A social science degree did not seem like the place for technical skills. That assumption was wrong.
 
@@ -26,7 +26,7 @@ So I built something.
 
 It was a dashboard in Excel. Input your raw data, and the sheet automatically computed frequency distributions, measures of central tendency, variance, standard deviation, and qualitative variation indices. Before each class I would update the data and have everything ready. During quizzes I could answer faster and more accurately than would have been possible by hand.
 
-This was before generative AI existed in any practical form. The method was just logic, formulas, and color-coded cells. But it worked, and it taught me something I still hold onto. Automating a repetitive task does not make you worse at understanding it. It frees your attention for the parts that actually require judgment.
+This was before generative AI existed in any practical form. The method was just logic, formulas, and color-coded cells. But it worked, and it taught me something I still hold onto. **Automating a repetitive task does not make you worse at understanding it. It frees your attention for the parts that actually require judgment.**
 
 ---
 
@@ -36,7 +36,7 @@ The statistics course opened a door. I started reading beyond the syllabus. Meta
 
 I brought those methods into research competitions. Meta-analysis went into a paper on fishermen welfare programs for the Brawijaya National Student Conference, which took first place. Social network analysis became the methodological core of my PKM-RSH research on juvenile correctional institutions, which reached PIMNAS and won a Silver Medal, and later formed the foundation of my undergraduate thesis.
 
-Every one of those projects required the same discipline. Map the workflow from input to output, identify what can be structured and automated, and focus human attention on the interpretive steps that cannot. In practice that meant macro recordings for data collection, structured templates for classification, and systematic pipelines for processing research data. The thinking was the same as the statistics dashboard. The tools were just more complex.
+Every one of those projects required the same discipline. **Map the workflow from input to output, identify what can be structured and automated, and focus human attention on the interpretive steps that cannot.** In practice that meant macro recordings for data collection, structured templates for classification, and systematic pipelines for processing research data. The tools were just more complex than the dashboard.
 
 ---
 
@@ -51,6 +51,8 @@ The clearest example is a regulatory monitoring pipeline. I set up Google Alerts
 A second workflow handles stakeholder calendar management. It tracks important dates, events, and relationship touchpoints that would otherwise require someone to remember and flag them manually. Automated reminders surface the right information at the right time without anyone maintaining a separate tracking system.
 
 A third focuses on information aggregation, pulling updates from multiple sources into a single structured summary and reducing the time spent context-switching between channels.
+
+A regulatory summary that is subtly wrong is worse than no summary, because someone repeats it in a meeting and builds a position on it. The pipeline decides what deserves attention. It does not decide what is true.
 
 None of these replace judgment. They clear the space for it.
 
