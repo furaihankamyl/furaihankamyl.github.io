@@ -136,11 +136,22 @@
       background: radial-gradient(circle at 50% 28%, #ffffff 0%, var(--hero-shape) 52%, #e6e6e6 100%);
       box-shadow: 0 0 120px rgba(250, 250, 250, 0.14);
     }
-    .hero-figure img {
+    /* Body: clipped by the circle. Bottom-aligned so it never spills past the arc. */
+    .hero-figure-clip {
+      position: absolute; left: 0; bottom: 0; width: 100%;
+      aspect-ratio: 1 / 1; border-radius: 50%; overflow: hidden;
+    }
+    .hero-figure-clip img {
+      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      height: 124%; width: auto; max-width: none;
+    }
+    /* Head: the same photo, revealed only above the circle's top edge.
+       Both layers share size and baseline, so the handoff is seamless. */
+    .hero-figure-head {
       position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
       height: 100%; width: auto; max-width: none;
-      -webkit-mask-image: linear-gradient(to bottom, #000 90%, transparent 100%);
-      mask-image: linear-gradient(to bottom, #000 90%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, #000 19.2%, transparent 19.5%);
+      mask-image: linear-gradient(to bottom, #000 19.2%, transparent 19.5%);
     }
 
     /* Layer 3: scrolling foreground text */
@@ -658,7 +669,10 @@ nav#nav {
 <div class="hero-fixed" id="heroFixed" aria-hidden="true">
   <canvas id="networkCanvas"></canvas>
   <div class="hero-figure">
-    <img src="images/hero-kamyl.png" alt="" loading="eager" />
+    <div class="hero-figure-clip">
+      <img src="images/hero-kamyl.png" alt="" loading="eager" />
+    </div>
+    <img class="hero-figure-head" src="images/hero-kamyl.png" alt="" loading="eager" />
   </div>
 </div>
 
