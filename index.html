@@ -136,7 +136,7 @@
       background: radial-gradient(circle at 50% 28%, #ffffff 0%, var(--hero-shape) 52%, #e6e6e6 100%);
       box-shadow: 0 0 120px rgba(250, 250, 250, 0.14);
     }
-    /* Body: clipped by the circle. Bottom-aligned so it never spills past the arc. */
+    /* Body below the circle's centerline: clipped by the bottom semicircle. */
     .hero-figure-clip {
       position: absolute; left: 0; bottom: 0; width: 100%;
       aspect-ratio: 1 / 1; border-radius: 50%; overflow: hidden;
@@ -145,13 +145,13 @@
       position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
       height: 124%; width: auto; max-width: none;
     }
-    /* Head: the same photo, revealed only above the circle's top edge.
-       Both layers share size and baseline, so the handoff is seamless. */
+    /* Everything above the centerline: unclipped, so the arc never cuts the face.
+       At the centerline the circle is at full width, so the handoff is invisible. */
     .hero-figure-head {
       position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
       height: 100%; width: auto; max-width: none;
-      -webkit-mask-image: linear-gradient(to bottom, #000 19.2%, transparent 19.5%);
-      mask-image: linear-gradient(to bottom, #000 19.2%, transparent 19.5%);
+      -webkit-mask-image: linear-gradient(to bottom, #000 59.5%, transparent 59.9%);
+      mask-image: linear-gradient(to bottom, #000 59.5%, transparent 59.9%);
     }
 
     /* Layer 3: scrolling foreground text */
