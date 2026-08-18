@@ -22,6 +22,7 @@
       --bg: #fafafa; --bg-2: #f1f1f1; --surface: #ffffff;
       --border: #e4e4e4; --text: #111111; --text-2: #545454; --text-3: #8a8a8a;
       --tag-bg: #ececec; --tag-text: #454545;
+      --veil: rgba(250, 250, 250, 0.45);
       --font-display: 'Cormorant Garamond', Georgia, serif;
       --font-mono: 'Cormorant Garamond', Georgia, serif;
       --font-body: 'DM Sans', system-ui, sans-serif;
@@ -34,6 +35,7 @@
       --bg: #0d0d0d; --bg-2: #151515; --surface: #1a1a1a;
       --border: #2a2a2a; --text: #f2f2f2; --text-2: #a6a6a6; --text-3: #6e6e6e;
       --tag-bg: #232323; --tag-text: #bdbdbd;
+      --veil: rgba(13, 13, 13, 0.5);
       --shadow: 0 1px 4px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.2);
       --shadow-hover: 0 8px 32px rgba(0,0,0,0.4);
     }
@@ -116,19 +118,25 @@
 
     /* Layer 1+2: static backdrop (black + network + photo). Never scrolls. */
     .hero-fixed {
-      position: fixed; inset: 0; z-index: 0;
+      position: fixed; top: 0; left: 0; right: 0; bottom: -140px; z-index: 0;
       background: var(--hero-bg); overflow: hidden;
+      transform: translateY(var(--hero-shift, 0px));
+      will-change: transform;
     }
     .hero-fixed.is-hidden { visibility: hidden; }
     #networkCanvas {
       position: absolute; inset: 0; width: 100%; height: 100%;
-      pointer-events: none; opacity: 0.55;
+      pointer-events: none; opacity: 0.85;
     }
     .hero-figure {
-      position: absolute; left: 50%; bottom: 16vh; bottom: 16svh;
+      position: absolute; left: 50%;
+      bottom: calc(16vh + 140px); bottom: calc(16svh + 140px);
       transform: translateX(-50%);
       width: min(56vh, 440px, 76vw);
       aspect-ratio: 1 / 1.24;
+      opacity: var(--hero-figure-opacity, 1);
+      filter: blur(var(--hero-figure-blur, 0px));
+      will-change: opacity, filter;
     }
     .hero-figure::before {
       content: ''; position: absolute; left: 0; right: 0; bottom: 0;
@@ -230,12 +238,17 @@
     .hero-meta-value a { border-bottom: 1px solid var(--hero-line); transition: border-color var(--transition); }
     .hero-meta-value a:hover { border-color: var(--hero-text); }
 
-    /* Layer 4: the page content that slides over the fixed hero */
+    /* Layer 4: the page content that slides over the fixed hero.
+       A tall veil above it dissolves the hero instead of cutting it. */
     .page-content {
       position: relative; z-index: 2;
       background: var(--bg);
-      border-top: 1px solid var(--border);
       transition: background 0.3s;
+    }
+    .page-content::before {
+      content: ''; position: absolute; left: 0; right: 0;
+      top: -280px; height: 280px; pointer-events: none;
+      background: linear-gradient(to bottom, transparent 0%, var(--veil) 55%, var(--bg) 100%);
     }
 
     /* Nav over the dark hero: transparent, light text */
@@ -498,7 +511,7 @@
         border-bottom: 1px solid var(--border); padding: 24px; gap: 20px; z-index: 99;
       }
       .hamburger { display: block; }
-      .hero-figure { width: min(52vh, 380px, 82vw); bottom: 20vh; }
+      .hero-figure { width: min(52vh, 380px, 82vw); bottom: calc(20vh + 140px); bottom: calc(20svh + 140px); }
       .hero-intro { top: 76px; left: 24px; max-width: 210px; }
       .hero-hey { top: 21vh; left: 24px; }
       .hero-kamyl { top: 57vh; right: 24px; }
