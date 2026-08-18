@@ -68,23 +68,30 @@ function initNetwork() {
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
   const COUNT = isMobile ? 26 : 60;
   const LINK = isMobile ? 110 : 150;
+  const LABELS = isMobile ? ['Policy', 'Research'] : ['Policy', 'Governance', 'Research', 'Stakeholders'];
 
   let W = 0, H = 0;
   function resize() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    W = window.innerWidth; H = window.innerHeight;
+    W = canvas.clientWidth || window.innerWidth;
+    H = canvas.clientHeight || window.innerHeight;
     canvas.width = W * dpr; canvas.height = H * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
   resize();
 
-  const nodes = Array.from({ length: COUNT }, () => ({
-    x: Math.random() * window.innerWidth,
-    y: Math.random() * window.innerHeight,
-    vx: (Math.random() - 0.5) * 0.22,
-    vy: (Math.random() - 0.5) * 0.22,
-    r: 1 + Math.random() * 1.5
-  }));
+  const nodes = Array.from({ length: COUNT }, (_, i) => {
+    // The first few nodes are labelled hubs: larger, slower, and named.
+    const hub = i < LABELS.length;
+    return {
+      x: Math.random() * W,
+      y: Math.random() * H,
+      vx: (Math.random() - 0.5) * (hub ? 0.12 : 0.22),
+      vy: (Math.random() - 0.5) * (hub ? 0.12 : 0.22),
+      r: hub ? 3.6 : 1.6 + Math.random() * 1.8,
+      label: hub ? LABELS[i] : null
+    };
+  });
 
   const mouse = { x: -9999, y: -9999 };
   window.addEventListener('pointermove', e => { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
@@ -95,8 +102,17 @@ function initNetwork() {
     if (reduced) drawFrame(false);
   });
 
-  const NODE_COLOR = 'rgba(242,242,242,0.7)';
+  const NODE_COLOR = 'rgba(242,242,242,0.82)';
   const EDGE_RGB = '242,242,242';
+
+  // Labels fade out near the portrait so they never compete with it.
+  function labelAlpha(n) {
+    const cx = W / 2, cy = H * 0.62;
+    const guard = Math.min(W, H) * 0.42;
+    const d = Math.hypot(n.x - cx, n.y - cy);
+    if (d > guard) return 1;
+    return Math.max(0, (d - guard * 0.55) / (guard * 0.45));
+  }
 
   function drawFrame(move) {
     ctx.clearRect(0, 0, W, H);
@@ -119,30 +135,54 @@ function initNetwork() {
       });
     }
 
-    // Edges by proximity
+    // Edges: closer pairs read as stronger ties (thicker and brighter)
     for (let i = 0; i < COUNT; i++) {
       for (let j = i + 1; j < COUNT; j++) {
         const dx = nodes[i].x - nodes[j].x;
         const dy = nodes[i].y - nodes[j].y;
         const d2 = dx * dx + dy * dy;
         if (d2 < LINK * LINK) {
-          const alpha = (1 - Math.sqrt(d2) / LINK) * 0.3;
+          const t = 1 - Math.sqrt(d2) / LINK;      // 0 far, 1 touching
+          const hub = nodes[i].label || nodes[j].label;
+          const alpha = t * (hub ? 0.55 : 0.4);
           ctx.beginPath();
           ctx.moveTo(nodes[i].x, nodes[i].y);
           ctx.lineTo(nodes[j].x, nodes[j].y);
           ctx.strokeStyle = `rgba(${EDGE_RGB},${alpha.toFixed(3)})`;
-          ctx.lineWidth = 1;
+          ctx.lineWidth = 0.5 + t * (hub ? 1.6 : 1.1);
           ctx.stroke();
         }
       }
     }
 
     // Nodes
-    ctx.fillStyle = NODE_COLOR;
     nodes.forEach(n => {
       ctx.beginPath();
       ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.fillStyle = n.label ? 'rgba(242,242,242,0.95)' : NODE_COLOR;
       ctx.fill();
+
+      if (!n.label) return;
+
+      // Hub ring
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r + 5, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(242,242,242,0.32)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+
+      // Label, hidden whenever it drifts near the portrait
+      const a = labelAlpha(n);
+      if (a <= 0.01) return;
+      ctx.font = '400 10px "DM Sans", system-ui, sans-serif';
+      if ('letterSpacing' in ctx) ctx.letterSpacing = '1.5px';
+      const text = n.label.toUpperCase();
+      const flip = n.x > W - 140; // keep the label on screen near the right edge
+      ctx.textAlign = flip ? 'right' : 'left';
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = `rgba(242,242,242,${(a * 0.72).toFixed(3)})`;
+      ctx.fillText(text, n.x + (flip ? -(n.r + 12) : n.r + 12), n.y);
+      if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
     });
   }
 
@@ -174,6 +214,50 @@ function initNetwork() {
 
   // Hero is always dark; theme toggle doesn't affect it
   networkAnim = { updateColors: () => {} };
+}
+
+/* ===================== HERO SCROLL TRANSITION =====================
+   Three coordinated moves as the page rises over the hero:
+   the backdrop drifts up (parallax), the portrait fades and blurs,
+   and the network dims. Together with the gradient veil on .page-content,
+   the hero dissolves instead of getting cut off. */
+function initHeroTransition() {
+  const heroFixed = document.getElementById('heroFixed');
+  const hero = document.getElementById('hero');
+  const canvas = document.getElementById('networkCanvas');
+  if (!heroFixed || !hero) return;
+
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const root = document.documentElement;
+  let raf = null;
+
+  // Smooth ramp between two thresholds
+  const ramp = (v, a, b) => {
+    const t = Math.min(1, Math.max(0, (v - a) / (b - a)));
+    return t * t * (3 - 2 * t);
+  };
+
+  function update() {
+    raf = null;
+    const heroEnd = hero.offsetTop + hero.offsetHeight;
+    const vh = window.innerHeight;
+
+    // Parallax runs across the whole hero
+    if (!reduced) {
+      const g = Math.min(1, Math.max(0, window.scrollY / Math.max(1, heroEnd)));
+      root.style.setProperty('--hero-shift', `${(-g * 90).toFixed(1)}px`);
+    }
+
+    // Dissolve runs only while the content rises from the bottom edge to the top
+    const d = ramp(window.scrollY, heroEnd - vh, heroEnd);
+    root.style.setProperty('--hero-figure-opacity', (1 - d * 0.92).toFixed(3));
+    root.style.setProperty('--hero-figure-blur', `${(d * 12).toFixed(1)}px`);
+    if (canvas) canvas.style.opacity = (0.85 * (1 - d * 0.8)).toFixed(3);
+  }
+
+  window.addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(update); }, { passive: true });
+  window.addEventListener('resize', () => { if (!raf) raf = requestAnimationFrame(update); });
+  update();
 }
 
 /* ===================== NAV OVER HERO ===================== */
@@ -441,6 +525,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   initNetwork();
   initHeroNav();
+  initHeroTransition();
 });
 /* ===================== LIQUID GLASS GLARE ===================== */
 (function () {
