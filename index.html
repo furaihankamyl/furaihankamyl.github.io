@@ -164,6 +164,20 @@
 
     /* Layer 3: scrolling foreground text */
     #hero { position: relative; z-index: 1; color: var(--hero-text); }
+    /* Bridges the dark backdrop into the page background.
+       z-index -1 keeps it under the hero text but over the portrait. */
+    .hero-veil {
+      position: absolute; left: 0; right: 0; bottom: 0; height: 300px;
+      z-index: -1; pointer-events: none;
+      background: linear-gradient(to bottom, transparent 0%, var(--veil) 55%, var(--bg) 100%);
+    }
+    /* Full-bleed scrim over the lower hero so text stays legible where it
+       crosses the portrait. Sits under the hero text, over the backdrop. */
+    #hero::before {
+      content: ''; position: absolute; left: 0; right: 0; top: 92vh; bottom: 0;
+      z-index: -1; pointer-events: none;
+      background: linear-gradient(to bottom, transparent 0%, rgba(10,10,10,0.5) 30%, rgba(10,10,10,0.78) 60%, rgba(10,10,10,0.78) 100%);
+    }
     .hero-view1 { height: 100vh; height: 100svh; position: relative; }
     .hero-intro {
       position: absolute; top: 88px; left: clamp(24px, 8vw, 120px);
@@ -201,7 +215,7 @@
 
     .hero-view2 {
       max-width: 1200px; margin: 0 auto;
-      padding: 8vh clamp(24px, 8vw, 120px) 14vh;
+      padding: 8vh clamp(24px, 8vw, 120px) 320px;
     }
     .hero-headline {
       font-family: var(--font-display); font-weight: 300;
@@ -245,11 +259,7 @@
       background: var(--bg);
       transition: background 0.3s;
     }
-    .page-content::before {
-      content: ''; position: absolute; left: 0; right: 0;
-      top: -280px; height: 280px; pointer-events: none;
-      background: linear-gradient(to bottom, transparent 0%, var(--veil) 55%, var(--bg) 100%);
-    }
+
 
     /* Nav over the dark hero: transparent, light text */
     nav#nav.on-hero {
@@ -515,7 +525,7 @@
       .hero-intro { top: 76px; left: 24px; max-width: 210px; }
       .hero-hey { top: 21vh; left: 24px; }
       .hero-kamyl { top: 57vh; right: 24px; }
-      .hero-view2 { padding: 6vh 24px 12vh; }
+      .hero-view2 { padding: 6vh 24px 300px; }
       .hero-meta { display: grid; grid-template-columns: 1fr 1fr; justify-content: start; }
       .section { padding: 64px 24px; }
       .exp-columns { grid-template-columns: 1fr; gap: 56px; }
@@ -739,6 +749,7 @@ nav#nav {
       </div>
     </div>
   </div>
+  <div class="hero-veil" aria-hidden="true"></div>
 </section>
 
 <main class="page-content">
