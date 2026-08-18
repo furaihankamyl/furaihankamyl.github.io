@@ -68,7 +68,9 @@ function initNetwork() {
   const isMobile = window.matchMedia('(max-width: 768px)').matches;
   const COUNT = isMobile ? 26 : 60;
   const LINK = isMobile ? 110 : 150;
-  const LABELS = isMobile ? ['Policy', 'Research'] : ['Policy', 'Governance', 'Research', 'Stakeholders'];
+  const LABELS = isMobile
+    ? ['Network Governance', 'Actor Mapping']
+    : ['Network Governance', 'Actor Mapping', 'Public Trust', 'Policy Analysis'];
 
   let W = 0, H = 0;
   function resize() {
@@ -177,11 +179,13 @@ function initNetwork() {
       ctx.font = '400 10px "DM Sans", system-ui, sans-serif';
       if ('letterSpacing' in ctx) ctx.letterSpacing = '1.5px';
       const text = n.label.toUpperCase();
-      const flip = n.x > W - 140; // keep the label on screen near the right edge
+      const gap = n.r + 12;
+      // Flip to the left when the label would otherwise run past the edge
+      const flip = n.x + gap + ctx.measureText(text).width > W - 24;
       ctx.textAlign = flip ? 'right' : 'left';
       ctx.textBaseline = 'middle';
       ctx.fillStyle = `rgba(242,242,242,${(a * 0.72).toFixed(3)})`;
-      ctx.fillText(text, n.x + (flip ? -(n.r + 12) : n.r + 12), n.y);
+      ctx.fillText(text, n.x + (flip ? -gap : gap), n.y);
       if ('letterSpacing' in ctx) ctx.letterSpacing = '0px';
     });
   }
