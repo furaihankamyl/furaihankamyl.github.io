@@ -98,7 +98,11 @@ function initNetwork() {
   const mouse = { x: -9999, y: -9999 };
   window.addEventListener('pointermove', e => { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
   window.addEventListener('pointerleave', () => { mouse.x = -9999; mouse.y = -9999; });
+  let lastW = window.innerWidth;
   window.addEventListener('resize', () => {
+    // Mobile URL bars fire resize on height alone; ignore those
+    if (window.innerWidth === lastW) return;
+    lastW = window.innerWidth;
     resize();
     nodes.forEach(n => { n.x = Math.min(n.x, W); n.y = Math.min(n.y, H); });
     if (reduced) drawFrame(false);
