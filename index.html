@@ -127,7 +127,11 @@
 
     /* Layer 1+2: static backdrop (black + network + photo). Never scrolls. */
     .hero-fixed {
-      position: fixed; top: 0; left: 0; right: 0; bottom: -140px; z-index: 0;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 0;
+      /* svh ignores the mobile URL bar, so the backdrop never resizes mid-scroll.
+         The extra 220px covers the parallax lift and the URL bar collapsing. */
+      height: calc(100vh + 220px);
+      height: calc(100svh + 220px);
       background: var(--hero-bg); overflow: hidden;
       transform: translateY(var(--hero-shift, 0px));
       will-change: transform;
@@ -139,9 +143,10 @@
     }
     .hero-figure {
       position: absolute; left: 50%;
-      bottom: calc(16vh + 140px); bottom: calc(16svh + 140px);
+      bottom: calc(16vh + 220px); bottom: calc(16svh + 220px);
       transform: translateX(-50%);
       width: min(56vh, 440px, 76vw);
+      width: min(56svh, 440px, 76vw);
       aspect-ratio: 1 / 1.24;
       opacity: var(--hero-figure-opacity, 1);
       filter: blur(var(--hero-figure-blur, 0px));
@@ -183,7 +188,7 @@
     /* Full-bleed scrim over the lower hero so text stays legible where it
        crosses the portrait. Sits under the hero text, over the backdrop. */
     #hero::before {
-      content: ''; position: absolute; left: 0; right: 0; top: 92vh; bottom: 0;
+      content: ''; position: absolute; left: 0; right: 0; top: 92svh; bottom: 0;
       z-index: -1; pointer-events: none;
       background: linear-gradient(to bottom, transparent 0%, rgba(10,10,10,0.5) 30%, rgba(10,10,10,0.78) 60%, rgba(10,10,10,0.78) 100%);
     }
@@ -361,10 +366,19 @@
     .slider-btn:disabled { opacity: 0.3; cursor: default; }
 
     .activities-track {
-      display: flex; gap: 20px; overflow-x: auto;
+      display: flex; gap: 20px; overflow-x: auto; overflow-y: hidden;
       scroll-snap-type: x mandatory; scroll-behavior: smooth;
+      /* Keeps the horizontal rubber-band inside the track so a vertical
+         swipe starting on a card still scrolls the page. */
+      overscroll-behavior-x: contain;
+      touch-action: pan-x pan-y;
+      -webkit-overflow-scrolling: touch;
       padding-bottom: 6px; margin: 0 -2px;
       scrollbar-width: none; -ms-overflow-style: none;
+    }
+    /* Mandatory snapping fights vertical swipes on touch screens */
+    @media (hover: none) {
+      .activities-track { scroll-snap-type: x proximity; }
     }
     .activities-track::-webkit-scrollbar { display: none; }
     .activities-track .activity-card {
@@ -530,7 +544,10 @@
         border-bottom: 1px solid var(--border); padding: 24px; gap: 20px; z-index: 99;
       }
       .hamburger { display: block; }
-      .hero-figure { width: min(52vh, 380px, 82vw); bottom: calc(20vh + 140px); bottom: calc(20svh + 140px); }
+      .hero-figure {
+        width: min(52vh, 380px, 82vw); width: min(52svh, 380px, 82vw);
+        bottom: calc(20vh + 220px); bottom: calc(20svh + 220px);
+      }
       .hero-intro { top: 76px; left: 24px; max-width: 210px; }
       .hero-hey { top: 21vh; left: 24px; }
       .hero-kamyl { top: 57vh; right: 24px; }
@@ -657,7 +674,22 @@ nav#nav {
     background: linear-gradient(180deg, var(--glass-hi), transparent 55%), var(--surface);
   }
 }
-  </style>
+  
+/* ============ TOUCH DEVICES ============
+   No real hover on touch, so lift and glare effects stick after a tap
+   and read as cards stretching. Must sit last to win the cascade. */
+@media (hover: none) {
+  .activity-card:hover, .pub-card:hover {
+    transform: none;
+    box-shadow: var(--glass-shadow);
+    border-color: var(--glass-border);
+  }
+  .activity-card:hover .activity-thumb { transform: none; }
+  .activity-card:hover .activity-arrow { transform: none; color: var(--text-3); }
+  .activity-card::after, .pub-card::after { opacity: 0; }
+}
+
+</style>
 <link rel="icon" type="image/png" sizes="96x96" href="icon-96.png" />
 <link rel="icon" type="image/png" sizes="48x48" href="icon-48.png" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
