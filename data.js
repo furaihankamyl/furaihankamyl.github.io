@@ -128,42 +128,60 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       venue: "Jurnal Ilmiah Wahana Pendidikan (JIWP)",
       author: "Furaihan Kamyl Arnazaye et al.",
       year: 2024,
-      driveId: "1z1gBBxb5rXhj09Y2sip8b4HjUtxFU8E_"
+      driveId: "1z1gBBxb5rXhj09Y2sip8b4HjUtxFU8E_",
+      slug: "jaklapor-engagement",
+      summary: "Young Jakartans intend to engage with JakLapor at moderate to high levels. Gender makes no difference. Between generations, only trust does.",
+      explainerTitle: "Do Gender and Generation Change Who Engages with JakLapor?"
     },
     {
       title: "Simplification of Limited Liability Company Registration Procedures Through Notaries",
       venue: "Temu Administrator Muda Indonesia (TemuAdMI)",
       author: "Furaihan Kamyl Arnazaye et al.",
       year: 2024,
-      driveId: "1erXwQba8S_rnZGv_VKod7KJeNRWG17o1"
+      driveId: "1erXwQba8S_rnZGv_VKod7KJeNRWG17o1",
+      slug: "notary-business-registration",
+      summary: "Across 190 countries, requiring a notary adds about two procedures, seven days, and 23 points of income per capita to registering a company.",
+      explainerTitle: "What a Notary Costs a New Company"
     },
     {
       title: "Comprehensive Analysis of Public Trust Levels Among Young Individuals in the JakLapor Feature",
       venue: "PKM-AI, Jurnal Ilmiah Administrasi (JIA), STIA LAN Bandung",
       author: "Furaihan Kamyl Arnazaye et al.",
       year: 2024,
-      driveId: "1j36itRC-S7fGPdxOZeQpO_IfelPIaI2k"
+      driveId: "1j36itRC-S7fGPdxOZeQpO_IfelPIaI2k",
+      slug: "jaklapor-public-trust",
+      summary: "A survey of 353 young Jakartans found moderate trust in JakLapor, and one significant gap: Gen Z trusts it less than Millennials.",
+      explainerTitle: "After the Data Leaks, Do Young Jakartans Still Trust JakLapor?"
     },
     {
       title: "Network Governance in Supporting Subjective Well-being of Juvenile Inmates in LPKA",
       venue: "PKM-RSH, Kemendikbudristek",
       author: "Furaihan Kamyl Arnazaye et al.",
       year: 2024,
-      driveId: "1s3_HDObWfezzZ66EawVExvmT0P4zNF8T"
+      driveId: "1s3_HDObWfezzZ66EawVExvmT0P4zNF8T",
+      slug: "lpka-coaching-network",
+      summary: "Mapping 80 actors around LPKA Jakarta showed regional ties holding after the move while local ones fell away, and some programs could not be run again.",
+      explainerTitle: "What Keeps a Juvenile Institution's Programs Running?"
     },
     {
       title: "Analisis Faktor Motivasi Mahasiswa untuk Menjadi Pegawai Pemerintah",
       venue: "Jurnal Publik, Ilmu Administrasi Negara",
       author: "Furaihan Kamyl Arnazaye et al.",
       year: 2023,
-      driveId: "1wO8RnysxKz1jnaWXA4RNa4wU3bdE7uTg"
+      driveId: "1wO8RnysxKz1jnaWXA4RNa4wU3bdE7uTg",
+      slug: "civil-service-motivation",
+      summary: "Eight UI and ITB students explain what draws them to the civil service, security and family, and what holds them back, rigid workplaces and pay.",
+      explainerTitle: "Why Students Want, and Doubt, a Civil Service Career"
     },
     {
       title: "Efektivitas Pengangkatan Penjabat Kepala Daerah dalam Perspektif Demokrasi dan Teknokrasi",
       venue: "Jurnal Ilmiah Bidang Ilmu Administrasi Negara",
       author: "Furaihan Kamyl Arnazaye et al.",
       year: 2023,
-      driveId: "1UNDMfo_Py_ZNIiG7yTbqku95hXig-jvK"
+      driveId: "1UNDMfo_Py_ZNIiG7yTbqku95hXig-jvK",
+      slug: "acting-regional-heads",
+      summary: "Indonesia appointed 272 acting regional heads before the 2024 elections. Against the democracy index, appointment fits only 2 of 34 provinces.",
+      explainerTitle: "Who Should Run a Region When Nobody Was Elected?"
     }
   ],
 
