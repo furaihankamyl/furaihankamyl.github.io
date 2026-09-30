@@ -16,9 +16,7 @@ Once Car Free Day was not enough, I started signing up for actual events:
 
 What keeps me coming back is not the race pack, although that helps. It is the personal records. **Every event so far has given me a new one**, and that small proof of progress is addictive in the best way. Current personal bests:
 
-**5K: 24:10**
-**10K: 51:25**
-**Half Marathon: 1:58:15**
+<div class="stats"><div class="stat"><div class="stat-value">24:10</div><div class="stat-label">5K</div></div><div class="stat"><div class="stat-value">51:25</div><div class="stat-label">10K</div></div><div class="stat"><div class="stat-value">1:58:15</div><div class="stat-label">Half marathon</div></div></div>
 
 No full marathon yet. That is the goal for next year. Let's go.
 

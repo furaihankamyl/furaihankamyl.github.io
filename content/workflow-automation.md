@@ -1,3 +1,5 @@
+<div class="takeaways"><div class="takeaways-title">In short</div><ul><li>It started in 2020 with Excel, and a statistics dashboard I built at UI to answer weekly quizzes faster.</li><li>The lesson I kept: automating a repetitive task frees attention for the parts that need judgment.</li><li>The same discipline carried into research, from meta-analysis for a 1st-place paper to social network analysis for PIMNAS and my thesis.</li><li>At GoTo I have built three workflow automations, including a daily regulatory digest that runs from Google Alerts through Gemini to Google Chat.</li><li>The pipeline decides what deserves attention. It does not decide what is true.</li></ul></div>
+
 The dream is simple. Work calmly, with AI agents handling the repetitive parts, while I occasionally glance at the screen to check the output. That is where I am trying to get to, and it started in a spreadsheet.
 
 ## Learning the Logic
@@ -10,7 +12,11 @@ When I moved to Public Administration at UI the following year, I assumed that c
 
 It was a dashboard in Excel. Input your raw data, and the sheet automatically computed frequency distributions, measures of central tendency, variance, standard deviation, and qualitative variation indices. Before each class I would update the data and have everything ready. During quizzes I could answer faster and more accurately than would have been possible by hand. This was before generative AI existed in any practical form. The method was just logic, formulas, and color-coded cells. But it worked, and it taught me something I still hold onto. **Automating a repetitive task does not make you worse at understanding it. It frees your attention for the parts that actually require judgment.**
 
-That course opened a door. I started reading beyond the syllabus. Meta-analysis, social network analysis, computational methods applied to social and governance questions. None of it was taught in the curriculum at the time, but all of it connected directly to the policy and administrative questions I was studying. I brought those methods into research competitions. Meta-analysis went into a paper on fishermen welfare programs for the Brawijaya National Student Conference, which took first place. Social network analysis became the methodological core of my PKM-RSH research on juvenile correctional institutions, which reached PIMNAS and won a Silver Medal, and later formed the foundation of my undergraduate thesis. Every one of those projects required the same discipline. **Map the workflow from input to output, identify what can be structured and automated, and focus human attention on the interpretive steps that cannot.** In practice that meant macro recordings for data collection, structured templates for classification, and systematic pipelines for processing research data. The tools were just more complex than the dashboard.
+That course opened a door.
+
+I started reading beyond the syllabus. Meta-analysis, social network analysis, computational methods applied to social and governance questions. None of it was taught in the curriculum at the time, but all of it connected directly to the policy and administrative questions I was studying. I brought those methods into research competitions. Meta-analysis went into a paper on fishermen welfare programs for the Brawijaya National Student Conference, which took first place. Social network analysis became the methodological core of my PKM-RSH research on juvenile correctional institutions, which reached PIMNAS and won a Silver Medal, and later formed the foundation of my undergraduate thesis. 
+
+Every one of those projects required the same discipline. **Map the workflow from input to output, identify what can be structured and automated, and focus human attention on the interpretive steps that cannot.** In practice that meant macro recordings for data collection, structured templates for classification, and systematic pipelines for processing research data. The tools were just more complex than the dashboard.
 
 ## Automation at Work
 
@@ -19,6 +25,8 @@ Professionally, the same instinct continues. I have built three workflow automat
 * **Regulatory monitoring.** Google Alerts on relevant topics generate daily digest emails. Those emails are automatically extracted and passed to Gemini for analysis, and the structured output is pushed to Google Chat as a daily intelligence update for the team. What previously required manual monitoring and write-up now runs on its own.
 * **Stakeholder calendar management.** Important dates, events, and relationship touchpoints get tracked and surfaced as automated reminders, without anyone maintaining a separate tracking system.
 * **Information aggregation.** Updates from multiple sources are pulled into a single structured summary, reducing the time spent context-switching between channels.
+
+<figure class="chart"><div class="chart-title">How the regulatory monitoring workflow runs</div><div class="chart-sub">Every day, without anyone writing it up by hand</div><div class="pipeline"><div><strong>Google Alerts</strong>Topics relevant to the team produce a daily digest email</div><div><strong>Extraction</strong>The digest is pulled out of the inbox automatically</div><div><strong>Gemini</strong>Analyzes the updates and structures the output</div><div><strong>Google Chat</strong>A daily intelligence update lands in the team channel</div></div></figure>
 
 ![Google Alerts Intelligence Analysis workflow built in Google Workspace Studio](images/google-alert-automation.jpg)
 

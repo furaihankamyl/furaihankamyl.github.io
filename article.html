@@ -147,6 +147,33 @@
       padding: 12px 20px; margin: 24px 0;
       color: var(--text-2); font-style: italic;
     }
+    /* A quote on its own line in an essay reads as a pull quote */
+    .article-content > blockquote {
+      border-left: 2px solid var(--text); padding: 4px 0 4px 22px; margin: 36px 0;
+      font-family: var(--font-display); font-size: 25px; line-height: 1.4; color: var(--text);
+    }
+    .article-content > blockquote p { font-size: inherit; color: inherit; line-height: inherit; margin: 0; font-family: inherit; }
+
+    /* Photos with visible captions */
+    .article-content figure.photo { margin: 32px 0; }
+    .article-content figure.photo img { margin: 0; }
+    .article-content figure.photo figcaption { font-size: 12px; color: var(--text-3); line-height: 1.5; margin-top: 10px; }
+    .article-content .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 32px 0; }
+    .article-content .gallery figure.photo { margin: 0; }
+    .article-content .gallery img { aspect-ratio: 4 / 3; object-fit: cover; }
+    .article-content figure.photo.side { float: right; width: 220px; margin: 4px 0 16px 24px; }
+    @media (max-width: 560px) {
+      .article-content .gallery { grid-template-columns: 1fr; }
+      .article-content figure.photo.side { float: none; width: 100%; margin: 24px 0; }
+      .article-content > blockquote { font-size: 21px; }
+    }
+
+    /* Two halves side by side (used for frameworks in essays) */
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .split > div { border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 18px 18px 8px; }
+    .split h4 { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); font-weight: 500; margin-bottom: 10px; }
+    .article-content .split ul li { font-size: 13.5px; line-height: 1.55; margin-bottom: 8px; }
+    @media (max-width: 560px) { .split { grid-template-columns: 1fr; } }
     .article-content code {
       background: var(--bg-2); padding: 2px 6px;
       border-radius: var(--radius); font-size: 13px;
@@ -236,6 +263,9 @@
     .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin: 28px 0; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
     .stat { background: var(--bg); padding: 14px 16px; }
     @media (max-width: 480px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+    /* Exactly three tiles stay on one row instead of leaving an empty cell */
+    .stats:has(> .stat:nth-child(3):last-child) { grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 480px) { .stat-value { font-size: 21px; } .stat { padding: 12px; } }
     .stat-value { font-size: 26px; font-weight: 600; color: var(--text); line-height: 1.1; }
     .stat-label { font-size: 11px; color: var(--text-3); margin-top: 6px; line-height: 1.45; }
 
@@ -424,7 +454,7 @@
 <body>
 
 <nav>
-  <a href="index.html#activities" class="nav-back" id="navBack">← Activities</a>
+  <a href="index.html#activities" class="nav-back" id="navBack">← Writing</a>
   <a href="index.html" class="nav-name">Kamyl</a>
   <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀</button>
 </nav>
@@ -470,7 +500,7 @@
   </a>
 
   <div class="article-back-bottom">
-    <a href="index.html#activities" class="back-link" id="bottomBack">← Back to Activities</a>
+    <a href="index.html#activities" class="back-link" id="bottomBack">← Back to Writing</a>
   </div>
 </div>
 
@@ -544,6 +574,7 @@
       document.getElementById('articleMeta').style.display = 'block';
       document.getElementById('articleContent').innerHTML = html;
       initWidgets(document.getElementById('articleContent'));
+      captionPhotos(document.getElementById('articleContent'));
       document.getElementById('articleContent').style.display = 'block';
       document.getElementById('articleLoading').style.display = 'none';
       if (pub) document.getElementById('paperCta').style.display = 'block';
@@ -551,6 +582,35 @@
     } catch (e) {
       showError();
     }
+  }
+
+  // Markdown images become figures with their alt text as a visible caption.
+  // Photos that follow each other directly are laid out side by side.
+  function captionPhotos(root) {
+    root.querySelectorAll('img').forEach(img => {
+      if (img.closest('figure, .chart, .schematic')) return;
+      const p = img.parentElement;
+      const alone = p.tagName === 'P' && p.textContent.trim() === '' && p.querySelectorAll('img').length === 1;
+      const fig = document.createElement('figure');
+      fig.className = 'photo';
+      const cap = img.getAttribute('alt');
+      (alone ? p : img).replaceWith(fig);
+      fig.appendChild(img);
+      if (cap) {
+        const fc = document.createElement('figcaption');
+        fc.textContent = cap;
+        fig.appendChild(fc);
+      }
+    });
+    Array.from(root.querySelectorAll(':scope > figure.photo')).forEach(fig => {
+      const next = fig.nextElementSibling;
+      if (next && next.matches('figure.photo') && !fig.closest('.gallery')) {
+        const g = document.createElement('div');
+        g.className = 'gallery';
+        fig.before(g);
+        g.append(fig, next);
+      }
+    });
   }
 
   // Interactive pieces embedded in article Markdown (scripts inside

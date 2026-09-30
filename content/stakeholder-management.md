@@ -1,8 +1,12 @@
+<div class="takeaways"><div class="takeaways-title">In short</div><ul><li>At the desk, the work is understanding the issue, mapping stakeholders as institutions and as people, then building the narrative and choosing the channel.</li><li>Beyond the desk, it is relationships built over time, public communication on a parallel track, and coalitions when a position carries more weight together.</li><li>My own experience sits mostly on the desk side. I would rather be precise about that than blur it.</li></ul></div>
+
 **Most of what determines whether a policy conversation goes well happens before anyone enters the room.**
 
 By the time a meeting starts, the real work has usually already been done. Understanding the issue, mapping who matters and why, deciding what to say and how to say it. What happens in the room is often just the execution of a plan built at a desk.
 
 I find it useful to think about this work through a framework from Young and Quinn (2012), which breaks advocacy into three components: a way into the process, the message and the activities built around it, and the messenger delivering it. It maps closely onto how policy communication actually works, and it gives me a way to describe the discipline without making it sound more mysterious than it is.
+
+<figure class="chart"><div class="chart-title">The work, in two halves</div><div class="chart-sub">What this piece walks through</div><div class="split"><div><h4>At the desk</h4><ul><li>Understand the issue: regulatory mechanics, competing interests, points of friction</li><li>Map stakeholders as institutions and as people</li><li>Build the narrative, the framing, and the channel</li></ul></div><div><h4>Beyond the desk</h4><ul><li>Relationships built over time, formal and informal</li><li>Public communication on a parallel track</li><li>Coalitions when a position carries more weight together</li></ul></div></div></figure>
 
 ## At the Desk
 
