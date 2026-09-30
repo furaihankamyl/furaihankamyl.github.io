@@ -454,6 +454,37 @@
     }
     .awards-toggle-btn:hover { border-color: var(--text); color: var(--text); }
 
+    /* WRITING: one featured piece plus a list */
+    .w-feature { display: grid; grid-template-columns: 1.1fr 1fr; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: 28px; cursor: pointer; }
+    .w-feature-media { min-height: 300px; overflow: hidden; }
+    .w-feature-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .w-feature:hover .w-feature-img { transform: scale(1.03); }
+    .w-feature-body { padding: 36px 36px 32px; display: flex; flex-direction: column; justify-content: center; }
+    .w-feature-title { font-family: var(--font-display); font-size: clamp(26px, 3vw, 34px); font-weight: 400; line-height: 1.15; color: var(--text); margin: 6px 0 14px; }
+    .w-feature-desc { font-size: 14px; color: var(--text-2); line-height: 1.7; margin-bottom: 22px; }
+    .w-read { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); }
+    .w-list { border-top: 1px solid var(--border); }
+    .w-row { display: grid; grid-template-columns: 112px 1fr 24px; gap: 22px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--border); }
+    .w-row-media { width: 112px; height: 76px; border-radius: var(--radius); overflow: hidden; background: var(--bg-2); }
+    .w-row-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .w-row:hover .w-row-img { transform: scale(1.05); }
+    .w-row-title { font-family: var(--font-display); font-size: 20px; font-weight: 400; line-height: 1.25; color: var(--text); margin: 2px 0 4px; transition: color 0.2s; }
+    .w-row-desc { font-size: 12.5px; color: var(--text-2); line-height: 1.55; }
+    .w-row-arrow { color: var(--text-3); transition: transform 0.2s, color 0.2s; }
+    .w-row:hover .w-row-arrow { transform: translateX(3px); color: var(--text); }
+    .w-quote { display: flex; align-items: center; justify-content: center; padding: 10px; background: var(--text); color: var(--bg); text-align: center; }
+    .w-quote span { font-family: var(--font-display); font-style: italic; font-size: 12px; line-height: 1.25; }
+    .w-feature-media .w-quote span { font-size: 26px; }
+    @media (max-width: 768px) {
+      .w-feature { grid-template-columns: 1fr; }
+      .w-feature-media { min-height: 200px; height: 220px; }
+      .w-feature-body { padding: 22px 20px 24px; }
+      .w-row { grid-template-columns: 84px 1fr; gap: 14px; }
+      .w-row-media { width: 84px; height: 64px; }
+      .w-row-arrow { display: none; }
+      .w-row-desc { display: none; }
+    }
+
     /* PUBLICATIONS */
     .pub-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
     .pub-card {
@@ -747,7 +778,7 @@ nav#nav {
     <a href="#publications">Research</a>
     <a href="#skills">Skills</a>
     <a href="#awards">Awards</a>
-    <a href="#activities">Activities</a>
+    <a href="#activities">Writing</a>
     <a href="#contact">Contact</a>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀</button>
   </div>
@@ -900,17 +931,13 @@ nav#nav {
 <section id="activities" class="section" style="background:var(--bg-2);">
   <div class="section-inner">
     <div class="section-header">
-      <h2 class="section-title">Activities</h2>
+      <h2 class="section-title">Writing</h2>
       <div class="section-divider"></div>
     </div>
     <div class="activities-controls">
       <div class="filter-bar" id="filterBar"></div>
-      <div class="slider-nav" id="sliderNav">
-        <button class="slider-btn" id="actPrev" aria-label="Previous activities">←</button>
-        <button class="slider-btn" id="actNext" aria-label="Next activities">→</button>
-      </div>
     </div>
-    <div class="activities-track" id="activitiesGrid"></div>
+    <div class="writing" id="activitiesGrid"></div>
   </div>
 </section>
 
@@ -930,7 +957,7 @@ nav#nav {
 
 </main>
 
-<script src="data.js?v=7"></script>
-<script src="main.js?v=7"></script>
+<script src="data.js?v=8"></script>
+<script src="main.js?v=8"></script>
 </body>
 </html>

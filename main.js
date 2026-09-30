@@ -315,32 +315,43 @@ function renderExpList(id, items, isOrg = false) {
 /* ===================== ACTIVITIES ===================== */
 let activeFilter = 'All';
 
+function activityThumb(item, cls) {
+  if (item.thumbnail) return `<img src="${item.thumbnail}" alt="" class="${cls}" loading="lazy" />`;
+  // Pieces without a photo get a text tile carrying their own line
+  return `<div class="${cls} w-quote"><span>${item.quote || item.title}</span></div>`;
+}
+
+// One featured piece, then every other piece as a light list. Nothing sits behind a slider.
 function renderActivities(filter = 'All') {
-  const items = filter === 'All' ? PORTFOLIO_DATA.activities : PORTFOLIO_DATA.activities.filter(a => a.category === filter);
+  const all = PORTFOLIO_DATA.activities;
   const el = document.getElementById('activitiesGrid');
-  if (!items.length) {
-    el.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:48px;color:var(--text-3);font-size:13px;">No activities in this category yet.</div>`;
-    return;
-  }
-  el.innerHTML = items.map((item, i) => `
-    <div class="activity-card fade-up" style="--d:${(i % 3) * 80}" onclick="window.location.href='article.html?slug=${item.slug}'">
-      <div class="activity-thumb-wrap">
-        <img src="${item.thumbnail}" alt="${item.title}" class="activity-thumb"
-          onerror="this.parentElement.style.minHeight='120px';this.style.display='none'" />
+  const featured = filter === 'All' ? all.find(a => a.featured) : null;
+  const rest = all.filter(a => a !== featured && (filter === 'All' || a.category === filter));
+
+  const feature = featured ? `
+    <a class="w-feature activity-card fade-up" href="article.html?slug=${featured.slug}">
+      <div class="w-feature-media">${activityThumb(featured, 'w-feature-img')}</div>
+      <div class="w-feature-body">
+        <div class="activity-category">Featured · ${featured.category}</div>
+        <h3 class="w-feature-title">${featured.title}</h3>
+        <p class="w-feature-desc">${featured.description}</p>
+        <span class="w-read">Read the story →</span>
       </div>
-      <div class="activity-body">
-        <div class="activity-category">${item.category}</div>
-        <h3 class="activity-title">${item.title}</h3>
-        <p class="activity-desc">${item.description}</p>
+    </a>` : '';
+
+  const list = rest.map((item, i) => `
+    <a class="w-row fade-up" style="--d:${Math.min(i, 5) * 50}" href="article.html?slug=${item.slug}">
+      <div class="w-row-media">${activityThumb(item, 'w-row-img')}</div>
+      <div class="w-row-body">
+        <div class="activity-category">${item.category} · ${item.date}</div>
+        <h3 class="w-row-title">${item.title}</h3>
+        <p class="w-row-desc">${item.description}</p>
       </div>
-      <div class="activity-footer">
-        <span class="activity-date">${item.date}</span>
-        <span class="activity-arrow">↗</span>
-      </div>
-    </div>
-  `).join('');
+      <span class="w-row-arrow">→</span>
+    </a>`).join('');
+
+  el.innerHTML = feature + `<div class="w-list">${list}</div>`;
   observeFadeUps(el);
-  if (el._resetSlider) el._resetSlider();
 }
 
 function renderFilterBar() {

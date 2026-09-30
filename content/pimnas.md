@@ -1,6 +1,8 @@
-This article is dedicated to the children at LPKA, those who still carry hopes and building lives they deserve.
+This article is dedicated to the children at LPKA, those who still carry hopes and are building lives they deserve.
 
 ---
+
+<div class="takeaways"><div class="takeaways-title">In short</div><ul><li>Our PKM-RSH team asked whether LPKA Jakarta's partnerships were built around what the children inside needed.</li><li>Social network analysis, interviews, observation, and desk study all pointed the same way. Partnerships grew from a general willingness to cooperate, not from program objectives.</li><li>We turned the finding into a policy brief for Ditjenpas, which confirmed it would be considered as input for a legislative review of the SPPA Law.</li><li>The project received the highest score in the PKM-RSH category nationally and a Silver Medal at PIMNAS 37.</li><li>The lesson I kept: research is finished when it reaches the people who can act on it.</li></ul></div>
 
 ## How It Started
 
@@ -67,6 +69,8 @@ Our core recommendation to the Directorate General of Corrections (Ditjenpas) fo
 We structured this as a formal policy brief, presented it to Ditjenpas, and received confirmation that **it would be considered as substantive input for an upcoming legislative review of the SPPA Law,** the primary legal framework governing juvenile justice in Indonesia in coordination with the DPR.
 
 That was the moment the work felt like it had weight beyond the academic exercise.
+
+The full analysis, with the network data and charts, is in [the research explainer](article.html?slug=lpka-coaching-network). A year later, my thesis rebuilt the same network from 1,789 Instagram posts. That analysis has [its own explainer](article.html?slug=lpka-network-governance).
 
 ---
 

@@ -237,67 +237,68 @@ const PORTFOLIO_DATA = {
 
   activities: [
     {
+      id: "sahabat-ai",
+      title: "Building Sahabat-AI with Seven Indonesian Universities",
+      date: "2024–2025",
+      category: "Work",
+      thumbnail: "images/sahabat-ai-1.jpg",
+      featured: true,
+      description: "GoTo's open-source LLM for Indonesian and regional languages needed data, talent, and trust from campuses. I led the university program that brought seven of them in.",
+      slug: "sahabat-ai"
+    },
+    {
       id: "workflow-automation",
-      title: "I Automated My Own Job (And Here's Why That Made Me Better at It)",
+      title: "I Automated My Own Job, and It Made Me Better at It",
       date: "2026",
-      category: "Professional Practice",
+      category: "Work",
       thumbnail: "images/google-alert-automation.jpg",
       description: "From an Excel statistics dashboard in 2020 to AI-powered workflow automation at GoTo. The obsession with making work run itself.",
       slug: "workflow-automation"
     },
     {
       id: "stakeholder-management",
-      title: "How I Think About Stakeholder Management in High-Stakes Policy Environments",
+      title: "How I Think About Stakeholder Management",
       date: "2026",
-      category: "Policy and Advocacy",
-      thumbnail: "images/sahabat-ai-1.jpg",
+      category: "Work",
+      thumbnail: "images/presenting-sahabat-ai.jpg",
       description: "Most of what determines whether a policy conversation goes well happens before anyone enters the room.",
       slug: "stakeholder-management"
     },
     {
-      id: "deliberately-unfinished",
-      title: "Deliberately Unfinished: On Continuous Growth as a Professional Practice",
-      date: "2026",
-      category: "Professional Practice",
-      thumbnail: "images/presenting-sahabat-ai.jpg",
-      description: "Growth as a professional practice is iterative and undramatic. It does not announce itself.",
-      slug: "deliberately-unfinished"
-    },
-    {
-      id: "why-i-run",
-      title: "Runningggg (and Cafe Hopping)",
-      date: "2026",
-      category: "Beyond Work",
-      thumbnail: "images/jakim-racepack.jpg",
-      description: "It started as return on investment for a watch and a pair of shoes. It became something I actually love.",
-      slug: "why-i-run"
-    },
-    {
-      id: "sahabat-ai",
-      title: "Building Sahabat AI: How GoTo Brought an Open-Source LLM to Seven Indonesian Universities",
-      date: "2024–2025",
-      category: "Collaboration",
-      thumbnail: "images/sahabat-ai-3.jpg",
-      description: "Leading GoTo's university partnership program for Sahabat-AI, an open-source LLM built for Indonesian and regional languages.",
-      slug: "sahabat-ai"
-    },
-    {
       id: "pimnas",
-      title: "PIMNAS: What Competing at Indonesia's Largest Student Research Competition Taught Me",
+      title: "What PIMNAS Taught Me About Research",
       date: "2024",
-      category: "Research and Analysis",
+      category: "Research journey",
       thumbnail: "images/pimnas-4.jpg",
       description: "A Silver Medal, a policy brief to Ditjenpas, and research that began inside a juvenile correctional institution on International Children's Day.",
       slug: "pimnas"
     },
     {
       id: "indonesia-emas-2045",
-      title: "Towards Indonesia Emas 2045 from the Tip of the Pen",
+      title: "Three Studies for Indonesia Emas 2045",
       date: "2024",
-      category: "Research and Analysis",
+      category: "Research journey",
       thumbnail: "images/activity-indonesia-emas-2.png",
-      description: "Four research accomplishments across three projects contributing to Indonesia's national development goals.",
+      description: "A correctional institution for children, a reporting app, and a notary's signature. The short version of three 2024 projects.",
       slug: "indonesia-emas-2045"
+    },
+    {
+      id: "deliberately-unfinished",
+      title: "Deliberately Unfinished: On Growth as a Practice",
+      date: "2026",
+      category: "Personal",
+      quote: "I am not done. I do not expect to be.",
+      description: "Growth as a professional practice is iterative and undramatic. It does not announce itself.",
+      slug: "deliberately-unfinished"
+    },
+    {
+      id: "why-i-run",
+      title: "Why I Run (and Cafe Hop)",
+      date: "2026",
+      category: "Personal",
+      thumbnail: "images/jakim-racepack.jpg",
+      description: "It started as return on investment for a watch and a pair of shoes. It became something I actually love.",
+      slug: "why-i-run"
     }
   ]
 };
