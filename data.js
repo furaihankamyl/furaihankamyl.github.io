@@ -16,7 +16,7 @@ const PORTFOLIO_DATA = {
       id: "goto-analyst",
       headline: "Policy analysis and advocacy on 6 national priority bills affecting 9+ million driver-partners and merchants.",
       company: "GoTo Group",
-      role: "Public Policy and Government Relations Analyst",
+      role: "PPGR Analyst, Policy Communications and Influential Groups",
       type: "Full-time",
       period: "Jul 2025 – Present",
       location: "Jakarta, Indonesia",
@@ -25,14 +25,14 @@ const PORTFOLIO_DATA = {
         "Built the analytical case on employment classification and welfare policy affecting 9+ million driver-partners and merchants, shaping the company position across 6 national priority bills.",
         "Drafted 10+ analyses and policy briefs for senior leadership, parliamentary stakeholders, ministries, and regional governments.",
         "Ran 5+ cross-functional workstreams aligning media, academia, NGOs, and government counterparts.",
-        "Led the Sahabat-AI university program across 7 universities and 5 regional languages, owning partner alignment, workplan, and delivery."
+        "Continued leading the Sahabat-AI university program across 7 universities and 5 regional languages, owning partner alignment, workplan, and delivery."
       ]
     },
     {
       id: "goto-intern",
       headline: "Advocacy strategy and stakeholder engagement with ministries and the Jakarta Provincial Government.",
       company: "GoTo Group",
-      role: "Public Policy and Government Relations Intern",
+      role: "PPGR Intern",
       type: "Internship",
       period: "Feb 2024 – Jun 2025",
       location: "Jakarta, Indonesia",
@@ -40,12 +40,13 @@ const PORTFOLIO_DATA = {
       highlights: [
         "Developed advocacy strategies for 5+ policy initiatives, with regulatory impact analysis in Excel behind each recommended position.",
         "Designed and ran 10+ stakeholder engagements, including focus group discussions, workshops, and digital campaigns.",
-        "Built working relationships with the Ministry of Communication and Informatics, the Ministry of Manpower, and the Jakarta Provincial Government."
+        "Built working relationships with the Ministry of Communication and Informatics, the Ministry of Manpower, and the Jakarta Provincial Government.",
+        "Started leading the Sahabat-AI university program in 2024, building partnerships with 7 universities for regional-language AI."
       ]
     },
     {
       id: "ui-lecturer",
-      headline: "Taught Administrative Behavior to 30+ students for a full semester.",
+      headline: "Co-taught Administrative Behavior to 30+ students for a full semester.",
       company: "Universitas Indonesia",
       role: "Assistant Lecturer, Administrative Behavior",
       type: "Contract",
@@ -53,7 +54,7 @@ const PORTFOLIO_DATA = {
       location: "Depok, Indonesia",
       logo: "images/logos/ui.png",
       highlights: [
-        "Delivered a full-semester course to 30+ students on motivation, leadership, group dynamics, and organizational culture.",
+        "Co-delivered a full-semester course to 30+ students on motivation, leadership, group dynamics, and organizational culture.",
         "Ran assessments and class administration on the EMAS UI platform."
       ]
     },
