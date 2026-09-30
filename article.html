@@ -106,20 +106,20 @@
     }
     .article-content h2 {
       font-family: var(--font-display); font-size: 26px; font-weight: 400;
-      color: var(--text); margin: 40px 0 16px; line-height: 1.3;
+      color: var(--text); margin: 36px 0 12px; line-height: 1.3;
     }
     .article-content h3 {
       font-size: 15px; font-weight: 500; color: var(--text);
       margin: 28px 0 12px; letter-spacing: 0.02em;
     }
     .article-content p {
-      font-size: 15px; color: var(--text-2); line-height: 1.85;
-      margin-bottom: 20px; font-weight: 300;
+      font-size: 15px; color: var(--text-2); line-height: 1.75;
+      margin-bottom: 16px; font-weight: 300;
     }
     .article-content strong { color: var(--text); font-weight: 500; }
     .article-content em { font-style: italic; color: var(--text-2); }
     .article-content ul, .article-content ol {
-      padding-left: 0; margin-bottom: 20px;
+      list-style: none; padding-left: 0; margin-bottom: 16px;
     }
     .article-content ul li, .article-content ol li {
       font-size: 15px; color: var(--text-2); line-height: 1.7;
@@ -208,8 +208,61 @@
     .hbar-fill { height: 12px; width: var(--v); min-width: 2px; border-radius: 0 4px 4px 0; }
     .hbar-val { font-size: 12px; color: var(--text-2); white-space: nowrap; font-variant-numeric: tabular-nums; }
     .hbar-name { width: 64px; flex-shrink: 0; font-size: 11px; color: var(--text-3); }
+    .hbar.wide .hbar-name { width: 104px; }
 
     .schematic { display: flex; flex-wrap: wrap; gap: 16px; }
+    /* STAT TILES */
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin: 28px 0; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .stat { background: var(--bg); padding: 14px 16px; }
+    @media (max-width: 480px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+    .stat-value { font-size: 26px; font-weight: 600; color: var(--text); line-height: 1.1; }
+    .stat-label { font-size: 11px; color: var(--text-3); margin-top: 6px; line-height: 1.45; }
+
+    /* PIPELINE */
+    .pipeline { display: flex; flex-wrap: wrap; gap: 6px; counter-reset: step; }
+    .pipeline > div {
+      flex: 1 1 120px; border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 10px 12px; font-size: 12px; line-height: 1.5; color: var(--text-2); counter-increment: step;
+    }
+    .pipeline > div::before { content: counter(step); display: block; font-size: 10px; color: var(--text-3); margin-bottom: 4px; }
+    .pipeline strong { display: block; color: var(--text); font-weight: 500; font-size: 13px; }
+
+    /* SEGMENTED TOGGLE + TABS */
+    .seg { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; padding: 2px; margin-bottom: 16px; }
+    .seg button, .tab-btns button {
+      font: inherit; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+      background: none; border: none; color: var(--text-3); cursor: pointer;
+      padding: 6px 12px; border-radius: 999px; transition: background 0.2s, color 0.2s;
+    }
+    .seg button[aria-pressed="true"], .tab-btns button[aria-selected="true"] { background: var(--text); color: var(--bg); }
+    .seg button:focus-visible, .tab-btns button:focus-visible, [data-tip]:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+    .tab-btns { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 16px; }
+    .tab-panel[hidden] { display: none; }
+    .tab-panel p { font-size: 13px; margin-bottom: 12px; }
+    .mini-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 12px; }
+    .mini-stats div { border-top: 1px solid var(--border); padding-top: 8px; font-size: 11px; color: var(--text-3); }
+    .mini-stats b { display: block; font-size: 18px; font-weight: 600; color: var(--text); }
+    @media (max-width: 480px) { .mini-stats { grid-template-columns: repeat(2, 1fr); } }
+    .chart-note { font-size: 12px; color: var(--text-3); line-height: 1.6; }
+
+    /* Views switched by .seg: bars animate between --v and --v2 */
+    .chart .hbar-fill { transition: width 0.45s ease; }
+    .chart[data-view="alt"] .hbar-fill { width: var(--v2, var(--v)); }
+    .chart .val-alt, .chart[data-view="alt"] .val-main { display: none; }
+    .chart[data-view="alt"] .val-alt { display: inline; }
+
+    /* TOOLTIP */
+    [data-tip] { cursor: help; }
+    .pair[data-tip]:hover .pair-label, .col[data-tip]:hover .col-val { color: var(--text); }
+    .tip {
+      position: fixed; z-index: 200; max-width: 260px; pointer-events: none;
+      background: var(--text); color: var(--bg); font-size: 12px; line-height: 1.5;
+      padding: 8px 10px; border-radius: var(--radius); opacity: 0; transition: opacity 0.12s;
+      white-space: pre-line;
+    }
+    .tip.show { opacity: 1; }
+    .tag { font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--border); border-radius: 999px; padding: 1px 6px; color: var(--text-2); margin-left: 6px; white-space: nowrap; }
+
     .schematic > div { flex: 1 1 260px; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 16px; }
     .schematic svg { width: 100%; height: auto; display: block; }
     .schematic-title { font-size: 12px; color: var(--text); margin-bottom: 4px; }
@@ -409,6 +462,7 @@
       document.getElementById('readingTime').textContent = calcReadingTime(md);
       document.getElementById('articleMeta').style.display = 'block';
       document.getElementById('articleContent').innerHTML = html;
+      initWidgets(document.getElementById('articleContent'));
       document.getElementById('articleContent').style.display = 'block';
       document.getElementById('articleLoading').style.display = 'none';
       if (pub) document.getElementById('paperCta').style.display = 'block';
@@ -416,6 +470,63 @@
     } catch (e) {
       showError();
     }
+  }
+
+  // Interactive pieces embedded in article Markdown (scripts inside
+  // Markdown do not run, so behavior is wired here by data attributes)
+  function initWidgets(root) {
+    // Segmented toggle: sets data-view on the closest .chart
+    root.querySelectorAll('.seg').forEach(seg => {
+      const chart = seg.closest('.chart');
+      seg.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          seg.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+          chart.dataset.view = btn.dataset.view;
+        });
+      });
+    });
+
+    // Tabs
+    root.querySelectorAll('[data-tabs]').forEach(box => {
+      const btns = box.querySelectorAll('.tab-btns button');
+      btns.forEach(btn => btn.addEventListener('click', () => {
+        btns.forEach(b => b.setAttribute('aria-selected', String(b === btn)));
+        box.querySelectorAll('.tab-panel').forEach(p => { p.hidden = p.dataset.panel !== btn.dataset.tab; });
+      }));
+    });
+
+    // Tooltips: hover on desktop, tap on touch, focus for keyboard
+    const tip = document.createElement('div');
+    tip.className = 'tip';
+    tip.setAttribute('role', 'tooltip');
+    document.body.appendChild(tip);
+    let current = null;
+    function show(el) {
+      current = el;
+      tip.textContent = el.dataset.tip;
+      tip.classList.add('show');
+      const r = el.getBoundingClientRect();
+      const t = tip.getBoundingClientRect();
+      const left = Math.min(Math.max(8, r.left + r.width / 2 - t.width / 2), window.innerWidth - t.width - 8);
+      const top = r.top - t.height - 8 < 64 ? r.bottom + 8 : r.top - t.height - 8;
+      tip.style.left = left + 'px';
+      tip.style.top = top + 'px';
+    }
+    function hide() { current = null; tip.classList.remove('show'); }
+    root.querySelectorAll('[data-tip]').forEach(el => {
+      if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '0');
+      el.addEventListener('mouseenter', () => show(el));
+      el.addEventListener('mouseleave', hide);
+      el.addEventListener('focus', () => show(el));
+      el.addEventListener('blur', hide);
+      el.addEventListener('click', e => {
+        e.stopPropagation();
+        if (e.pointerType === 'mouse') return; // hover already handles mouse
+        current === el ? hide() : show(el);
+      });
+    });
+    document.addEventListener('click', hide);
+    window.addEventListener('scroll', hide, { passive: true });
   }
 
   // Publication explainers, in the same shape as Activities
