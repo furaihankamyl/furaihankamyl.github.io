@@ -1,5 +1,3 @@
-**Category:** Research and Analysis | **Year:** 2025
-
 I started running in April 2025 for a reason I am not proud of.
 
 A coworker invited me along, and I said yes. Then I bought the gear that comes with deciding to take something seriously. Running shoes, proper clothes, a Garmin 165. And the moment I paid, a question appeared in my head that had nothing to do with fitness. What is the return on this? **There is exactly one way to get a return on a running watch. You have to run.**

@@ -1,5 +1,3 @@
-**Category:** Research and Analysis | **Year:** 2025
-
 The dream is simple. Work calmly, with AI agents handling the repetitive parts, while I occasionally glance at the screen to check the output. That is where I am trying to get to, and it started in a spreadsheet.
 
 ## Learning the Logic

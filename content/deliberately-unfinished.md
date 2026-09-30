@@ -1,5 +1,3 @@
-**Category:** Research and Analysis | **Year:** 2026
-
 I have a folder of certificates. Seminars attended, online courses completed, credentials added to a LinkedIn profile. None of them is what I mean when I talk about growth.
 
 What I mean is building systems that close real gaps, sustaining them over time, and accepting that **the work is never fully done.**

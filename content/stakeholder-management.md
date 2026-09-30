@@ -1,5 +1,3 @@
-**Category:** Policy and Advocacy | **Year:** 2025
-
 **Most of what determines whether a policy conversation goes well happens before anyone enters the room.**
 
 By the time a meeting starts, the real work has usually already been done. Understanding the issue, mapping who matters and why, deciding what to say and how to say it. What happens in the room is often just the execution of a plan built at a desk.

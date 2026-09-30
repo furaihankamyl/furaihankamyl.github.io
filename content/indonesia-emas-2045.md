@@ -1,5 +1,3 @@
-**Category:** Research and Analysis | **Year:** 2024
-
 Indonesia Emas 2045 is usually discussed in demographic and economic terms. A working-age population at its peak, a target position among the world's largest economies. What that conversation covers less often is the machinery that has to deliver it. A correctional institution for children. A city reporting channel nobody trusts. A company registration procedure that costs founders more than it should. **Those three are what I spent 2024 looking at.**
 
 Three projects, four accomplishments, and three institutions on the receiving end of the recommendations: the Ministry of Law and Human Rights, the DKI Jakarta Provincial Government, and the Ministry of Investment/BKPM.

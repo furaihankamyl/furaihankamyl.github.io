@@ -1,5 +1,3 @@
-**Category:** Collaboration | **Year:** 2024–2025
-
 *"Gak begitu, njir."*
 
 Some version of that sentence is sitting in almost every Indonesian's phone right now. It also appears in almost no formal corpus, no academic publication, and no dataset that a large language model would ordinarily be trained on.

@@ -93,6 +93,18 @@ Each publication card can carry a plain-language article explaining the study, n
 
 **Step 2 — Create `content/thesis-lpka-network-governance.md`** and write the explainer in Markdown (same format as activity articles).
 
+Optional publication fields:
+
+- `translation`: English translation shown under an Indonesian title
+- `doi`: adds a DOI button on the card and in the article
+- `pdf`: path to a PDF hosted in this repo (for example `papers/x.pdf`), used instead of `driveId`
+- `role`: your role on the paper, shown at the end of the explainer
+- `cite`: the full citation, with a Copy citation button in the explainer
+
+Experience and organization entries take a `highlights` array, rendered as bullet points.
+
+After editing `data.js`, bump the `?v=` number on the `data.js` and `main.js` script tags in `index.html` (and on `data.js` in `article.html`) so returning visitors get the new version.
+
 The card then shows an **Explainer** badge, opens the article on click, and keeps a "Read paper ↗" button for the PDF. The article page links back to Publications and ends with a link to the full paper. Publications without `slug` behave as before (open the PDF).
 
 ---

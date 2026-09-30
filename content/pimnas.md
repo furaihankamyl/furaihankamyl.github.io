@@ -1,5 +1,3 @@
-**Category:** Research and Analysis | **Year:** 2024
-
 This article is dedicated to the children at LPKA, those who still carry hopes and building lives they deserve.
 
 ---

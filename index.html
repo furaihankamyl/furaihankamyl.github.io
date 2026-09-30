@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Furaihan Kamyl Arnazaye | Portfolio</title>
   <meta property="og:title" content="Furaihan Kamyl Arnazaye" />
-  <meta property="og:description" content="Public Policy and Government Relations Analyst at GoTo Group. Policy research, government relations, and quantitative analysis." />
+  <meta property="og:description" content="Public Policy and Government Relations Analyst at GoTo Group. I build the evidence behind policy positions and bring it to the people who decide." />
   <meta property="og:image" content="https://furaihankamyl.github.io/images/og-cover.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -17,9 +17,9 @@
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Furaihan Kamyl Arnazaye" />
-  <meta name="twitter:description" content="Public Policy and Government Relations Analyst at GoTo Group. Policy research, government relations, and quantitative analysis." />
+  <meta name="twitter:description" content="Public Policy and Government Relations Analyst at GoTo Group. I build the evidence behind policy positions and bring it to the people who decide." />
   <meta name="twitter:image" content="https://furaihankamyl.github.io/images/og-cover.jpg" />
-  <meta name="description" content="Portfolio of Furaihan Kamyl Arnazaye. Public Affairs and Research, Quantitative Analyst focused on digital economy, transport, and AI." />
+  <meta name="description" content="Portfolio of Furaihan Kamyl Arnazaye. Public affairs and policy research in the digital economy, transport, and AI, with published research explained in plain language." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -337,6 +337,11 @@
     .exp-org { font-size: 12px; color: var(--text-2); margin-top: 1px; }
     .exp-period { font-size: 10px; color: var(--text-3); letter-spacing: 0.04em; white-space: nowrap; padding-top: 3px; }
     .exp-summary { font-size: 12.5px; color: var(--text-2); line-height: 1.65; margin-top: 10px; }
+    .exp-highlights { list-style: none; margin-top: 10px; padding: 0; }
+    .exp-highlights li { position: relative; padding-left: 14px; font-size: 12.5px; color: var(--text-2); line-height: 1.6; margin-bottom: 6px; }
+    .exp-highlights li::before { content: ''; position: absolute; left: 0; top: 9px; width: 6px; height: 1px; background: var(--text-3); }
+    .research-intro { max-width: 760px; font-size: 14px; line-height: 1.75; color: var(--text-2); margin: -8px 0 28px; }
+    .pub-translation { font-size: 11.5px; font-style: italic; color: var(--text-3); line-height: 1.5; margin: -4px 0 8px; }
 
     /* ACTIVITIES */
     .filter-bar { display: flex; gap: 8px; margin-bottom: 36px; flex-wrap: wrap; }
@@ -730,11 +735,11 @@ nav#nav {
   <span class="nav-logo">FKA</span>
   <div class="nav-links" id="navLinks">
     <a href="#about">About</a>
-    <a href="#activities">Activities</a>
     <a href="#experience">Experience</a>
     <a href="#publications">Research</a>
-    <a href="#awards">Awards</a>
     <a href="#skills">Skills</a>
+    <a href="#awards">Awards</a>
+    <a href="#activities">Activities</a>
     <a href="#contact">Contact</a>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀</button>
   </div>
@@ -771,13 +776,12 @@ nav#nav {
     <div class="hero-scroll">Scroll</div>
   </div>
   <div class="hero-view2">
-    <h2 class="hero-headline">Translating regulatory complexity into <em>strategic action.</em></h2>
+    <h2 class="hero-headline">I build the evidence behind policy positions and bring it to <em>the people who decide.</em></h2>
     <div class="hero-chips">
-      <span class="hero-chip">Public Policy</span>
-      <span class="hero-chip">Government Relations</span>
-      <span class="hero-chip">Quantitative Research</span>
-      <span class="hero-chip">Digital Economy</span>
-      <span class="hero-chip">AI Governance</span>
+      <span class="hero-chip">Public Affairs</span>
+      <span class="hero-chip">Policy Research</span>
+      <span class="hero-chip">Quantitative Analysis</span>
+      <span class="hero-chip">Digital Economy and AI</span>
     </div>
     <div class="hero-meta">
       <div>
@@ -802,6 +806,10 @@ nav#nav {
         <div class="hero-meta-label">Social</div>
         <div class="hero-meta-value"><a href="https://linkedin.com/in/furaihankamyl" target="_blank" rel="noopener">LinkedIn</a></div>
       </div>
+      <div>
+        <div class="hero-meta-label">CV</div>
+        <div class="hero-meta-value"><a href="cv/Furaihan_Kamyl_Arnazaye_CV.pdf" target="_blank" rel="noopener">Download PDF ↓</a></div>
+      </div>
     </div>
   </div>
   <div class="hero-veil" aria-hidden="true"></div>
@@ -824,26 +832,8 @@ nav#nav {
   </div>
 </section>
 
-<!-- ACTIVITIES -->
-<section id="activities" class="section" style="background:var(--bg-2);">
-  <div class="section-inner">
-    <div class="section-header">
-      <h2 class="section-title">Activities</h2>
-      <div class="section-divider"></div>
-    </div>
-    <div class="activities-controls">
-      <div class="filter-bar" id="filterBar"></div>
-      <div class="slider-nav" id="sliderNav">
-        <button class="slider-btn" id="actPrev" aria-label="Previous activities">←</button>
-        <button class="slider-btn" id="actNext" aria-label="Next activities">→</button>
-      </div>
-    </div>
-    <div class="activities-track" id="activitiesGrid"></div>
-  </div>
-</section>
-
 <!-- EXPERIENCE & LEADERSHIP -->
-<section id="experience" class="section">
+<section id="experience" class="section" style="background:var(--bg-2);">
   <div class="section-inner">
     <div class="section-header">
       <h2 class="section-title">Experience &amp; Leadership</h2>
@@ -863,13 +853,25 @@ nav#nav {
 </section>
 
 <!-- PUBLICATIONS -->
-<section id="publications" class="section" style="background:var(--bg-2);">
+<section id="publications" class="section">
   <div class="section-inner">
     <div class="section-header">
       <h2 class="section-title">Research &amp; Publications</h2>
       <div class="section-divider"></div>
     </div>
+    <p class="research-intro fade-up" id="researchIntro"></p>
     <div class="pub-grid" id="pubList"></div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section" style="background:var(--bg-2);">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2 class="section-title">Skills</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="skills-grid fade-up" id="skillsGrid"></div>
   </div>
 </section>
 
@@ -887,14 +889,21 @@ nav#nav {
   </div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills" class="section" style="background:var(--bg-2);">
+<!-- ACTIVITIES -->
+<section id="activities" class="section" style="background:var(--bg-2);">
   <div class="section-inner">
     <div class="section-header">
-      <h2 class="section-title">Skills</h2>
+      <h2 class="section-title">Activities</h2>
       <div class="section-divider"></div>
     </div>
-    <div class="skills-grid fade-up" id="skillsGrid"></div>
+    <div class="activities-controls">
+      <div class="filter-bar" id="filterBar"></div>
+      <div class="slider-nav" id="sliderNav">
+        <button class="slider-btn" id="actPrev" aria-label="Previous activities">←</button>
+        <button class="slider-btn" id="actNext" aria-label="Next activities">→</button>
+      </div>
+    </div>
+    <div class="activities-track" id="activitiesGrid"></div>
   </div>
 </section>
 
@@ -914,7 +923,7 @@ nav#nav {
 
 </main>
 
-<script src="data.js?v=4"></script>
-<script src="main.js?v=4"></script>
+<script src="data.js?v=5"></script>
+<script src="main.js?v=5"></script>
 </body>
 </html>

@@ -302,7 +302,8 @@ function renderExpList(id, items, isOrg = false) {
         </div>
         <div class="exp-period">${item.period}</div>
       </div>
-      <p class="exp-summary">${item.summary}</p>
+      ${item.summary ? `<p class="exp-summary">${item.summary}</p>` : ''}
+      ${item.highlights ? `<ul class="exp-highlights">${item.highlights.map(h => `<li>${h}</li>`).join('')}</ul>` : ''}
     </div>`;
   }).join('');
 }
@@ -392,9 +393,15 @@ const pdfFrame = document.getElementById('pdfModalFrame');
 const pdfTitle = document.getElementById('pdfModalTitle');
 const pdfClose = document.getElementById('pdfModalClose');
 
-function openPdf(driveId, title) {
-  pdfTitle.textContent = title;
-  pdfFrame.src = `https://drive.google.com/file/d/${driveId}/preview`;
+function paperUrl(pub, forModal) {
+  if (pub.pdf) return pub.pdf;
+  return `https://drive.google.com/file/d/${pub.driveId}/${forModal ? 'preview' : 'view'}`;
+}
+
+function openPdf(i) {
+  const pub = PORTFOLIO_DATA.publications[i];
+  pdfTitle.textContent = pub.title;
+  pdfFrame.src = paperUrl(pub, true);
   pdfModal.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -410,10 +417,16 @@ pdfModal.addEventListener('click', e => { if (e.target === pdfModal) closePdf();
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closePdf(); });
 
 function renderPublications() {
+  const intro = document.getElementById('researchIntro');
+  if (intro && PORTFOLIO_DATA.personal.researchIntro) intro.textContent = PORTFOLIO_DATA.personal.researchIntro;
+
   const el = document.getElementById('pubList');
   el.innerHTML = PORTFOLIO_DATA.publications.map((pub, i) => {
-    const safeTitle = pub.title.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '&quot;');
-    const openPaper = `openPdf('${pub.driveId}', '${safeTitle}')`;
+    const openPaper = `openPdf(${i})`;
+    const translation = pub.translation ? `<div class="pub-translation">${pub.translation}</div>` : '';
+    const doi = pub.doi
+      ? `<a class="pub-read-btn" href="https://doi.org/${pub.doi}" target="_blank" rel="noopener" onclick="event.stopPropagation()">DOI ↗</a>`
+      : '';
 
     // Publications with a slug get an explainer article (content/<slug>.md).
     // The card then leads to the explainer; the paper stays one click away.
@@ -424,6 +437,7 @@ function renderPublications() {
           onclick="window.location.href='${explainerUrl}'">
           <div class="pub-year">${pub.year}<span class="pub-badge">Explainer</span></div>
           <div class="pub-title">${pub.title}</div>
+          ${translation}
           ${pub.summary ? `<div class="pub-summary">${pub.summary}</div>` : ''}
           <div class="pub-author">${pub.author}</div>
           <div class="pub-venue">${pub.venue}</div>
@@ -432,6 +446,7 @@ function renderPublications() {
               onclick="event.stopPropagation()">Read explainer →</a>
             <button type="button" class="pub-read-btn"
               onclick="event.stopPropagation(); ${openPaper}">Read paper ↗</button>
+            ${doi}
           </div>
         </div>
       `;
@@ -443,13 +458,13 @@ function renderPublications() {
         onkeydown="if(event.key==='Enter')${openPaper}">
         <div class="pub-year">${pub.year}</div>
         <div class="pub-title">${pub.title}</div>
+        ${translation}
         <div class="pub-author">${pub.author}</div>
         <div class="pub-venue">${pub.venue}</div>
         <span class="pub-read-btn">Read paper ↗</span>
       </div>
     `;
   }).join('');
-  
 }
 
 /* ===================== SKILLS ===================== */
@@ -469,6 +484,7 @@ function renderContact() {
     <a href="mailto:${email}" class="contact-link">✉ Email</a>
     <a href="https://wa.me/${whatsapp}" target="_blank" rel="noopener" class="contact-link">💬 WhatsApp</a>
     <a href="https://linkedin.com/in/${linkedin}" target="_blank" rel="noopener" class="contact-link">in LinkedIn</a>
+    <a href="${PORTFOLIO_DATA.personal.cv}" target="_blank" rel="noopener" class="contact-link">↓ CV (PDF)</a>
   `;
   
 }

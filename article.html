@@ -378,7 +378,19 @@
       font-family: var(--font-display); font-size: 22px; font-weight: 400;
       line-height: 1.3; color: var(--text); margin-bottom: 6px;
     }
-    .paper-cta-venue { font-size: 12px; font-style: italic; color: var(--text-2); margin-bottom: 20px; }
+    .paper-cta-venue { font-size: 12px; font-style: italic; color: var(--text-2); margin-bottom: 16px; }
+    .paper-cta-meta { display: grid; grid-template-columns: 72px 1fr; gap: 8px 12px; margin: 0 0 20px; font-size: 12px; line-height: 1.6; }
+    .paper-cta-meta dt { color: var(--text-3); text-transform: uppercase; letter-spacing: 0.1em; font-size: 10px; padding-top: 2px; }
+    .paper-cta-meta dd { color: var(--text-2); margin: 0; }
+    .paper-cta-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+    button.back-link { background: none; font-family: inherit; cursor: pointer; }
+    @media (max-width: 480px) {
+      .paper-cta-meta { grid-template-columns: 1fr; gap: 2px; }
+      .paper-cta-meta dd { margin-bottom: 8px; }
+      .strip-name { width: 76px; font-size: 10px; }
+      .strip-axis { margin-left: 86px; }
+      .strip .dot { width: 8px; height: 8px; margin-left: -4px; }
+    }
 
     /* ERROR / LOADING */
     .article-error, .article-loading {
@@ -439,7 +451,16 @@
     <div class="paper-cta-label">The full paper</div>
     <div class="paper-cta-title" id="paperCtaTitle"></div>
     <div class="paper-cta-venue" id="paperCtaVenue"></div>
-    <a id="paperCtaLink" class="back-link" target="_blank" rel="noopener">Read the paper ↗</a>
+    <dl class="paper-cta-meta">
+      <dt>Authors</dt><dd id="paperCtaAuthors"></dd>
+      <dt>My role</dt><dd id="paperCtaRole"></dd>
+      <dt>Cite</dt><dd><span id="paperCtaCite"></span></dd>
+    </dl>
+    <div class="paper-cta-actions">
+      <a id="paperCtaLink" class="back-link" target="_blank" rel="noopener">Read the paper ↗</a>
+      <a id="paperCtaDoi" class="back-link" target="_blank" rel="noopener" style="display:none;">DOI ↗</a>
+      <button type="button" id="paperCtaCopy" class="back-link">Copy citation</button>
+    </div>
   </div>
 
   <a id="articleNext" class="article-next" style="display:none;">
@@ -453,7 +474,7 @@
   </div>
 </div>
 
-<script src="data.js"></script>
+<script src="data.js?v=5"></script>
 <script>
   // Theme
   const saved = localStorage.getItem('theme') || 'dark';
@@ -474,8 +495,9 @@
 
   function calcReadingTime(text) {
     const wpm = 200;
-    // Count prose only: chart markup embedded in the Markdown is not read
-    const words = text.replace(/<[^>]+>/g, ' ').trim().split(/\s+/).length;
+    // Count prose only. Chart, table, and takeaway blocks are one-line HTML in the Markdown.
+    const prose = text.split('\n').filter(l => !l.trim().startsWith('<')).join(' ');
+    const words = prose.trim().split(/\s+/).length;
     const mins = Math.ceil(words / wpm);
     return `${mins} min read`;
   }
@@ -607,7 +629,26 @@
     });
     document.getElementById('paperCtaTitle').textContent = pub.title;
     document.getElementById('paperCtaVenue').textContent = `${pub.venue}, ${pub.year}`;
-    document.getElementById('paperCtaLink').href = `https://drive.google.com/file/d/${pub.driveId}/view`;
+    document.getElementById('paperCtaLink').href = pub.pdf || `https://drive.google.com/file/d/${pub.driveId}/view`;
+    document.getElementById('paperCtaAuthors').textContent = pub.author;
+    document.getElementById('paperCtaRole').textContent = pub.role || '';
+    document.getElementById('paperCtaCite').textContent = pub.cite || '';
+    if (pub.doi) {
+      const doi = document.getElementById('paperCtaDoi');
+      doi.href = `https://doi.org/${pub.doi}`;
+      doi.style.display = '';
+    }
+    const copy = document.getElementById('paperCtaCopy');
+    if (!pub.cite) copy.style.display = 'none';
+    copy.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(pub.cite);
+        copy.textContent = 'Copied';
+      } catch (e) {
+        copy.textContent = 'Select the text to copy';
+      }
+      setTimeout(() => { copy.textContent = 'Copy citation'; }, 2000);
+    });
   }
 
   // Next article: the entry after the current one in its list, wrapping around
