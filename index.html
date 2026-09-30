@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Furaihan Kamyl Arnazaye | Portfolio</title>
   <meta property="og:title" content="Furaihan Kamyl Arnazaye" />
-  <meta property="og:description" content="Public Policy and Government Relations Analyst at GoTo Group. I build the evidence behind policy positions and bring it to the people who decide." />
+  <meta property="og:description" content="Public Policy and Government Relations Analyst at GoTo Group. Public affairs, policy research, and data analysis, with published research explained in plain language." />
   <meta property="og:image" content="https://furaihankamyl.github.io/images/og-cover.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -17,7 +17,7 @@
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Furaihan Kamyl Arnazaye" />
-  <meta name="twitter:description" content="Public Policy and Government Relations Analyst at GoTo Group. I build the evidence behind policy positions and bring it to the people who decide." />
+  <meta name="twitter:description" content="Public Policy and Government Relations Analyst at GoTo Group. Public affairs, policy research, and data analysis, with published research explained in plain language." />
   <meta name="twitter:image" content="https://furaihankamyl.github.io/images/og-cover.jpg" />
   <meta name="description" content="Portfolio of Furaihan Kamyl Arnazaye. Public affairs and policy research in the digital economy, transport, and AI, with published research explained in plain language." />
 
@@ -340,7 +340,15 @@
     .exp-highlights { list-style: none; margin-top: 10px; padding: 0; }
     .exp-highlights li { position: relative; padding-left: 14px; font-size: 12.5px; color: var(--text-2); line-height: 1.6; margin-bottom: 6px; }
     .exp-highlights li::before { content: ''; position: absolute; left: 0; top: 9px; width: 6px; height: 1px; background: var(--text-3); }
-    .research-intro { max-width: 760px; font-size: 14px; line-height: 1.75; color: var(--text-2); margin: -8px 0 28px; }
+    .exp-more { margin-top: 8px; }
+    .exp-more summary {
+      display: inline-flex; align-items: center; gap: 6px; cursor: pointer; list-style: none;
+      font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3);
+    }
+    .exp-more summary::-webkit-details-marker { display: none; }
+    .exp-more summary::after { content: '+'; font-size: 12px; }
+    .exp-more[open] summary::after { content: '−'; }
+    .exp-more summary:hover { color: var(--text); }
     .pub-translation { font-size: 11.5px; font-style: italic; color: var(--text-3); line-height: 1.5; margin: -4px 0 8px; }
 
     /* ACTIVITIES */
@@ -776,12 +784,12 @@ nav#nav {
     <div class="hero-scroll">Scroll</div>
   </div>
   <div class="hero-view2">
-    <h2 class="hero-headline">I build the evidence behind policy positions and bring it to <em>the people who decide.</em></h2>
+    <h2 class="hero-headline">I make evidence <em>persuasive.</em></h2>
     <div class="hero-chips">
       <span class="hero-chip">Public Affairs</span>
       <span class="hero-chip">Policy Research</span>
-      <span class="hero-chip">Quantitative Analysis</span>
-      <span class="hero-chip">Digital Economy and AI</span>
+      <span class="hero-chip">Data Analysis</span>
+      <span class="hero-chip">Strategic Communication</span>
     </div>
     <div class="hero-meta">
       <div>
@@ -859,7 +867,6 @@ nav#nav {
       <h2 class="section-title">Research &amp; Publications</h2>
       <div class="section-divider"></div>
     </div>
-    <p class="research-intro fade-up" id="researchIntro"></p>
     <div class="pub-grid" id="pubList"></div>
   </div>
 </section>
@@ -923,7 +930,7 @@ nav#nav {
 
 </main>
 
-<script src="data.js?v=5"></script>
-<script src="main.js?v=5"></script>
+<script src="data.js?v=6"></script>
+<script src="main.js?v=6"></script>
 </body>
 </html>

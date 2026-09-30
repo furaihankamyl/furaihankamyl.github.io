@@ -474,7 +474,7 @@
   </div>
 </div>
 
-<script src="data.js?v=5"></script>
+<script src="data.js?v=6"></script>
 <script>
   // Theme
   const saved = localStorage.getItem('theme') || 'dark';
@@ -627,7 +627,7 @@
       el.href = 'index.html#publications';
       el.textContent = id === 'navBack' ? '← Publications' : '← Back to Publications';
     });
-    document.getElementById('paperCtaTitle').textContent = pub.title;
+    document.getElementById('paperCtaTitle').textContent = pub.translation ? `${pub.title} (${pub.translation})` : pub.title;
     document.getElementById('paperCtaVenue').textContent = `${pub.venue}, ${pub.year}`;
     document.getElementById('paperCtaLink').href = pub.pdf || `https://drive.google.com/file/d/${pub.driveId}/view`;
     document.getElementById('paperCtaAuthors').textContent = pub.author;

@@ -302,8 +302,12 @@ function renderExpList(id, items, isOrg = false) {
         </div>
         <div class="exp-period">${item.period}</div>
       </div>
-      ${item.summary ? `<p class="exp-summary">${item.summary}</p>` : ''}
-      ${item.highlights ? `<ul class="exp-highlights">${item.highlights.map(h => `<li>${h}</li>`).join('')}</ul>` : ''}
+      ${item.headline ? `<p class="exp-summary">${item.headline}</p>` : ''}
+      ${item.highlights && item.highlights.length > 1 ? `
+        <details class="exp-more">
+          <summary>Details</summary>
+          <ul class="exp-highlights">${item.highlights.map(h => `<li>${h}</li>`).join('')}</ul>
+        </details>` : ''}
     </div>`;
   }).join('');
 }
@@ -354,7 +358,7 @@ function renderFilterBar() {
 }
 
 /* ===================== AWARDS ===================== */
-const AWARDS_VISIBLE = 8;
+const AWARDS_VISIBLE = 6;
 
 function renderAwards() {
   const list = PORTFOLIO_DATA.awards;
@@ -417,13 +421,12 @@ pdfModal.addEventListener('click', e => { if (e.target === pdfModal) closePdf();
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closePdf(); });
 
 function renderPublications() {
-  const intro = document.getElementById('researchIntro');
-  if (intro && PORTFOLIO_DATA.personal.researchIntro) intro.textContent = PORTFOLIO_DATA.personal.researchIntro;
-
   const el = document.getElementById('pubList');
   el.innerHTML = PORTFOLIO_DATA.publications.map((pub, i) => {
     const openPaper = `openPdf(${i})`;
     const translation = pub.translation ? `<div class="pub-translation">${pub.translation}</div>` : '';
+    const names = pub.author.split(', ').map(n => n.trim().split(' ').pop());
+    const byline = names.length > 2 ? `${names[0]}, ${names[1]}, et al.` : names.join(' and ');
     const doi = pub.doi
       ? `<a class="pub-read-btn" href="https://doi.org/${pub.doi}" target="_blank" rel="noopener" onclick="event.stopPropagation()">DOI ↗</a>`
       : '';
@@ -436,16 +439,14 @@ function renderPublications() {
         <div class="pub-card has-explainer fade-up" style="--d:${Math.min(i, 6) * 70}"
           onclick="window.location.href='${explainerUrl}'">
           <div class="pub-year">${pub.year}<span class="pub-badge">Explainer</span></div>
-          <div class="pub-title">${pub.title}</div>
-          ${translation}
+          <div class="pub-title">${pub.explainerTitle || pub.title}</div>
           ${pub.summary ? `<div class="pub-summary">${pub.summary}</div>` : ''}
-          <div class="pub-author">${pub.author}</div>
-          <div class="pub-venue">${pub.venue}</div>
+          <div class="pub-venue">${byline} · ${pub.venue}</div>
           <div class="pub-actions">
             <a class="pub-read-btn pub-read-btn--primary" href="${explainerUrl}"
               onclick="event.stopPropagation()">Read explainer →</a>
             <button type="button" class="pub-read-btn"
-              onclick="event.stopPropagation(); ${openPaper}">Read paper ↗</button>
+              onclick="event.stopPropagation(); ${openPaper}">Paper ↗</button>
             ${doi}
           </div>
         </div>

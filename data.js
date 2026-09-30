@@ -2,10 +2,8 @@ const PORTFOLIO_DATA = {
   personal: {
     name: "Furaihan Kamyl Arnazaye",
     tagline: "Public Affairs and Policy Research | Digital Economy, Transport, and AI",
-    headline: "I build the evidence behind policy positions and bring it to the people who decide.",
-    about: "I work where policy research meets public affairs. I build the evidence behind a policy position, then bring it to the people who decide.\n\nAt GoTo Group, that means <strong>analysis on employment classification and welfare policy</strong> affecting 9+ million driver-partners and merchants, briefs for parliament and ministries on 6 national priority bills, and engagement with government, academia, NGOs, and media.\n\nThe evidence habit comes from research. I have published on <strong>network governance, public trust, and public sector reform</strong>, using surveys, statistics, and social network analysis.",
-    cv: "cv/Furaihan_Kamyl_Arnazaye_CV.pdf",
-    researchIntro: "My research follows three threads: how networks of organizations govern public services, how much citizens trust digital government, and how public institutions can be reformed, from business registration to regional leadership and civil service careers. Each explainer walks through the question, the data, and what the findings mean.",
+    headline: "I make evidence persuasive.",
+    about: "At GoTo Group, I turn policy analysis into positions for parliament, ministries, and partners, on issues that affect 9+ million driver-partners and merchants.\n\nI have also published research on network governance, public trust, and public sector reform. Each paper below has a short explainer, because how I reach a conclusion matters as much as the conclusion.",    cv: "cv/Furaihan_Kamyl_Arnazaye_CV.pdf",
     contact: {
       email: "furaihankamyl.arnazaye@gmail.com",
       whatsapp: "6285159691922",
@@ -16,6 +14,7 @@ const PORTFOLIO_DATA = {
   experience: [
     {
       id: "goto-analyst",
+      headline: "Policy analysis and advocacy on 6 national priority bills affecting 9+ million driver-partners and merchants.",
       company: "GoTo Group",
       role: "Public Policy and Government Relations Analyst",
       type: "Full-time",
@@ -31,6 +30,7 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "goto-intern",
+      headline: "Advocacy strategy and stakeholder engagement with ministries and the Jakarta Provincial Government.",
       company: "GoTo Group",
       role: "Public Policy and Government Relations Intern",
       type: "Internship",
@@ -45,6 +45,7 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "ui-lecturer",
+      headline: "Taught Administrative Behavior to 30+ students for a full semester.",
       company: "Universitas Indonesia",
       role: "Assistant Lecturer, Administrative Behavior",
       type: "Contract",
@@ -58,6 +59,7 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "ayo-intern",
+      headline: "Social content and long-form articles reaching 4,000+ readers, measured in SPSS and Excel.",
       company: "ASEAN Youth Organization",
       role: "Marketing and Communication Intern",
       type: "Internship",
@@ -74,6 +76,7 @@ const PORTFOLIO_DATA = {
   organizations: [
     {
       id: "pemira-vpo",
+      headline: "Led a 100+ member team through a faculty-wide student election, with 97% voter data accuracy.",
       org: "Pemilihan Raya IKM FIA UI 2023",
       role: "Vice Project Officer",
       period: "Oct 2023 – Jan 2024",
@@ -85,9 +88,10 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "himanera-deputy",
+      headline: "Led a 6-member team publishing 8+ policy analyses, including in Kumparan.",
       org: "Himpunan Mahasiswa Ilmu Administrasi Negara FIA UI",
-      role: "Deputy Head of Science",
-      period: "Jan 2023 – Jan 2024",
+      role: "Deputy Head of Science, previously Research and Studies Staff",
+      period: "Mar 2022 – Jan 2024",
       logo: "images/logos/himanera.png",
       highlights: [
         "Led a 6-member team producing 8+ policy analyses published on Instagram, LinkedIn, and national media including Kumparan.",
@@ -95,17 +99,8 @@ const PORTFOLIO_DATA = {
       ]
     },
     {
-      id: "himanera-staff",
-      org: "Himpunan Mahasiswa Ilmu Administrasi Negara FIA UI",
-      role: "Research and Studies Staff",
-      period: "Mar 2022 – Mar 2023",
-      logo: "images/logos/himanera.png",
-      highlights: [
-        "Contributed to policy research publications under the Science division."
-      ]
-    },
-    {
       id: "bemui-rnd",
+      headline: "Research and development for the learning house program. Best Staff of the Year.",
       org: "Rumah Belajar BEM UI",
       role: "Research and Development Staff",
       period: "Aug 2021 – May 2022",
@@ -123,9 +118,9 @@ const PORTFOLIO_DATA = {
     { year: 2024, title: "1st Place, Best Presentation", issuer: "Temu Administrator Muda Indonesia" },
     { year: 2023, title: "1st Place, National Scientific Writing", issuer: "Brawijaya National Student Conference" },
     { year: 2024, title: "Most Creative and Highest Score in Research", issuer: "PKM-RSH, Kemendikbudristek" },
+    { year: 2024, title: "Dean's Award for Academic Achievement, 2023 and 2024", issuer: "FIA Universitas Indonesia" },
     { year: 2024, title: "Research Fund Grantee", issuer: "PKM-RSH, Kemendikbudristek" },
     { year: 2024, title: "Research Incentive Awardee", issuer: "PKM-AI, Kemendikbudristek" },
-    { year: 2024, title: "Dean's Award for Academic Achievement, 2023 and 2024", issuer: "FIA Universitas Indonesia" },
     { year: 2024, title: "Finalist", issuer: "PIMNAS, Pusat Prestasi Nasional" },
     { year: 2024, title: "Top 10, National Essay", issuer: "Liberthi III" },
     { year: 2023, title: "Best Pitch, National Essay", issuer: "Publician Fair, Universitas Indonesia" },
