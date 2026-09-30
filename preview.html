@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Furaihan Kamyl Arnazaye | Portfolio</title>
+  <meta name="description" content="Analyst in Public Policy and Government Relations (PPGR) at GoTo Group. Public affairs, policy research, and data analysis, with published research explained in plain language." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script>
+    // Light by default. A visitor's own choice is remembered.
+    (function () {
+      var t = 'light';
+      try { t = localStorage.getItem('theme') || 'light'; } catch (e) {}
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <style>
+    :root {
+      --bg: #fbfaf7; --bg-2: #f3f1ec; --surface: #ffffff;
+      --text: #15171c; --text-2: #4a4f59; --text-3: #7b808a; --border: #e3e0d8;
+      --accent: #25467e; --accent-soft: #e7edf7; --on-accent: #ffffff;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --radius: 6px; --radius-lg: 14px;
+      --wrap: 1120px;
+    }
+    [data-theme="dark"] {
+      --bg: #0f1115; --bg-2: #161920; --surface: #1b1f27;
+      --text: #eceef2; --text-2: #b3b8c2; --text-3: #858b96; --border: #2a2f3a;
+      --accent: #9db8e8; --accent-soft: #1b2638; --on-accent: #0f1115;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg); color: var(--text); font-family: var(--font-body);
+      font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+      transition: background 0.3s, color 0.3s;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--border);
+    }
+    .nav-in { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .logo { font-family: var(--font-display); font-size: 24px; font-style: italic; }
+    .nav-links { display: flex; align-items: center; gap: 26px; font-size: 14px; color: var(--text-2); }
+    .nav-links a:hover { color: var(--text); }
+    .theme-btn {
+      width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--border); background: none;
+      color: var(--text-2); cursor: pointer; font-size: 14px;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500;
+      padding: 11px 18px; border-radius: var(--radius); border: 1px solid var(--border); transition: all 0.2s;
+    }
+    .btn:hover { border-color: var(--text); }
+    .btn-accent { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+    .btn-accent:hover { filter: brightness(1.1); border-color: var(--accent); }
+    .nav-cv { padding: 7px 14px; font-size: 13px; }
+
+    /* HERO */
+    .hero { padding: 72px 0 64px; }
+    .hero-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 48px; align-items: center; }
+    .eyebrow { font-size: 13px; letter-spacing: 0.06em; color: var(--text-3); margin-bottom: 20px; }
+    .eyebrow b { color: var(--text); font-weight: 500; }
+    .avatar { display: none; }
+    h1 {
+      font-family: var(--font-display); font-weight: 500; font-size: clamp(48px, 7vw, 88px);
+      line-height: 1.0; letter-spacing: -0.01em; margin-bottom: 22px;
+    }
+    h1 em { color: var(--accent); }
+    .hero-sub { font-size: 18px; color: var(--text-2); max-width: 520px; margin-bottom: 32px; }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 44px; }
+    .proof { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; border-top: 1px solid var(--border); padding-top: 22px; }
+    .proof b { display: block; font-family: var(--font-display); font-size: 34px; font-weight: 600; line-height: 1; color: var(--accent); margin-bottom: 6px; }
+    .proof span { font-size: 13px; color: var(--text-2); line-height: 1.4; display: block; }
+    .portrait { position: relative; aspect-ratio: 4 / 5; max-width: 400px; margin-left: auto; }
+    .portrait::before {
+      content: ''; position: absolute; inset: 22% 0 0 0; border-radius: 200px 200px var(--radius-lg) var(--radius-lg);
+      background: var(--accent-soft);
+    }
+    .portrait img { position: relative; width: 100%; height: 100%; object-fit: contain; object-position: bottom; }
+
+    /* SECTIONS */
+    section { padding: 96px 0; }
+    .alt { background: var(--bg-2); }
+    .kicker { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
+    h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(34px, 4.4vw, 52px); line-height: 1.08; margin-bottom: 16px; }
+    .lede { font-size: 17px; color: var(--text-2); max-width: 620px; }
+    .sec-head { margin-bottom: 56px; }
+
+    /* SELECTED WORK */
+    .work { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; padding: 48px 0; border-top: 1px solid var(--border); }
+    .work:first-of-type { border-top: none; padding-top: 0; }
+    .work:nth-of-type(even) .work-visual { order: -1; }
+    .work-tag { font-size: 12px; color: var(--text-3); margin-bottom: 10px; }
+    .work h3 { font-family: var(--font-display); font-weight: 500; font-size: 32px; line-height: 1.15; margin-bottom: 14px; }
+    .work p { color: var(--text-2); margin-bottom: 20px; }
+    .work-stat { display: flex; align-items: baseline; gap: 12px; margin-bottom: 22px; }
+    .work-stat b { font-family: var(--font-display); font-size: 44px; font-weight: 600; color: var(--accent); line-height: 1; }
+    .work-stat span { font-size: 14px; color: var(--text-2); max-width: 240px; line-height: 1.4; }
+    .link { font-size: 14px; font-weight: 500; color: var(--accent); border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+    .work-visual {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px;
+      box-shadow: 0 20px 50px -30px rgba(20, 30, 50, 0.35);
+    }
+    .work-visual.photo { padding: 0; overflow: hidden; }
+    .work-visual.photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+    .viz-title { font-size: 13px; font-weight: 500; margin-bottom: 4px; }
+    .viz-sub { font-size: 12px; color: var(--text-3); margin-bottom: 20px; }
+    .viz-row { margin-bottom: 16px; }
+    .viz-label { font-size: 12px; color: var(--text-2); margin-bottom: 6px; }
+    .bar { display: flex; align-items: center; gap: 10px; margin-bottom: 5px; font-size: 12px; color: var(--text-2); }
+    .bar i { display: block; height: 12px; border-radius: 0 4px 4px 0; background: var(--text-3); width: var(--w); min-width: 3px; }
+    .bar.hl i { background: var(--accent); }
+    .bar em { font-style: normal; width: 62px; flex-shrink: 0; color: var(--text-3); }
+    .viz-legend { display: flex; gap: 16px; font-size: 12px; color: var(--text-2); margin-top: 14px; }
+    .viz-legend span::before { content: ''; display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 6px; background: var(--text-3); }
+    .viz-legend span.hl::before { background: var(--accent); }
+
+    /* HOW I WORK */
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: s; }
+    .step { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 26px 22px; counter-increment: s; }
+    .step::before { content: '0' counter(s); display: block; font-family: var(--font-display); font-size: 26px; color: var(--accent); margin-bottom: 14px; }
+    .step h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+    .step p { font-size: 14px; color: var(--text-2); margin-bottom: 14px; }
+    .step a { font-size: 13px; color: var(--accent); font-weight: 500; }
+    .toolkit { margin-top: 28px; display: grid; grid-template-columns: 120px 1fr; gap: 10px 20px; font-size: 14px; color: var(--text-2); }
+    .toolkit dt { color: var(--text-3); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; padding-top: 2px; }
+
+    /* EXPERIENCE */
+    .timeline { border-top: 1px solid var(--border); }
+    .t-row { display: grid; grid-template-columns: 170px 1fr; gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--border); }
+    .t-period { font-size: 13px; color: var(--text-3); padding-top: 2px; }
+    .t-role { font-weight: 600; font-size: 16px; }
+    .t-org { font-size: 14px; color: var(--text-3); margin-bottom: 6px; }
+    .t-line { font-size: 15px; color: var(--text-2); }
+    .t-row details { margin-top: 8px; }
+    .t-row summary { cursor: pointer; font-size: 13px; color: var(--accent); list-style: none; }
+    .t-row summary::-webkit-details-marker { display: none; }
+    .t-row summary::after { content: ' +'; }
+    .t-row details[open] summary::after { content: ' −'; }
+    .t-row ul { list-style: none; margin-top: 8px; }
+    .t-row li { font-size: 14px; color: var(--text-2); padding-left: 16px; position: relative; margin-bottom: 6px; }
+    .t-row li::before { content: ''; position: absolute; left: 0; top: 11px; width: 7px; height: 1px; background: var(--text-3); }
+    .sub-head { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); margin: 44px 0 4px; }
+
+    /* WRITING */
+    .write-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+    .write-col h3 { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); font-weight: 500; margin-bottom: 8px; }
+    .w-item { display: block; padding: 16px 0; border-bottom: 1px solid var(--border); }
+    .w-item:hover .w-title { color: var(--accent); }
+    .w-title { font-family: var(--font-display); font-size: 21px; line-height: 1.25; transition: color 0.2s; }
+    .w-meta { font-size: 13px; color: var(--text-3); margin-top: 4px; }
+
+    /* CREDENTIALS */
+    .creds { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .cred { border-left: 2px solid var(--accent); padding: 4px 0 4px 16px; }
+    .cred b { display: block; font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+    .cred span { font-size: 13px; color: var(--text-2); }
+    .all-awards { margin-top: 28px; }
+    .all-awards summary { cursor: pointer; font-size: 14px; color: var(--accent); font-weight: 500; list-style: none; }
+    .all-awards summary::-webkit-details-marker { display: none; }
+    .award-list { columns: 2; column-gap: 40px; margin-top: 16px; font-size: 14px; color: var(--text-2); }
+    .award-list div { break-inside: avoid; padding: 6px 0; border-bottom: 1px solid var(--border); }
+    .award-list em { font-style: normal; color: var(--text-3); margin-right: 8px; }
+
+    /* CONTACT */
+    .contact { text-align: center; }
+    .contact h2 { font-size: clamp(44px, 6vw, 72px); }
+    .contact .email { display: inline-block; font-family: var(--font-display); font-size: clamp(22px, 3vw, 32px); color: var(--accent); border-bottom: 1px solid currentColor; margin: 8px 0 32px; }
+    .contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+    footer { padding: 28px 0; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-3); }
+    footer .wrap { display: flex; justify-content: space-between; }
+
+    /* REVEAL */
+    .rv { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .rv.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+
+    @media (max-width: 900px) {
+      .nav-links a:not(.btn) { display: none; }
+      .hero { padding: 40px 0 48px; }
+      .hero-grid, .work, .write-grid { grid-template-columns: 1fr; gap: 32px; }
+      .portrait { display: none; }
+      .avatar {
+        display: inline-block; width: 44px; height: 44px; border-radius: 50%; object-fit: cover; object-position: top;
+        background: var(--accent-soft); vertical-align: middle; margin-right: 10px;
+      }
+      .proof, .creds { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .work:nth-of-type(even) .work-visual { order: 0; }
+      section { padding: 72px 0; }
+    }
+    @media (max-width: 560px) {
+      .steps { grid-template-columns: 1fr; }
+      .t-row { grid-template-columns: 1fr; gap: 4px; }
+      .toolkit { grid-template-columns: 1fr; }
+      .award-list { columns: 1; }
+      .hero-sub { font-size: 16px; }
+      footer .wrap { flex-direction: column; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a href="#top" class="logo">Kamyl</a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#how">How I work</a>
+      <a href="#experience">Experience</a>
+      <a href="#writing">Writing</a>
+      <a href="#contact">Contact</a>
+      <a href="cv/Furaihan_Kamyl_Arnazaye_CV.pdf" target="_blank" rel="noopener" class="btn nav-cv">CV ↓</a>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">☾</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><img class="avatar" src="images/hero-kamyl.png" alt="" /><b>Furaihan Kamyl Arnazaye</b> · PPGR Analyst at GoTo Group, Jakarta</div>
+      <h1>I make evidence <em>persuasive.</em></h1>
+      <p class="hero-sub">Public affairs and policy research, from the data to the room where it is decided.</p>
+      <div class="hero-ctas">
+        <a href="#work" class="btn btn-accent">See selected work →</a>
+        <a href="cv/Furaihan_Kamyl_Arnazaye_CV.pdf" target="_blank" rel="noopener" class="btn">Download CV</a>
+      </div>
+      <div class="proof">
+        <div><b>9M+</b><span>driver-partners and merchants affected by the policies I work on</span></div>
+        <div><b>6</b><span>national priority bills in my advocacy portfolio</span></div>
+        <div><b>7</b><span>research papers, each with a plain-language explainer</span></div>
+        <div><b>Silver</b><span>PIMNAS 2024, Indonesia's national student research competition</span></div>
+      </div>
+    </div>
+    <div class="portrait"><img src="images/hero-kamyl.png" alt="Portrait of Furaihan Kamyl Arnazaye" /></div>
+  </div>
+</header>
+
+<section id="work" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker">Selected work</div>
+      <h2>Three problems, three ways of answering them.</h2>
+    </div>
+
+    <article class="work rv">
+      <div>
+        <div class="work-tag">Undergraduate thesis · 2025 · Social network analysis</div>
+        <h3>When a juvenile institution moves, who runs its network?</h3>
+        <p>No dataset of LPKA Jakarta's partners existed, so I built one from 1,789 Instagram posts and checked it against 11 interviews. The move to Cinere put LPKA at the center of its network, and the network grew faster than its capacity to lead it.</p>
+        <div class="work-stat"><b>41 → 189</b><span>organizations in the network after the relocation</span></div>
+        <a class="link" href="article.html?slug=lpka-network-governance">Read the explainer →</a>
+      </div>
+      <div class="work-visual">
+        <div class="viz-title">The network before and after the move</div>
+        <div class="viz-sub">Each metric on its own scale</div>
+        <div class="viz-row"><div class="viz-label">Organizations in the network</div>
+          <div class="bar"><em>Salemba</em><i style="--w:17%"></i>41</div>
+          <div class="bar hl"><em>Cinere</em><i style="--w:80%"></i>189</div></div>
+        <div class="viz-row"><div class="viz-label">Density</div>
+          <div class="bar"><em>Salemba</em><i style="--w:80%"></i>0.133</div>
+          <div class="bar hl"><em>Cinere</em><i style="--w:19%"></i>0.032</div></div>
+        <div class="viz-row"><div class="viz-label">Degree centralization</div>
+          <div class="bar"><em>Salemba</em><i style="--w:65%"></i>0.806</div>
+          <div class="bar hl"><em>Cinere</em><i style="--w:80%"></i>0.989</div></div>
+        <div class="viz-legend"><span>Salemba, 2017 to 2020</span><span class="hl">Cinere, 2020 to 2025</span></div>
+      </div>
+    </article>
+
+    <article class="work rv">
+      <div>
+        <div class="work-tag">TemuAdMI 2024 · 1st Place Best Paper · Mixed methods</div>
+        <h3>What a notary costs a new company.</h3>
+        <p>Indonesia still requires a notary to register a PT. Comparing 190 countries showed what that requirement adds, and two reforms abroad showed how to remove it.</p>
+        <div class="work-stat"><b>+22.85</b><span>points of cost, as a share of income per capita, where a notary is required</span></div>
+        <a class="link" href="article.html?slug=notary-business-registration">Read the explainer →</a>
+      </div>
+      <div class="work-visual">
+        <div class="viz-title">Starting a company, by notary requirement</div>
+        <div class="viz-sub">Mean across 190 countries, EoDB 2020</div>
+        <div class="viz-row"><div class="viz-label">Procedures</div>
+          <div class="bar"><em>No notary</em><i style="--w:58%"></i>5.48</div>
+          <div class="bar hl"><em>Notary</em><i style="--w:80%"></i>7.54</div></div>
+        <div class="viz-row"><div class="viz-label">Days</div>
+          <div class="bar"><em>No notary</em><i style="--w:54%"></i>15.48</div>
+          <div class="bar hl"><em>Notary</em><i style="--w:80%"></i>22.80</div></div>
+        <div class="viz-row"><div class="viz-label">Cost, % of income per capita</div>
+          <div class="bar"><em>No notary</em><i style="--w:20%"></i>7.60</div>
+          <div class="bar hl"><em>Notary</em><i style="--w:80%"></i>30.45</div></div>
+        <div class="viz-legend"><span>Not required (88)</span><span class="hl">Required (102)</span></div>
+      </div>
+    </article>
+
+    <article class="work rv">
+      <div>
+        <div class="work-tag">GoTo Group · 2024 to 2025 · Partnerships</div>
+        <h3>Bringing an Indonesian-language AI to seven universities.</h3>
+        <p>I led the university program for Sahabat-AI, an open-source large language model for Indonesian and regional languages. The work covered negotiation, training data, internships, and research grants.</p>
+        <div class="work-stat"><b>7</b><span>universities, from UI and ITB to Unhas and Udayana</span></div>
+        <a class="link" href="article.html?slug=sahabat-ai">Read the story →</a>
+      </div>
+      <div class="work-visual photo"><img src="images/sahabat-ai-1.jpg" alt="Sahabat-AI session with university partners at Universitas Indonesia" loading="lazy" /></div>
+    </article>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker">How I work</div>
+      <h2>Question, evidence, position, the room.</h2>
+      <p class="lede">The same four steps sit behind a thesis, a policy brief, and a stakeholder meeting.</p>
+    </div>
+    <div class="steps rv">
+      <div class="step"><h3>Question</h3><p>Start with a question narrow enough to answer. A relocation with a date becomes a before and after.</p><a href="article.html?slug=lpka-network-governance">In the thesis →</a></div>
+      <div class="step"><h3>Evidence</h3><p>Build the data when it does not exist, then check it against the people involved.</p><a href="article.html?slug=lpka-coaching-network">In the LPKA partner map →</a></div>
+      <div class="step"><h3>Position</h3><p>Judge findings against the right benchmark, then turn them into options someone can choose.</p><a href="article.html?slug=notary-business-registration">In the notary paper →</a></div>
+      <div class="step"><h3>The room</h3><p>Take the position to the people who decide, prepared for how each of them thinks.</p><a href="article.html?slug=stakeholder-management">On stakeholder work →</a></div>
+    </div>
+    <dl class="toolkit rv">
+      <dt>Methods</dt><dd>Surveys, nonparametric statistics, social network analysis, mixed methods, comparative case studies</dd>
+      <dt>Tools</dt><dd>Python, Gephi, SPSS, Advanced Excel, PowerPoint</dd>
+      <dt>Languages</dt><dd>Indonesian (native), English (professional)</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="experience" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker">Experience</div>
+      <h2>Where the work happens.</h2>
+    </div>
+    <div class="timeline rv" id="timeline"></div>
+    <div class="sub-head rv">Leadership</div>
+    <div class="timeline rv" id="leadership"></div>
+  </div>
+</section>
+
+<section id="writing">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker">Writing</div>
+      <h2>Research, explained. Work, reflected on.</h2>
+    </div>
+    <div class="write-grid rv">
+      <div class="write-col"><h3>Research explainers</h3><div id="explainers"></div></div>
+      <div class="write-col"><h3>Essays and stories</h3><div id="essays"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="credentials" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="kicker">Recognition</div>
+      <h2>Along the way.</h2>
+    </div>
+    <div class="creds rv">
+      <div class="cred"><b>PIMNAS 2024 Silver Medal</b><span>Research poster, national student research competition</span></div>
+      <div class="cred"><b>TemuAdMI 2024, two 1st places</b><span>Best paper and best presentation</span></div>
+      <div class="cred"><b>Brawijaya 2023, 1st place</b><span>National scientific writing</span></div>
+      <div class="cred"><b>Universitas Indonesia, cum laude</b><span>Public Administration, GPA 3.69. Dean's Award 2023 and 2024</span></div>
+    </div>
+    <details class="all-awards rv">
+      <summary>See all 18 awards →</summary>
+      <div class="award-list" id="awards"></div>
+    </details>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap rv">
+    <div class="kicker">Contact</div>
+    <h2>Let's talk.</h2>
+    <p class="lede" style="margin: 0 auto;">About policy, research, or a problem that needs both.</p>
+    <a class="email" href="mailto:furaihankamyl.arnazaye@gmail.com">furaihankamyl.arnazaye@gmail.com</a>
+    <div class="contact-links">
+      <a class="btn" href="https://linkedin.com/in/furaihankamyl" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://wa.me/6285159691922" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-accent" href="cv/Furaihan_Kamyl_Arnazaye_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 Furaihan Kamyl Arnazaye</span><span>Jakarta, Indonesia</span></div></footer>
+
+<script src="data.js?v=7"></script>
+<script>
+  const D = PORTFOLIO_DATA;
+
+  function rows(items, isOrg) {
+    return items.map(it => `
+      <div class="t-row">
+        <div class="t-period">${it.period}</div>
+        <div>
+          <div class="t-role">${it.role}</div>
+          <div class="t-org">${isOrg ? it.org : it.company}</div>
+          <div class="t-line">${it.headline || ''}</div>
+          ${it.highlights && it.highlights.length > 1 ? `<details><summary>Details</summary><ul>${it.highlights.map(h => `<li>${h}</li>`).join('')}</ul></details>` : ''}
+        </div>
+      </div>`).join('');
+  }
+  document.getElementById('timeline').innerHTML = rows(D.experience, false);
+  document.getElementById('leadership').innerHTML = rows(D.organizations, true);
+
+  const shortVenue = p => p.venue.split(',')[0].replace(/\s\d{4}$/, '');
+  document.getElementById('explainers').innerHTML = D.publications.filter(p => p.slug).map(p => `
+    <a class="w-item" href="article.html?slug=${p.slug}">
+      <div class="w-title">${p.explainerTitle || p.title}</div>
+      <div class="w-meta">${shortVenue(p)} · ${p.year}</div>
+    </a>`).join('');
+  document.getElementById('essays').innerHTML = D.activities.map(a => `
+    <a class="w-item" href="article.html?slug=${a.slug}">
+      <div class="w-title">${a.title}</div>
+      <div class="w-meta">${a.category} · ${a.date}</div>
+    </a>`).join('');
+  document.getElementById('awards').innerHTML = D.awards.map(a => `<div><em>${a.year}</em>${a.title}, ${a.issuer}</div>`).join('');
+
+  // Theme toggle, shared with article pages through the same storage key
+  const btn = document.getElementById('themeBtn');
+  const setIcon = () => { btn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀' : '☾'; };
+  setIcon();
+  btn.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    setIcon();
+  });
+
+  // Gentle reveal on scroll
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

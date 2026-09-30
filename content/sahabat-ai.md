@@ -4,7 +4,7 @@ Some version of that sentence is sitting in almost every Indonesian's phone righ
 
 Indonesia has hundreds of living languages, millions of daily conversations in slang and regional dialects, and a digital economy that runs on informal communication. Most large language models are trained predominantly on English data, and when they do support Indonesian, they support the formal written version of it. Sahabat-AI was GoTo's answer to that gap. My part in it was the university collaboration program.
 
-![GoTo team at Indonesia AI Day, November 14, 2024](images/sahabat-ai-1.jpg)
+![GoTo team at Indonesia AI Day, November 14, 2024](images/sahabat-ai-3.jpg)
 
 Sahabat-AI is an open-source Large Language Model developed by PT GoTo Gojek Tokopedia Tbk in collaboration with PT Indosat Ooredoo Hutchison, trained specifically for Bahasa Indonesia and regional languages, currently supporting **Indonesian, Sundanese, Javanese, Batak, and Balinese**. The premise was clear from the start. Indonesia's AI future should be built from Indonesian language and context rather than retrofitted from Western models. Development involved local universities, media groups, language communities, and global research partners including AI Singapore.
 
@@ -22,7 +22,7 @@ Sahabat-AI is an open-source Large Language Model developed by PT GoTo Gojek Tok
 
 Each partnership was structured around several forms of collaboration. Training data contribution by faculty and students. Student internship programs for AI data training work. Knowledge-sharing sessions paired with MOU or PKS signings. At Universitas Indonesia, an AI research grant program on top of that.
 
-![Sharing session and MOU signing with university partners at Universitas Indonesia](images/sahabat-ai-3.jpg)
+![Sharing session and MOU signing with university partners at Universitas Indonesia](images/sahabat-ai-1.jpg)
 
 What made this complex was that every engagement ran end to end. Account management, then negotiation, then event project management, which was the part I had the least preparation for. I learned the technical nuances on the job. Invitation management, university crowd coordination, session design for a mixed student and faculty audience, and hospitality standards that nobody notices when they are met and everybody notices when they are not. **A campus that feels used by a company does not sign the next agreement.**
 
