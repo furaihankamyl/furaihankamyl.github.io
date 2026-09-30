@@ -1,3 +1,5 @@
+<div class="takeaways"><div class="takeaways-title">Key takeaways</div><ul><li>We interviewed eight students from UI and ITB in depth on why they would or would not become civil servants.</li><li>Security and family encouragement pull students toward the civil service. Both are material motivations.</li><li>A restrictive workplace is the main deterrent, named by 4 of 8 informants.</li><li>Pay appears on both sides. It is stable enough to attract, and too small compared with the private sector and work abroad.</li><li>6 of 8 would consider the civil service only as a last option, on condition of a clean, better-paid, and better-run public sector.</li></ul></div>
+
 In the United States, the United Kingdom, Germany, and Singapore, arts and humanities students ranked public sector jobs at the bottom of their preferences in Universum Global's 2022 survey. In Indonesia, Universum's 2017 survey found that arts and humanities students most often preferred becoming a civil servant, a PNS. The same career sits at opposite ends of the list.
 
 Part of the explanation is history. Public officials held a special status under the pre-colonial kingdoms, the Dutch colonial government kept that status to run its administration, and New Order patronage networks carried it forward. We wanted to know what drives students today. The question was simple. What motivational factors dominate how students at Universitas Indonesia (UI) and Institut Teknologi Bandung (ITB) see working in the public sector?
@@ -24,7 +26,11 @@ The answers are easiest to read question by question. Each square below is one i
 
 Three patterns stand out. Every informant agreed that public sector work lets you make an impact on society, and seven of eight felt appreciation from superiors is fulfilled, though mostly in material form. Rules drew a split verdict. Five of eight called public sector regulations effective, but seven of eight said implementation is the problem. Pay was the weakest point, with only one informant calling remuneration commensurate.
 
-The last row is the one that matters most for recruitment. **Six of eight would consider becoming a civil servant, but only as a last option, with conditions.** Those conditions were a public sector free of corruption, collusion, and nepotism, better remuneration, and a better working system.
+The last row is the one that matters most for recruitment. 
+
+<div class="callout"><span>Key finding</span>Six of eight would consider becoming a civil servant, but only as a last option, with conditions.</div>
+
+ Those conditions were a public sector free of corruption, collusion, and nepotism, better remuneration, and a better working system.
 
 ## Pulled in by security, pushed away by rigidity
 

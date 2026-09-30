@@ -1,3 +1,5 @@
+<div class="takeaways"><div class="takeaways-title">Key takeaways</div><ul><li>Using the same 353 respondents, we measured intention to engage with JakLapor through technology acceptance, public trust, and participation motivation.</li><li>Intention is moderate to high. 134 respondents were high, 218 moderate, and 1 low.</li><li>Gender made no difference on any of the four measures.</li><li>Between generations, only public trust differed (p = .022). Overall engagement intention did not (p = .744).</li><li>The implication is one outreach approach for men and women, and trust-building aimed at Gen Z.</li></ul></div>
+
 JakLapor won the Champion Project award at the WSIS Prizes 2023. A reporting platform only works if people use it, and the literature gave us two reasons to expect some groups to use it less. Sun (2016) found that women can find it harder to express their views on digital platforms. Studies of Gen Z and Millennials describe different participation styles, even though both grew up online. So we asked whether gender or generation changes young Jakartans' intention to engage with JakLapor.
 
 This paper uses the same August 2023 survey as [our study on public trust](article.html?slug=jaklapor-public-trust), with a wider lens. Trust is one part of engagement here, alongside two others.
@@ -26,7 +28,11 @@ The group comparisons returned eight tests. Seven were not significant.
 
 **Gender made no difference on any dimension.** Men and women had similar intention to engage, similar technology acceptance, similar trust, and similar motivation. This differs from Macaya et al. (2021), who found a gender gap in e-government use. Their sample was in Brazil, mostly men, and about e-government in general rather than one feature.
 
-**Between generations, only trust differed (p = .022).** Gen Z's ratio of moderate to high trust was 2.726 to 1. For Millennials it was 1.682 to 1. The overall engagement score showed no generational gap (p = .744). Gen Z's lower trust did not show up as lower overall intention.
+
+
+<div class="callout"><span>Key finding</span>Between generations, only trust differed (p = .022).</div>
+
+ Gen Z's ratio of moderate to high trust was 2.726 to 1. For Millennials it was 1.682 to 1. The overall engagement score showed no generational gap (p = .744). Gen Z's lower trust did not show up as lower overall intention.
 
 <figure class="chart"><div class="chart-title">Moderate to high ratio in public trust</div><div class="chart-sub">How many respondents sit at moderate trust for every one at high trust. Lower means more trust</div><div class="hbar a" data-tip="Millennials: 74 moderate, 44 high"><span class="hbar-name">Millennials</span><span class="hbar-track"><span class="hbar-fill" style="--v:49.4%"></span><span class="hbar-val">1.682 to 1</span></span></div><div class="hbar b" data-tip="Gen Z: 169 moderate, 62 high"><span class="hbar-name">Gen Z</span><span class="hbar-track"><span class="hbar-fill" style="--v:80.0%"></span><span class="hbar-val">2.726 to 1</span></span></div><figcaption>Source: calculated from Table 2 of the paper.</figcaption></figure>
 

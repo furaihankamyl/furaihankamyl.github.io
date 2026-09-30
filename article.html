@@ -211,6 +211,27 @@
     .hbar.wide .hbar-name { width: 104px; }
 
     .schematic { display: flex; flex-wrap: wrap; gap: 16px; }
+    /* KEY TAKEAWAYS (top of explainers) */
+    .takeaways {
+      border: 1px solid var(--border); border-radius: var(--radius-lg);
+      background: var(--bg-2); padding: 20px 22px 8px; margin: 0 0 36px;
+    }
+    .takeaways-title {
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-3); margin-bottom: 12px;
+    }
+    .article-content .takeaways ul li { font-size: 14px; line-height: 1.6; color: var(--text); margin-bottom: 10px; }
+
+    /* KEY FINDING CALLOUT (one per article, in place of a bold sentence) */
+    .callout {
+      margin: 28px 0; padding: 2px 0 2px 20px; border-left: 2px solid var(--text);
+      font-family: var(--font-display); font-size: 23px; font-weight: 400; line-height: 1.4; color: var(--text);
+    }
+    .callout span {
+      display: block; font-family: var(--font-body); font-size: 10px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--text-3); margin-bottom: 6px;
+    }
+
     /* STAT TILES */
     .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin: 28px 0; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
     .stat { background: var(--bg); padding: 14px 16px; }
