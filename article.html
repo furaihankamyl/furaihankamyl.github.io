@@ -160,6 +160,69 @@
     }
     .article-content a:hover { border-color: var(--text); }
 
+    /* TABLES */
+    .article-content .table-wrap { overflow-x: auto; margin: 32px 0; }
+    .article-content table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .article-content th, .article-content td {
+      text-align: left; padding: 10px 12px 10px 0;
+      border-bottom: 1px solid var(--border); color: var(--text-2); vertical-align: top;
+    }
+    .article-content th {
+      font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-3); font-weight: 400;
+    }
+    .article-content td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .article-content td.ok { color: var(--text); }
+    .article-content tr.group td {
+      color: var(--text); font-weight: 500; padding-top: 18px; border-bottom: none;
+    }
+
+    /* CHARTS (HTML bars, themed through the page tokens) */
+    .chart { margin: 40px 0; }
+    .chart-title { font-size: 13px; color: var(--text); font-weight: 500; margin-bottom: 4px; }
+    .chart-sub { font-size: 12px; color: var(--text-3); margin-bottom: 20px; }
+    .chart figcaption { font-size: 11px; color: var(--text-3); margin-top: 14px; line-height: 1.6; }
+    .chart-legend { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12px; color: var(--text-2); margin-bottom: 20px; }
+    .chart-legend span { display: inline-flex; align-items: center; gap: 6px; }
+    .chart-legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+    .swatch-a, .hbar.a .hbar-fill, .col-bar { background: var(--text-3); }
+    .swatch-b, .hbar.b .hbar-fill { background: var(--text); }
+    .col-last .col-bar { background: var(--text); }
+
+    .cols {
+      display: flex; align-items: flex-end; gap: 12px; height: 200px;
+      border-bottom: 1px solid var(--border); padding-top: 20px;
+    }
+    .col { flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; }
+    .col-val { font-size: 12px; color: var(--text-2); margin-bottom: 6px; font-variant-numeric: tabular-nums; }
+    .col-bar { width: 100%; max-width: 24px; height: var(--v); border-radius: 4px 4px 0 0; }
+    .col-labels { display: flex; gap: 12px; margin-top: 8px; }
+    .col-labels span { flex: 1; text-align: center; font-size: 11px; color: var(--text-3); }
+
+    .pair { padding: 14px 0; border-top: 1px solid var(--border); }
+    .pair:first-of-type { border-top: none; }
+    .pair-label { font-size: 13px; color: var(--text); margin-bottom: 2px; }
+    .pair-note { font-size: 11px; color: var(--text-3); margin-bottom: 10px; }
+    .hbar { display: flex; align-items: center; gap: 8px; height: 18px; margin-bottom: 4px; }
+    .hbar-track { flex: 1; display: flex; align-items: center; gap: 8px; min-width: 0; }
+    .hbar-fill { height: 12px; width: var(--v); min-width: 2px; border-radius: 0 4px 4px 0; }
+    .hbar-val { font-size: 12px; color: var(--text-2); white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .hbar-name { width: 64px; flex-shrink: 0; font-size: 11px; color: var(--text-3); }
+
+    .schematic { display: flex; flex-wrap: wrap; gap: 16px; }
+    .schematic > div { flex: 1 1 260px; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 16px; }
+    .schematic svg { width: 100%; height: auto; display: block; }
+    .schematic-title { font-size: 12px; color: var(--text); margin-bottom: 4px; }
+    .schematic-note { font-size: 11px; color: var(--text-3); margin-top: 8px; line-height: 1.5; }
+    .schematic line { stroke: var(--text-3); stroke-width: 1; }
+    .schematic line.strong { stroke: var(--text); stroke-width: 2.5; }
+    .schematic circle { fill: var(--text-3); stroke: var(--bg); stroke-width: 2; }
+    .schematic circle.hub { fill: var(--text); }
+    .schematic text {
+      fill: var(--text-2); font-family: var(--font-body); font-size: 13px;
+      paint-order: stroke; stroke: var(--bg); stroke-width: 4px; stroke-linejoin: round;
+    }
+
     /* READING PROGRESS */
     .read-progress {
       position: fixed; top: 56px; left: 0; right: 0; height: 2px; z-index: 101;
@@ -299,7 +362,8 @@
 
   function calcReadingTime(text) {
     const wpm = 200;
-    const words = text.trim().split(/\s+/).length;
+    // Count prose only: chart markup embedded in the Markdown is not read
+    const words = text.replace(/<[^>]+>/g, ' ').trim().split(/\s+/).length;
     const mins = Math.ceil(words / wpm);
     return `${mins} min read`;
   }

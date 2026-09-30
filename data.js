@@ -118,7 +118,10 @@ At GoTo Group, I work at the intersection of government, industry, and civil soc
       venue: "Thesis, Universitas Indonesia",
       author: "Furaihan Kamyl Arnazaye",
       year: 2025,
-      driveId: "1j93NVB_mjsn-bNK-CFbOk2SduqtdxA4A"
+      driveId: "1j93NVB_mjsn-bNK-CFbOk2SduqtdxA4A",
+      slug: "lpka-network-governance",
+      summary: "After relocating, LPKA took over the center of its partner network. The network then grew faster than LPKA's capacity to lead it.",
+      explainerTitle: "When a Juvenile Institution Moves, Who Runs Its Network?"
     },
     {
       title: "Membandingkan Intensi Keterlibatan Publik Antargender dan Antargenerasi Muda dalam Fitur JakLapor",
