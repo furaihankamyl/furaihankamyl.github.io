@@ -412,11 +412,35 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closePdf(); 
 function renderPublications() {
   const el = document.getElementById('pubList');
   el.innerHTML = PORTFOLIO_DATA.publications.map((pub, i) => {
-    const safeTitle = pub.title.replace(/'/g, '&#39;').replace(/"/g, '&quot;');
+    const safeTitle = pub.title.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+    const openPaper = `openPdf('${pub.driveId}', '${safeTitle}')`;
+
+    // Publications with a slug get an explainer article (content/<slug>.md).
+    // The card then leads to the explainer; the paper stays one click away.
+    if (pub.slug) {
+      const explainerUrl = `article.html?slug=${pub.slug}`;
+      return `
+        <div class="pub-card has-explainer fade-up" style="--d:${Math.min(i, 6) * 70}"
+          onclick="window.location.href='${explainerUrl}'">
+          <div class="pub-year">${pub.year}<span class="pub-badge">Explainer</span></div>
+          <div class="pub-title">${pub.title}</div>
+          ${pub.summary ? `<div class="pub-summary">${pub.summary}</div>` : ''}
+          <div class="pub-author">${pub.author}</div>
+          <div class="pub-venue">${pub.venue}</div>
+          <div class="pub-actions">
+            <a class="pub-read-btn pub-read-btn--primary" href="${explainerUrl}"
+              onclick="event.stopPropagation()">Read explainer →</a>
+            <button type="button" class="pub-read-btn"
+              onclick="event.stopPropagation(); ${openPaper}">Read paper ↗</button>
+          </div>
+        </div>
+      `;
+    }
+
     return `
       <div class="pub-card fade-up" style="--d:${Math.min(i, 6) * 70}" role="button" tabindex="0"
-        onclick="openPdf('${pub.driveId}', '${safeTitle}')"
-        onkeydown="if(event.key==='Enter')openPdf('${pub.driveId}','${safeTitle}')">
+        onclick="${openPaper}"
+        onkeydown="if(event.key==='Enter')${openPaper}">
         <div class="pub-year">${pub.year}</div>
         <div class="pub-title">${pub.title}</div>
         <div class="pub-author">${pub.author}</div>

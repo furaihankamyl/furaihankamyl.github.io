@@ -72,7 +72,32 @@ That's it. The website automatically renders the card and article.
 
 ---
 
-### 2. Update existing sections
+### 2. Add an explainer article to a publication
+
+Each publication card can carry a plain-language article explaining the study, next to the paper itself.
+
+**Step 1 — Add `slug` (and optionally `summary`) to the publication in `data.js`:**
+
+```js
+{
+  title: "Comparing the Effectiveness of Network Governance of LPKA Kelas II Jakarta",
+  venue: "Thesis, Universitas Indonesia",
+  author: "Furaihan Kamyl Arnazaye",
+  year: 2025,
+  driveId: "...",
+  slug: "thesis-lpka-network-governance",           // Must match the .md filename, unique across activities too
+  summary: "One-sentence takeaway shown on the card.", // Optional
+  explainerTitle: "Headline for the article page"    // Optional, defaults to the paper title
+}
+```
+
+**Step 2 — Create `content/thesis-lpka-network-governance.md`** and write the explainer in Markdown (same format as activity articles).
+
+The card then shows an **Explainer** badge, opens the article on click, and keeps a "Read paper ↗" button for the PDF. The article page links back to Publications and ends with a link to the full paper. Publications without `slug` behave as before (open the PDF).
+
+---
+
+### 3. Update existing sections
 
 All content is in `data.js`. Find the relevant array and edit directly:
 
@@ -86,7 +111,7 @@ All content is in `data.js`. Find the relevant array and edit directly:
 
 ---
 
-### 3. Add a new logo
+### 4. Add a new logo
 
 Upload the logo PNG (preferably with transparent or dark background) to `images/logos/`. Then reference it in `data.js` as `"images/logos/your-logo.png"`.
 

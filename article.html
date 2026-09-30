@@ -189,6 +189,22 @@
     }
     .article-next-cat { font-size: 11px; color: var(--text-3); margin-top: 8px; }
 
+    /* PAPER CTA (publication explainers) */
+    .paper-cta {
+      margin-top: 56px; padding: 28px;
+      border: 1px solid var(--border); border-radius: var(--radius-lg);
+      background: var(--bg-2);
+    }
+    .paper-cta-label {
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-3); margin-bottom: 10px;
+    }
+    .paper-cta-title {
+      font-family: var(--font-display); font-size: 22px; font-weight: 400;
+      line-height: 1.3; color: var(--text); margin-bottom: 6px;
+    }
+    .paper-cta-venue { font-size: 12px; font-style: italic; color: var(--text-2); margin-bottom: 20px; }
+
     /* ERROR / LOADING */
     .article-error, .article-loading {
       text-align: center; padding: 80px 0;
@@ -221,7 +237,7 @@
 <body>
 
 <nav>
-  <a href="index.html#activities" class="nav-back">← Activities</a>
+  <a href="index.html#activities" class="nav-back" id="navBack">← Activities</a>
   <a href="index.html" class="nav-name">Kamyl</a>
   <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀</button>
 </nav>
@@ -240,9 +256,16 @@
 
   <div id="articleLoading" class="article-loading">Loading article...</div>
   <div id="articleError" class="article-error" style="display:none;">
-    Article not found. <a href="index.html#activities">Return to Activities</a>
+    Article not found. <a href="index.html" id="errorBack">Return to home</a>
   </div>
   <div id="articleContent" class="article-content" style="display:none;"></div>
+
+  <div id="paperCta" class="paper-cta" style="display:none;">
+    <div class="paper-cta-label">The full paper</div>
+    <div class="paper-cta-title" id="paperCtaTitle"></div>
+    <div class="paper-cta-venue" id="paperCtaVenue"></div>
+    <a id="paperCtaLink" class="back-link" target="_blank" rel="noopener">Read the paper ↗</a>
+  </div>
 
   <a id="articleNext" class="article-next" style="display:none;">
     <div class="article-next-label"><span>Next article</span><span>↗</span></div>
@@ -251,7 +274,7 @@
   </a>
 
   <div class="article-back-bottom">
-    <a href="index.html#activities" class="back-link">← Back to Activities</a>
+    <a href="index.html#activities" class="back-link" id="bottomBack">← Back to Activities</a>
   </div>
 </div>
 
@@ -286,16 +309,25 @@
       showError(); return;
     }
 
+    // An article is either an Activity or a Publication explainer
     const activity = PORTFOLIO_DATA.activities.find(a => a.slug === slug);
-    if (!activity) { showError(); return; }
+    const pub = !activity && PORTFOLIO_DATA.publications.find(p => p.slug === slug);
+    if (!activity && !pub) { showError(); return; }
+    const entry = activity || {
+      slug: pub.slug,
+      title: pub.explainerTitle || pub.title,
+      category: 'Research Explainer',
+      date: pub.year
+    };
+    if (pub) setupPublication(pub);
 
     // Set OG/page title
-    document.title = `${activity.title} | Kamyl`;
+    document.title = `${entry.title} | Kamyl`;
 
     // Populate meta
-    document.getElementById('articleCategory').textContent = activity.category;
-    document.getElementById('articleHeadline').textContent = activity.title;
-    document.getElementById('articleDate').textContent = activity.date;
+    document.getElementById('articleCategory').textContent = entry.category;
+    document.getElementById('articleHeadline').textContent = entry.title;
+    document.getElementById('articleDate').textContent = entry.date;
 
     try {
       const res = await fetch(`content/${slug}.md`);
@@ -315,15 +347,37 @@
       document.getElementById('articleContent').innerHTML = html;
       document.getElementById('articleContent').style.display = 'block';
       document.getElementById('articleLoading').style.display = 'none';
-      renderNextArticle(activity);
+      if (pub) document.getElementById('paperCta').style.display = 'block';
+      renderNextArticle(entry, pub ? explainers() : PORTFOLIO_DATA.activities);
     } catch (e) {
       showError();
     }
   }
 
-  // Next article: the entry after the current one in Activities, wrapping around
-  function renderNextArticle(current) {
-    const all = PORTFOLIO_DATA.activities;
+  // Publication explainers, in the same shape as Activities
+  function explainers() {
+    return PORTFOLIO_DATA.publications.filter(p => p.slug).map(p => ({
+      slug: p.slug,
+      title: p.explainerTitle || p.title,
+      category: 'Research Explainer',
+      date: p.year
+    }));
+  }
+
+  // Point navigation back to Publications and link the full paper
+  function setupPublication(pub) {
+    ['navBack', 'bottomBack'].forEach(id => {
+      const el = document.getElementById(id);
+      el.href = 'index.html#publications';
+      el.textContent = id === 'navBack' ? '← Publications' : '← Back to Publications';
+    });
+    document.getElementById('paperCtaTitle').textContent = pub.title;
+    document.getElementById('paperCtaVenue').textContent = `${pub.venue}, ${pub.year}`;
+    document.getElementById('paperCtaLink').href = `https://drive.google.com/file/d/${pub.driveId}/view`;
+  }
+
+  // Next article: the entry after the current one in its list, wrapping around
+  function renderNextArticle(current, all) {
     if (all.length < 2) return;
     const idx = all.findIndex(a => a.slug === current.slug);
     const next = all[(idx + 1) % all.length];

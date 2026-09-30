@@ -461,6 +461,20 @@
       transition: all var(--transition);
     }
     .pub-card:hover .pub-read-btn { border-color: var(--text); color: var(--text); }
+    button.pub-read-btn { background: none; font-family: inherit; cursor: pointer; }
+    .pub-year { display: flex; align-items: center; gap: 10px; }
+    .pub-badge {
+      font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-2); border: 1px solid var(--border);
+      padding: 2px 7px; border-radius: 999px;
+    }
+    .pub-summary { font-size: 12px; line-height: 1.6; color: var(--text-2); margin-bottom: 10px; }
+    .pub-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pub-card.has-explainer:hover .pub-read-btn { border-color: var(--border); color: var(--text-2); }
+    .pub-card.has-explainer .pub-read-btn--primary,
+    .pub-card.has-explainer:hover .pub-read-btn--primary { background: var(--text); border-color: var(--text); color: var(--bg); }
+    .pub-card.has-explainer .pub-read-btn:hover { border-color: var(--text); color: var(--text); }
+    .pub-card.has-explainer .pub-read-btn--primary:hover { color: var(--bg); opacity: 0.85; }
 
     /* PDF MODAL */
     .pdf-modal {
