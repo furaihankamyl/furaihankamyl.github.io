@@ -487,6 +487,9 @@
 
     /* PUBLICATIONS */
     .pub-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .pub-cite-all { margin-top: 24px; font-size: 12px; color: var(--text-3); }
+    .pub-cite-all a { color: var(--text-2); border-bottom: 1px solid var(--border); }
+    .pub-cite-all a:hover { color: var(--text); border-color: var(--text-2); }
     .pub-card {
       border: 1px solid var(--border); border-radius: var(--radius-lg);
       padding: 22px; background: var(--surface); cursor: pointer;
@@ -899,6 +902,7 @@ nav#nav {
       <div class="section-divider"></div>
     </div>
     <div class="pub-grid" id="pubList"></div>
+    <p class="pub-cite-all">Citation files for all seven papers: <a href="cite/all.bib" download>BibTeX</a> · <a href="cite/all.ris" download>RIS</a></p>
   </div>
 </section>
 
@@ -957,7 +961,7 @@ nav#nav {
 
 </main>
 
-<script src="data.js?v=8"></script>
-<script src="main.js?v=8"></script>
+<script src="data.js?v=9"></script>
+<script src="main.js?v=9"></script>
 </body>
 </html>

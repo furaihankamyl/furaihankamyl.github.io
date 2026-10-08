@@ -70,7 +70,7 @@ We structured this as a formal policy brief, presented it to Ditjenpas, and rece
 
 That was the moment the work felt like it had weight beyond the academic exercise.
 
-The full analysis, with the network data and charts, is in [the research explainer](article.html?slug=lpka-coaching-network). A year later, my thesis rebuilt the same network from 1,789 Instagram posts. That analysis has [its own explainer](article.html?slug=lpka-network-governance).
+The full analysis, with the network data and charts, is in [the research explainer](research/lpka-coaching-network/). A year later, my thesis rebuilt the same network from 1,789 Instagram posts. That analysis has [its own explainer](research/lpka-network-governance/).
 
 ---
 

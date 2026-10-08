@@ -10,7 +10,7 @@ Three projects, four accomplishments, and three institutions on the receiving en
 
 The question my team started with, together with Adinda and Gebrena, was whether the collaborations run by LPKA Kelas II Jakarta were organized around what the children inside actually needed. The institution was trying, and the staff had built real programs. What it lacked were comprehensive standard operating procedures, which meant **its partnerships existed without being directed toward specific outcomes.**
 
-[Read the explainer →](article.html?slug=lpka-coaching-network) · [The story behind it →](article.html?slug=pimnas)
+[Read the explainer →](research/lpka-coaching-network/) · [The story behind it →](article.html?slug=pimnas)
 
 ## The Reporting Channel Nobody Trusts
 
@@ -18,7 +18,7 @@ The question my team started with, together with Adinda and Gebrena, was whether
 
 JakLapor is a public reporting feature run by the DKI Jakarta Provincial Government. What we kept hearing from young users was a concern about data breach, which is difficult to act on while it stays anecdotal. So we measured it, across 353 young respondents. **Generation Z held significantly lower trust in the feature than Generation Y.**
 
-[Read the explainer →](article.html?slug=jaklapor-public-trust)
+[Read the explainer →](research/jaklapor-public-trust/)
 
 ## The Cost of a Signature
 
@@ -30,6 +30,6 @@ Founders in Indonesia carry procedural, time, and cost burdens to register a com
 
 We recommended to the Ministry of Investment/BKPM that the role of notaries in company registration be integrated into the process or removed from it. It was the hardest recommendation to write, because it is straightforwardly bad news for one profession.
 
-[Read the explainer →](article.html?slug=notary-business-registration)
+[Read the explainer →](research/notary-business-registration/)
 
 We learned that, perhaps, no public policy can benefit all parties. And that is precisely why the work of analysis matters.

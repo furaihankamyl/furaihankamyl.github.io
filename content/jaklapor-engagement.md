@@ -2,7 +2,7 @@
 
 JakLapor won the Champion Project award at the WSIS Prizes 2023. A reporting platform only works if people use it, and the literature gave us two reasons to expect some groups to use it less. Sun (2016) found that women can find it harder to express their views on digital platforms. Studies of Gen Z and Millennials describe different participation styles, even though both grew up online. So we asked whether gender or generation changes young Jakartans' intention to engage with JakLapor.
 
-This paper uses the same August 2023 survey as [our study on public trust](article.html?slug=jaklapor-public-trust), with a wider lens. Trust is one part of engagement here, alongside two others.
+This paper uses the same August 2023 survey as [our study on public trust](research/jaklapor-public-trust/), with a wider lens. Trust is one part of engagement here, alongside two others.
 
 <div class="stats"><div class="stat"><div class="stat-value">353</div><div class="stat-label">Respondents aged 15 to 42 across Jakarta</div></div><div class="stat"><div class="stat-value">37.96%</div><div class="stat-label">With high intention to engage (134 of 353)</div></div><div class="stat"><div class="stat-value">1</div><div class="stat-label">Respondent with low intention</div></div><div class="stat"><div class="stat-value">0 of 4</div><div class="stat-label">Significant gender differences</div></div><div class="stat"><div class="stat-value">1 of 4</div><div class="stat-label">Significant generational differences, all in trust</div></div><div class="stat"><div class="stat-value">.744</div><div class="stat-label">p-value for the generational gap in overall engagement</div></div></div>
 

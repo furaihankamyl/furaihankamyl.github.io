@@ -9,7 +9,13 @@ Personal portfolio website. Built with plain HTML, CSS, and JavaScript. No frame
 ```
 portfolio/
 ├── index.html          → Main portfolio page
-├── article.html        → Article reader (renders Markdown)
+├── article.html        → Article reader for Writing posts (renders Markdown in the browser)
+├── article.css         → Styles shared by article.html and research/ pages
+├── article-widgets.js  → Charts, tabs, tooltips, and photo captions shared by both
+├── research/<slug>/    → Static explainer pages, generated (do not edit by hand)
+├── cite/               → BibTeX and RIS citation files, generated
+├── sitemap.xml         → Generated
+├── tools/build.mjs     → Generator for the three items above
 ├── 404.html            → Custom 404 page
 ├── data.js             → All portfolio content (edit this to update content)
 ├── main.js             → Rendering logic (do not edit unless structural change)
@@ -93,17 +99,26 @@ Each publication card can carry a plain-language article explaining the study, n
 
 **Step 2 — Create `content/thesis-lpka-network-governance.md`** and write the explainer in Markdown (same format as activity articles).
 
+**Step 3 — Build the static page.** Explainers are published as plain HTML at `research/<slug>/` so search engines can read them without running JavaScript. After any change to a publication in `data.js` or to its explainer in `content/`, run:
+
+```
+npm install      # once
+npm run build
+```
+
+Commit the regenerated `research/`, `cite/`, and `sitemap.xml` together with your edit. Old `article.html?slug=<slug>` links forward to the new page. Link to an explainer from other Markdown as `research/<slug>/`.
+
 Optional publication fields:
 
 - `translation`: English translation shown under an Indonesian title
 - `doi`: adds a DOI button on the card and in the article
 - `pdf`: path to a PDF hosted in this repo (for example `papers/x.pdf`), used instead of `driveId`
 - `role`: your role on the paper, shown at the end of the explainer
-- `cite`: the full citation, with a Copy citation button in the explainer
+- `citation`: structured metadata for the paper. The build turns it into the APA 7 reference, BibTeX, RIS, the citation meta tags read by Zotero and Google Scholar, and schema.org data. Fields: `type` (`article`, `thesis`, `conference`, or `manuscript`), `key` (BibTeX key), `title` (as published), `sentence` (sentence case, for APA), `translated` (English title in sentence case, for non-English papers), `protect` (phrases BibTeX must keep capitalized), `language` (`id` or `en`), `date` (`YYYY` or `YYYY-MM-DD`), then `journal`, `volume`, `issue`, `pages`, `issn` for articles, `thesisType`, `institution`, `place` for theses, `event` for conference papers, and `institution`, `url`, `note` for manuscripts. Authors come from `author`, and the last word of each name is read as the family name.
 
 Experience and organization entries take a `highlights` array, rendered as bullet points.
 
-After editing `data.js`, bump the `?v=` number on the `data.js` and `main.js` script tags in `index.html` (and on `data.js` in `article.html`) so returning visitors get the new version.
+After editing `data.js`, bump the `?v=` number on the `data.js` and `main.js` script tags in `index.html` (and on `data.js` in `article.html`, and on `article.css` and `article-widgets.js` when those change, including in `tools/build.mjs`) so returning visitors get the new version.
 
 The card then shows an **Explainer** badge, opens the article on click, and keeps a "Read paper ↗" button for the PDF. The article page links back to Publications and ends with a link to the full paper. Publications without `slug` behave as before (open the PDF).
 

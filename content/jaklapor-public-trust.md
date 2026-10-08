@@ -46,6 +46,6 @@ We turned both into two steps the DKI Jakarta Provincial Government could take d
 
 The study has limits. The sample was drawn by accidental, non-probability sampling, so it describes the respondents we reached. It does not represent all young Jakartans. It leans toward women (60.91%) and Gen Z (66.57%). The survey also measured trust at one point in time.
 
-The same survey also measured whether young people intend to engage with JakLapor at all, which is the subject of [the companion paper](article.html?slug=jaklapor-engagement).
+The same survey also measured whether young people intend to engage with JakLapor at all, which is the subject of [the companion paper](research/jaklapor-engagement/).
 
 The youngest users are the most active on e-government apps and the least convinced by this one.

@@ -145,7 +145,19 @@ const PORTFOLIO_DATA = {
       summary: "After relocating, LPKA took over the center of its partner network. The network then grew faster than LPKA's capacity to lead it.",
       explainerTitle: "When a Juvenile Institution Moves, Who Runs Its Network?",
       role: "Sole author, supervised by Dr. Lina Miftahul Jannah.",
-      cite: "Arnazaye, F. K. (2025). Komparasi efektivitas network governance pada relokasi Lembaga Pembinaan Khusus Anak Kelas II Jakarta [Undergraduate thesis]. Universitas Indonesia."
+      citation: {
+        type: "thesis",
+        key: "arnazaye2025komparasi",
+        title: "Komparasi Efektivitas Network Governance pada Relokasi Lembaga Pembinaan Khusus Anak Kelas II Jakarta",
+        sentence: "Komparasi efektivitas network governance pada relokasi Lembaga Pembinaan Khusus Anak Kelas II Jakarta",
+        translated: "Comparing the effectiveness of network governance in the relocation of LPKA Kelas II Jakarta",
+        protect: ["Lembaga Pembinaan Khusus Anak Kelas II Jakarta"],
+        language: "id",
+        date: "2025",
+        thesisType: "Undergraduate thesis",
+        institution: "Universitas Indonesia",
+        place: "Depok, Indonesia"
+      }
     },
     {
       title: "Membandingkan Intensi Keterlibatan Publik Antargender dan Antargenerasi Muda dalam Fitur JakLapor",
@@ -159,7 +171,21 @@ const PORTFOLIO_DATA = {
       summary: "Young Jakartans intend to engage with JakLapor at moderate to high levels. Gender makes no difference. Between generations, only trust does.",
       explainerTitle: "Do Gender and Generation Change Who Engages with JakLapor?",
       role: "First author.",
-      cite: "Arnazaye, F. K., Tesalonika, K., & Mahendra, W. (2024). Membandingkan intensi keterlibatan publik antargender dan antargenerasi muda dalam fitur JakLapor. Jurnal Ilmiah Wahana Pendidikan, 10(14), 570–582. https://doi.org/10.5281/zenodo.13731851"
+      citation: {
+        type: "article",
+        key: "arnazaye2024membandingkan",
+        title: "Membandingkan Intensi Keterlibatan Publik Antargender dan Antargenerasi Muda dalam Fitur JakLapor",
+        sentence: "Membandingkan intensi keterlibatan publik antargender dan antargenerasi muda dalam fitur JakLapor",
+        translated: "Comparing public engagement intention across genders and young generations in JakLapor",
+        protect: ["JakLapor"],
+        language: "id",
+        date: "2024-07-31",
+        journal: "Jurnal Ilmiah Wahana Pendidikan",
+        volume: "10",
+        issue: "14",
+        pages: "570-582",
+        issn: "2089-5364"
+      }
     },
     {
       title: "Simplification of Limited Liability Company Registration Procedures Through Notaries",
@@ -171,7 +197,17 @@ const PORTFOLIO_DATA = {
       summary: "Across 190 countries, requiring a notary adds about two procedures, seven days, and 23 points of income per capita to registering a company.",
       explainerTitle: "What a Notary Costs a New Company",
       role: "First and corresponding author.",
-      cite: "Arnazaye, F. K., & Ningrum, A. P. (2024). Simplifikasi prosedur registrasi perseroan terbatas badan usaha melalui notaris. Paper presented at Temu Administrator Muda Indonesia 2024."
+      citation: {
+        type: "conference",
+        key: "arnazaye2024simplifikasi",
+        title: "Simplifikasi Prosedur Registrasi Perseroan Terbatas Badan Usaha melalui Notaris",
+        sentence: "Simplifikasi prosedur registrasi perseroan terbatas badan usaha melalui notaris",
+        translated: "Simplification of limited liability company registration procedures through notaries",
+        protect: [],
+        language: "id",
+        date: "2024",
+        event: "Temu Administrator Muda Indonesia 2024"
+      }
     },
     {
       title: "Comprehensive Analysis of Public Trust Levels Among Young Individuals in the JakLapor Feature",
@@ -183,7 +219,19 @@ const PORTFOLIO_DATA = {
       summary: "A survey of 353 young Jakartans found moderate trust in JakLapor, and one significant gap: Gen Z trusts it less than Millennials.",
       explainerTitle: "After the Data Leaks, Do Young Jakartans Still Trust JakLapor?",
       role: "First and corresponding author. Led the quantitative analysis and wrote the results and discussion.",
-      cite: "Arnazaye, F. K., Setiawan, B. F., Togarma, G. A., & Mahendra, W. (2024). Analisis komprehensif tingkat kepercayaan publik antarindividu generasi muda dalam fitur JakLapor [PKM-AI manuscript]."
+      citation: {
+        type: "manuscript",
+        key: "arnazaye2024analisis",
+        title: "Analisis Komprehensif Tingkat Kepercayaan Publik Antarindividu Generasi Muda dalam Fitur JakLapor",
+        sentence: "Analisis komprehensif tingkat kepercayaan publik antarindividu generasi muda dalam fitur JakLapor",
+        translated: "Comprehensive analysis of public trust levels among young individuals in the JakLapor feature",
+        protect: ["JakLapor"],
+        language: "id",
+        date: "2024",
+        institution: "Departemen Ilmu Administrasi Negara, Universitas Indonesia",
+        url: "https://furaihankamyl.github.io/papers/jaklapor-public-trust.pdf",
+        note: "PKM-AI 2024, Kemendikbudristek"
+      }
     },
     {
       title: "Network Governance-Based Strategy in Increasing the Capacity of the Fostered Child Development Program at LPKA Kelas II Jakarta",
@@ -196,7 +244,20 @@ const PORTFOLIO_DATA = {
       summary: "Mapping 80 actors around LPKA Jakarta showed regional ties holding after the move while local ones fell away, and some programs could not be run again.",
       explainerTitle: "What Keeps a Juvenile Institution's Programs Running?",
       role: "Second author. Led the methodology for the PKM-RSH team.",
-      cite: "Ningrum, A. P., Arnazaye, F. K., Gebrena, M. R., & Jannah, L. M. (2024). Network governance-based strategy in increasing the capacity of the fostered child development program at the Special Child Development Institution for Grade II Jakarta. Jurnal Ilmu Administrasi, 21(2), 170–180. https://doi.org/10.31113/jia.v21i2.1175"
+      citation: {
+        type: "article",
+        key: "ningrum2024network",
+        title: "Network Governance-Based Strategy in Increasing the Capacity of the Fostered Child Development Program at the Special Child Development Institution for Grade II Jakarta",
+        sentence: "Network governance-based strategy in increasing the capacity of the fostered child development program at the Special Child Development Institution for Grade II Jakarta",
+        protect: ["Special Child Development Institution for Grade II Jakarta"],
+        language: "en",
+        date: "2024-12-31",
+        journal: "Jurnal Ilmu Administrasi: Media Pengembangan Ilmu dan Praktek Administrasi",
+        volume: "21",
+        issue: "2",
+        pages: "170-180",
+        issn: "2614-2597"
+      }
     },
     {
       title: "Analisis Faktor Motivasi Mahasiswa untuk Menjadi Pegawai Pemerintah",
@@ -210,7 +271,21 @@ const PORTFOLIO_DATA = {
       summary: "Eight UI and ITB students explain what draws them to the civil service, security and family, and what holds them back, rigid workplaces and pay.",
       explainerTitle: "Why Students Want, and Doubt, a Civil Service Career",
       role: "Second author.",
-      cite: "Ningrum, A. P., Arnazaye, F. K., & Wicaksana, R. A. (2023). Analisis faktor motivasi mahasiswa untuk menjadi pegawai pemerintah. Jurnal Publik, 17(2), 87–103. https://doi.org/10.52434/jp.v17i02.190"
+      citation: {
+        type: "article",
+        key: "ningrum2023analisis",
+        title: "Analisis Faktor Motivasi Mahasiswa untuk Menjadi Pegawai Pemerintah",
+        sentence: "Analisis faktor motivasi mahasiswa untuk menjadi pegawai pemerintah",
+        translated: "Analyzing students' motivation to become government employees",
+        protect: [],
+        language: "id",
+        date: "2023-12-07",
+        journal: "Jurnal Publik",
+        volume: "17",
+        issue: "2",
+        pages: "87-103",
+        issn: "2579-9266"
+      }
     },
     {
       title: "Efektivitas Pengangkatan Penjabat Kepala Daerah dalam Perspektif Demokrasi dan Teknokrasi",
@@ -224,7 +299,21 @@ const PORTFOLIO_DATA = {
       summary: "Indonesia appointed 272 acting regional heads before the 2024 elections. Against the democracy index, appointment fits only 2 of 34 provinces.",
       explainerTitle: "Who Should Run a Region When Nobody Was Elected?",
       role: "First author.",
-      cite: "Arnazaye, F. K., Sulaiman, A. N., & Kastholani, M. I. (2023). Efektivitas pengangkatan penjabat kepala daerah dalam perspektif demokrasi dan teknokrasi. Jurnal Publik, 17(1), 29–39. https://doi.org/10.52434/jp.v17i01.188"
+      citation: {
+        type: "article",
+        key: "arnazaye2023efektivitas",
+        title: "Efektivitas Pengangkatan Penjabat Kepala Daerah dalam Perspektif Demokrasi dan Teknokrasi",
+        sentence: "Efektivitas pengangkatan penjabat kepala daerah dalam perspektif demokrasi dan teknokrasi",
+        translated: "The effectiveness of appointing acting regional heads from democratic and technocratic perspectives",
+        protect: [],
+        language: "id",
+        date: "2023-06-21",
+        journal: "Jurnal Publik",
+        volume: "17",
+        issue: "1",
+        pages: "29-39",
+        issn: "2579-9266"
+      }
     }
   ],
 

@@ -445,7 +445,7 @@ function renderPublications() {
     // Publications with a slug get an explainer article (content/<slug>.md).
     // The card then leads to the explainer; the paper stays one click away.
     if (pub.slug) {
-      const explainerUrl = `article.html?slug=${pub.slug}`;
+      const explainerUrl = `research/${pub.slug}/`;
       return `
         <div class="pub-card has-explainer fade-up" style="--d:${Math.min(i, 6) * 70}"
           onclick="window.location.href='${explainerUrl}'">
