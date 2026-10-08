@@ -321,36 +321,19 @@ function activityThumb(item, cls) {
   return `<div class="${cls} w-quote"><span>${item.quote || item.title}</span></div>`;
 }
 
-// One featured piece, then every other piece as a light list. Nothing sits behind a slider.
+// Every piece gets the same card, so no single story outranks the others.
 function renderActivities(filter = 'All') {
-  const all = PORTFOLIO_DATA.activities;
+  const items = PORTFOLIO_DATA.activities.filter(a => filter === 'All' || a.category === filter);
   const el = document.getElementById('activitiesGrid');
-  const featured = filter === 'All' ? all.find(a => a.featured) : null;
-  const rest = all.filter(a => a !== featured && (filter === 'All' || a.category === filter));
-
-  const feature = featured ? `
-    <a class="w-feature activity-card fade-up" href="article.html?slug=${featured.slug}">
-      <div class="w-feature-media">${activityThumb(featured, 'w-feature-img')}</div>
-      <div class="w-feature-body">
-        <div class="activity-category">Featured · ${featured.category}</div>
-        <h3 class="w-feature-title">${featured.title}</h3>
-        <p class="w-feature-desc">${featured.description}</p>
-        <span class="w-read">Read the story →</span>
-      </div>
-    </a>` : '';
-
-  const list = rest.map((item, i) => `
-    <a class="w-row fade-up" style="--d:${Math.min(i, 5) * 50}" href="article.html?slug=${item.slug}">
-      <div class="w-row-media">${activityThumb(item, 'w-row-img')}</div>
-      <div class="w-row-body">
+  el.innerHTML = `<div class="w-grid">${items.map((item, i) => `
+    <a class="w-card fade-up" style="--d:${Math.min(i, 5) * 50}" href="writing/${item.slug}/">
+      <div class="w-card-media">${activityThumb(item, 'w-card-img')}</div>
+      <div class="w-card-body">
         <div class="activity-category">${item.category} · ${item.date}</div>
-        <h3 class="w-row-title">${item.title}</h3>
-        <p class="w-row-desc">${item.description}</p>
+        <h3 class="w-card-title">${item.title}</h3>
+        <p class="w-card-desc">${item.description}</p>
       </div>
-      <span class="w-row-arrow">→</span>
-    </a>`).join('');
-
-  el.innerHTML = feature + `<div class="w-list">${list}</div>`;
+    </a>`).join('')}</div>`;
   observeFadeUps(el);
 }
 
@@ -438,6 +421,9 @@ function renderPublications() {
     const translation = pub.translation ? `<div class="pub-translation">${pub.translation}</div>` : '';
     const names = pub.author.split(', ').map(n => n.trim().split(' ').pop());
     const byline = names.length > 2 ? `${names[0]}, ${names[1]}, et al.` : names.join(' and ');
+    const brief = pub.brief
+      ? `<a class="pub-read-btn" href="${pub.brief}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Policy brief ↗</a>`
+      : '';
     const doi = pub.doi
       ? `<a class="pub-read-btn" href="https://doi.org/${pub.doi}" target="_blank" rel="noopener" onclick="event.stopPropagation()">DOI ↗</a>`
       : '';
@@ -458,6 +444,7 @@ function renderPublications() {
               onclick="event.stopPropagation()">Read explainer →</a>
             <button type="button" class="pub-read-btn"
               onclick="event.stopPropagation(); ${openPaper}">Paper ↗</button>
+            ${brief}
             ${doi}
           </div>
         </div>

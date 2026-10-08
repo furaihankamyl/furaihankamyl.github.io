@@ -2,7 +2,7 @@
 
 PKBM Hasanah runs education and training for the children at LPKA Kelas II Jakarta. In our interview, they described a problem. LPKA struggled to pass on programs that had run well to new partners, so the quality of coaching differed from one partner to the next. Ruang Damai described a similar picture, with gaps in facilities and in coordination between actors at different levels.
 
-Those two interviews framed this study. It is the PKM-RSH project I wrote about in [the PIMNAS story](article.html?slug=pimnas), done with Adinda Puspita Ningrum and Muhammad Rafli Gebrena under the supervision of Dr. Lina Miftahul Jannah. Adinda was the first author. The question was practical. How should LPKA manage its network of partners so that coaching programs survive changes in people, partners, and location?
+Those two interviews framed this study. It is the PKM-RSH project I wrote about in [the PIMNAS story](writing/pimnas/), done with Adinda Puspita Ningrum and Muhammad Rafli Gebrena under the supervision of Dr. Lina Miftahul Jannah. Adinda was the first author. The question was practical. How should LPKA manage its network of partners so that coaching programs survive changes in people, partners, and location?
 
 PUSKAPA UI (2023) had already named three problems in LPKA coaching programs. They were not based on comprehensive needs assessments, resources were limited, and coordination between actors at different levels had gaps. Muzakki and Subroto (2023) added the lack of standard operating procedures.
 

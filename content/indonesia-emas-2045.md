@@ -10,7 +10,7 @@ Three projects, four accomplishments, and three institutions on the receiving en
 
 The question my team started with, together with Adinda and Gebrena, was whether the collaborations run by LPKA Kelas II Jakarta were organized around what the children inside actually needed. The institution was trying, and the staff had built real programs. What it lacked were comprehensive standard operating procedures, which meant **its partnerships existed without being directed toward specific outcomes.**
 
-[Read the explainer →](research/lpka-coaching-network/) · [The story behind it →](article.html?slug=pimnas)
+[Read the explainer →](research/lpka-coaching-network/) · [The story behind it →](writing/pimnas/)
 
 ## The Reporting Channel Nobody Trusts
 

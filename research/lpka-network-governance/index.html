@@ -119,7 +119,7 @@
 
 <h2>Turning a relocation into a comparison</h2>
 <p>The research question was simple. How did the effectiveness of LPKA&#39;s network governance change after the relocation? A relocation is useful to a researcher because it is a single event with a date. Everything before 21 January 2020 is Salemba. Everything after is Cinere. That split gives a before and an after without anyone having to design an intervention.</p>
-<p>The harder part was the data. No list of LPKA&#39;s partners existed. The official website published too few activities to build a representative network, which was the main weakness of the earlier PKM study I wrote about in <a href="/article.html?slug=pimnas">PIMNAS</a>. So I scraped Instagram and kept only posts that showed an in-person activity between organizations. Two organizations appearing in the same activity became a tie. Each organization was coded by level, from national agencies to international organizations, and by the period in which it appeared.</p>
+<p>The harder part was the data. No list of LPKA&#39;s partners existed. The official website published too few activities to build a representative network, which was the main weakness of the earlier PKM study I wrote about in <a href="/writing/pimnas/">PIMNAS</a>. So I scraped Instagram and kept only posts that showed an in-person activity between organizations. Two organizations appearing in the same activity became a tie. Each organization was coded by level, from national agencies to international organizations, and by the period in which it appeared.</p>
 <figure class="chart"><div class="chart-title">How the network was built</div><div class="chart-sub">From public posts to a before and after comparison</div><div class="pipeline"><div><strong>1,789 posts</strong>1,568 from @lpkajakarta and 221 from @lapassalemba, 2017 to 2025</div><div><strong>Filtered</strong>Kept in-person activities between organizations, dropped announcements</div><div><strong>210 organizations, 617 ties</strong>Organizations in the same activity share a tie, coded by level and period</div><div><strong>Split at 21 Jan 2020</strong>738 days in Salemba, 1,788 days in Cinere, metrics computed in Gephi 0.10.1</div><div><strong>Triangulated</strong>11 interviews, field observation, and post captions</div></div></figure>
 
 <p>Network metrics describe structure. They do not explain it. I interviewed eleven informants from seven organizations, including Ditjenpas, the police, Disdukcapil Jakarta, Bapas Jakarta Selatan, Ruang Damai, and PKBM Hasanah, and observed activities in Cinere on 4 July 2024. The interviews were my check on whether the numbers meant what I thought they meant.</p>
@@ -157,6 +157,7 @@
 <div class="callout"><span>Key finding</span>LPKA took on the role of a lead organization without the capacity to lead a network this large and this varied.</div>
 
 <p> The recommendation follows from that finding. LPKA needs fewer partners, chosen more deliberately. Ditjenpas can set a framework for how LPKAs manage their networks, with criteria for selecting partners, a classification of which interactions take priority, and a simpler format for documenting cooperation. LPKA can then group its partners into thematic working groups by program focus, each with a small set of organizations whose resources complement each other.</p>
+<p>The recommendations are also written up as a <a href="/papers/lpka-policy-brief.pdf">four-page policy brief</a>, in Indonesian, with my supervisor Dr. Lina Miftahul Jannah. The brief adds the risks of each option and how to reduce them.</p>
 <p>The data has limits that anyone relying on it should know. Instagram only captures what LPKA and Lapas Salemba chose to publish, so unpublished interactions are missing. I also did not collect data from the children themselves. <strong>The study measures how the network is governed. It does not measure whether the children are better off.</strong> Answering that needs the children&#39;s perspective.</p>
 <p>The question I would leave LPKA with is which of its 189 partners the children actually need.</p>
     </div>
@@ -172,6 +173,7 @@
     </dl>
     <div class="paper-cta-actions">
       <a class="back-link" href="https://drive.google.com/file/d/1j93NVB_mjsn-bNK-CFbOk2SduqtdxA4A/view" target="_blank" rel="noopener">Read the paper ↗</a>
+      <a class="back-link" href="/papers/lpka-policy-brief.pdf" target="_blank" rel="noopener">Policy brief ↗</a>
       
     </div>
 
@@ -229,11 +231,9 @@ ER  -
 
 <script src="/article-widgets.js?v=1"></script>
 <script>
-  const content = document.getElementById('articleContent');
   initWidgets(document.querySelector('.article-wrap'));
-  captionPhotos(content);
+  captionPhotos(document.getElementById('articleContent'));
 
-  // Copy the citation in the open tab. APA keeps its italics when pasted into Word or Docs.
   const copyBtn = document.getElementById('citeCopy');
   copyBtn.addEventListener('click', async () => {
     const panel = document.querySelector('#cite .tab-panel:not([hidden])');

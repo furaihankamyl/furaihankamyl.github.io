@@ -9,10 +9,12 @@ Personal portfolio website. Built with plain HTML, CSS, and JavaScript. No frame
 ```
 portfolio/
 ├── index.html          → Main portfolio page
-├── article.html        → Article reader for Writing posts (renders Markdown in the browser)
-├── article.css         → Styles shared by article.html and research/ pages
-├── article-widgets.js  → Charts, tabs, tooltips, and photo captions shared by both
+├── article.html        → Forwards old article.html?slug= links to the static pages
+├── article.css         → Styles for the article pages
+├── article-widgets.js  → Charts, tabs, tooltips, and photo captions on article pages
 ├── research/<slug>/    → Static explainer pages, generated (do not edit by hand)
+├── writing/<slug>/     → Static Writing pages, generated (do not edit by hand)
+├── papers/             → PDFs hosted here (papers, policy brief)
 ├── cite/               → BibTeX and RIS citation files, generated
 ├── sitemap.xml         → Generated
 ├── tools/build.mjs     → Generator for the three items above
@@ -106,7 +108,7 @@ npm install      # once
 npm run build
 ```
 
-Commit the regenerated `research/`, `cite/`, and `sitemap.xml` together with your edit. Old `article.html?slug=<slug>` links forward to the new page. Link to an explainer from other Markdown as `research/<slug>/`.
+Commit the regenerated `research/`, `writing/`, `cite/`, `sitemap.xml`, and `index.html` together with your edit. The same build covers Writing posts, so run it after adding or editing one too. Old `article.html?slug=<slug>` links forward to the new pages. Link between articles in Markdown as `research/<slug>/` or `writing/<slug>/`.
 
 Optional publication fields:
 
@@ -114,6 +116,7 @@ Optional publication fields:
 - `doi`: adds a DOI button on the card and in the article
 - `pdf`: path to a PDF hosted in this repo (for example `papers/x.pdf`), used instead of `driveId`
 - `role`: your role on the paper, shown at the end of the explainer
+- `brief`: path to a policy brief PDF in this repo, shown as a Policy brief button on the card and in the explainer
 - `citation`: structured metadata for the paper. The build turns it into the APA 7 reference, BibTeX, RIS, the citation meta tags read by Zotero and Google Scholar, and schema.org data. Fields: `type` (`article`, `thesis`, `conference`, or `manuscript`), `key` (BibTeX key), `title` (as published), `sentence` (sentence case, for APA), `translated` (English title in sentence case, for non-English papers), `protect` (phrases BibTeX must keep capitalized), `language` (`id` or `en`), `date` (`YYYY` or `YYYY-MM-DD`), then `journal`, `volume`, `issue`, `pages`, `issn` for articles, `thesisType`, `institution`, `place` for theses, `event` for conference papers, and `institution`, `url`, `note` for manuscripts. Authors come from `author`, and the last word of each name is read as the family name.
 
 Experience and organization entries take a `highlights` array, rendered as bullet points.

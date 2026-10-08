@@ -143,7 +143,7 @@
 <div class="takeaways"><div class="takeaways-title">Key takeaways</div><ul><li>We mapped 80 actors in LPKA Jakarta's coaching programs from 56 published articles, then checked the map through observation and interviews.</li><li>Regional actors form the densest network (density 0.400). Local, community, and private actors form the loosest (0.065).</li><li>After the move to Cinere, density halved from 0.193 to 0.097, and some programs run with local partners could not be run again.</li><li>Three kinds of interaction keep the network running: information sharing, social action, and procurement.</li><li>Programs last when they follow children's needs, have a clear technical framework, involve actors at every level, and are evaluated continuously.</li></ul></div>
 
 <p>PKBM Hasanah runs education and training for the children at LPKA Kelas II Jakarta. In our interview, they described a problem. LPKA struggled to pass on programs that had run well to new partners, so the quality of coaching differed from one partner to the next. Ruang Damai described a similar picture, with gaps in facilities and in coordination between actors at different levels.</p>
-<p>Those two interviews framed this study. It is the PKM-RSH project I wrote about in <a href="/article.html?slug=pimnas">the PIMNAS story</a>, done with Adinda Puspita Ningrum and Muhammad Rafli Gebrena under the supervision of Dr. Lina Miftahul Jannah. Adinda was the first author. The question was practical. How should LPKA manage its network of partners so that coaching programs survive changes in people, partners, and location?</p>
+<p>Those two interviews framed this study. It is the PKM-RSH project I wrote about in <a href="/writing/pimnas/">the PIMNAS story</a>, done with Adinda Puspita Ningrum and Muhammad Rafli Gebrena under the supervision of Dr. Lina Miftahul Jannah. Adinda was the first author. The question was practical. How should LPKA manage its network of partners so that coaching programs survive changes in people, partners, and location?</p>
 <p>PUSKAPA UI (2023) had already named three problems in LPKA coaching programs. They were not based on comprehensive needs assessments, resources were limited, and coordination between actors at different levels had gaps. Muzakki and Subroto (2023) added the lack of standard operating procedures.</p>
 <div class="stats"><div class="stat"><div class="stat-value">260</div><div class="stat-label">Articles reviewed from LPKA and Ditjenpas websites</div></div><div class="stat"><div class="stat-value">80</div><div class="stat-label">Actors mapped in the coaching network</div></div><div class="stat"><div class="stat-value">3</div><div class="stat-label">Levels: national, regional, and local</div></div><div class="stat"><div class="stat-value">0.400</div><div class="stat-label">Density of the regional network, the highest</div></div><div class="stat"><div class="stat-value">0.065</div><div class="stat-label">Density of the local network, the lowest</div></div><div class="stat"><div class="stat-value">-50%</div><div class="stat-label">Change in density after the move, 0.193 to 0.097</div></div></div>
 
@@ -189,6 +189,7 @@
     </dl>
     <div class="paper-cta-actions">
       <a class="back-link" href="https://drive.google.com/file/d/1s3_HDObWfezzZ66EawVExvmT0P4zNF8T/view" target="_blank" rel="noopener">Read the paper ↗</a>
+      
       <a class="back-link" href="https://doi.org/10.31113/jia.v21i2.1175" target="_blank" rel="noopener">DOI ↗</a>
     </div>
 
@@ -256,11 +257,9 @@ ER  -
 
 <script src="/article-widgets.js?v=1"></script>
 <script>
-  const content = document.getElementById('articleContent');
   initWidgets(document.querySelector('.article-wrap'));
-  captionPhotos(content);
+  captionPhotos(document.getElementById('articleContent'));
 
-  // Copy the citation in the open tab. APA keeps its italics when pasted into Word or Docs.
   const copyBtn = document.getElementById('citeCopy');
   copyBtn.addEventListener('click', async () => {
     const panel = document.querySelector('#cite .tab-panel:not([hidden])');

@@ -141,6 +141,7 @@ const PORTFOLIO_DATA = {
       author: "Furaihan Kamyl Arnazaye",
       year: 2025,
       driveId: "1j93NVB_mjsn-bNK-CFbOk2SduqtdxA4A",
+      brief: "papers/lpka-policy-brief.pdf",
       slug: "lpka-network-governance",
       summary: "After relocating, LPKA took over the center of its partner network. The network then grew faster than LPKA's capacity to lead it.",
       explainerTitle: "When a Juvenile Institution Moves, Who Runs Its Network?",
@@ -205,8 +206,10 @@ const PORTFOLIO_DATA = {
         translated: "Simplification of limited liability company registration procedures through notaries",
         protect: [],
         language: "id",
-        date: "2024",
-        event: "Temu Administrator Muda Indonesia 2024"
+        date: "2024-08-14",
+        event: "Temu Administrator Muda Indonesia 2024",
+        host: "Universitas Gadjah Mada",
+        place: "Yogyakarta, Indonesia"
       }
     },
     {
@@ -331,7 +334,6 @@ const PORTFOLIO_DATA = {
       date: "2024–2025",
       category: "Work",
       thumbnail: "images/sahabat-ai-1.jpg",
-      featured: true,
       description: "GoTo's open-source LLM for Indonesian and regional languages needed data, talent, and trust from campuses. I led the university program that brought seven of them in.",
       slug: "sahabat-ai"
     },

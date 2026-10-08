@@ -4,144 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Article | Kamyl</title>
-
-  <meta name="description" content="Writing on public policy, research, and government relations by Furaihan Kamyl Arnazaye." />
-  <meta property="og:title" content="Furaihan Kamyl Arnazaye" />
-  <meta property="og:description" content="Writing on public policy, research, and government relations." />
-  <meta property="og:image" content="https://furaihankamyl.github.io/images/og-cover.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:site_name" content="Furaihan Kamyl Arnazaye" />
-  <meta property="og:type" content="article" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://furaihankamyl.github.io/images/og-cover.jpg" />
-
+  <!-- Articles now live at research/<slug>/ and writing/<slug>/ (built by tools/build.mjs).
+       This page only forwards old article.html?slug= links there. -->
+  <meta name="robots" content="noindex" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
   <script>document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");</script>
-
   <link rel="stylesheet" href="article.css?v=1" />
 </head>
 <body>
 
 <nav>
-  <a href="index.html#activities" class="nav-back" id="navBack">← Writing</a>
+  <a href="index.html#activities" class="nav-back">← Writing</a>
   <a href="index.html" class="nav-name">Kamyl</a>
-  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀</button>
+  <span></span>
 </nav>
-<div class="read-progress" id="readProgress"></div>
 
 <div class="article-wrap">
-  <div id="articleMeta" class="article-meta" style="display:none;">
-    <div class="article-category" id="articleCategory"></div>
-    <h1 class="article-headline" id="articleHeadline"></h1>
-    <div class="article-info">
-      <span id="articleDate"></span>
-      <span>·</span>
-      <span class="reading-time" id="readingTime"></span>
-    </div>
-  </div>
-
   <div id="articleLoading" class="article-loading">Loading article...</div>
   <div id="articleError" class="article-error" style="display:none;">
-    Article not found. <a href="index.html" id="errorBack">Return to home</a>
-  </div>
-  <div id="articleContent" class="article-content" style="display:none;"></div>
-
-  <a id="articleNext" class="article-next" style="display:none;">
-    <div class="article-next-label"><span>Next article</span><span>↗</span></div>
-    <div class="article-next-title" id="articleNextTitle"></div>
-    <div class="article-next-cat" id="articleNextCat"></div>
-  </a>
-
-  <div class="article-back-bottom">
-    <a href="index.html#activities" class="back-link" id="bottomBack">← Back to Writing</a>
+    Article not found. <a href="index.html">Return to home</a>
   </div>
 </div>
 
-<script src="data.js?v=9"></script>
-<script src="article-widgets.js?v=1"></script>
+<script src="data.js?v=10"></script>
 <script>
-  // Get slug from URL
-  const params = new URLSearchParams(window.location.search);
-  const slug = params.get('slug');
-
-  function calcReadingTime(text) {
-    const wpm = 200;
-    // Count prose only. Chart, table, and takeaway blocks are one-line HTML in the Markdown.
-    const prose = text.split('\n').filter(l => !l.trim().startsWith('<')).join(' ');
-    const words = prose.trim().split(/\s+/).length;
-    const mins = Math.ceil(words / wpm);
-    return `${mins} min read`;
-  }
-
-  async function loadArticle() {
-    if (!slug) {
-      showError(); return;
-    }
-
-    // Research explainers live as static pages in research/<slug>/ (built by
-    // tools/build.mjs). Old article.html?slug= links forward there.
-    const pub = PORTFOLIO_DATA.publications.find(p => p.slug === slug);
-    if (pub) { location.replace(`research/${pub.slug}/`); return; }
-
-    const entry = PORTFOLIO_DATA.activities.find(a => a.slug === slug);
-    if (!entry) { showError(); return; }
-
-    // Set OG/page title
-    document.title = `${entry.title} | Kamyl`;
-
-    // Populate meta
-    document.getElementById('articleCategory').textContent = entry.category;
-    document.getElementById('articleHeadline').textContent = entry.title;
-    document.getElementById('articleDate').textContent = entry.date;
-
-    try {
-      const res = await fetch(`content/${slug}.md`);
-      if (!res.ok) throw new Error('Not found');
-      const md = await res.text();
-
-      // Configure marked
-      marked.setOptions({
-        breaks: true,
-        gfm: true
-      });
-
-      const html = marked.parse(md);
-
-      document.getElementById('readingTime').textContent = calcReadingTime(md);
-      document.getElementById('articleMeta').style.display = 'block';
-      document.getElementById('articleContent').innerHTML = html;
-      initWidgets(document.getElementById('articleContent'));
-      captionPhotos(document.getElementById('articleContent'));
-      document.getElementById('articleContent').style.display = 'block';
-      document.getElementById('articleLoading').style.display = 'none';
-      renderNextArticle(entry, PORTFOLIO_DATA.activities);
-    } catch (e) {
-      showError();
-    }
-  }
-
-  // Next article: the entry after the current one in its list, wrapping around
-  function renderNextArticle(current, all) {
-    if (all.length < 2) return;
-    const idx = all.findIndex(a => a.slug === current.slug);
-    const next = all[(idx + 1) % all.length];
-    const card = document.getElementById('articleNext');
-    card.href = `article.html?slug=${next.slug}`;
-    document.getElementById('articleNextTitle').textContent = next.title;
-    document.getElementById('articleNextCat').textContent = `${next.category} · ${next.date}`;
-    card.style.display = 'block';
-  }
-
-  function showError() {
+  const slug = new URLSearchParams(location.search).get('slug');
+  const pub = PORTFOLIO_DATA.publications.find(p => p.slug && p.slug === slug);
+  const piece = PORTFOLIO_DATA.activities.find(a => a.slug === slug);
+  if (pub) location.replace(`research/${slug}/`);
+  else if (piece) location.replace(`writing/${slug}/`);
+  else {
     document.getElementById('articleLoading').style.display = 'none';
     document.getElementById('articleError').style.display = 'block';
   }
-
-  loadArticle();
 </script>
 </body>
 </html>

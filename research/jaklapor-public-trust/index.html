@@ -169,6 +169,7 @@
     <div class="paper-cta-actions">
       <a class="back-link" href="/papers/jaklapor-public-trust.pdf" target="_blank" rel="noopener">Read the paper ↗</a>
       
+      
     </div>
 
     <div class="cite-box" id="cite" data-tabs>
@@ -228,11 +229,9 @@ ER  -
 
 <script src="/article-widgets.js?v=1"></script>
 <script>
-  const content = document.getElementById('articleContent');
   initWidgets(document.querySelector('.article-wrap'));
-  captionPhotos(content);
+  captionPhotos(document.getElementById('articleContent'));
 
-  // Copy the citation in the open tab. APA keeps its italics when pasted into Word or Docs.
   const copyBtn = document.getElementById('citeCopy');
   copyBtn.addEventListener('click', async () => {
     const panel = document.querySelector('#cite .tab-panel:not([hidden])');

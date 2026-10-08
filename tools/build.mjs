@@ -1,13 +1,15 @@
-// Builds the static, indexable pages for research explainers.
+// Builds the static, indexable article pages.
 //
-//   npm install        (once, installs marked at the same version article.html uses)
+//   npm install        (once, installs marked)
 //   npm run build
 //
 // Reads data.js and content/<slug>.md, then writes:
-//   research/<slug>/index.html   one crawlable page per publication explainer
+//   research/<slug>/index.html   one page per publication explainer, with citations
+//   writing/<slug>/index.html    one page per Writing piece
 //   cite/<key>.bib, cite/<key>.ris, cite/all.bib, cite/all.ris
 //   sitemap.xml
-// Run it again after editing a publication in data.js or an explainer in content/.
+//   the Person schema.org block in index.html
+// Run it again after editing data.js or anything in content/.
 
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
@@ -24,6 +26,7 @@ const ME = {
   sameAs: ['https://www.linkedin.com/in/furaihankamyl/']
 };
 const LANG_NAME = { id: 'Indonesian', en: 'English' };
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const BIB_LANGID = { id: 'indonesian', en: 'english' };
 
 const read = f => readFileSync(join(ROOT, f), 'utf8');
@@ -70,7 +73,10 @@ function apa(pub) {
   const year = c.date.slice(0, 4);
   const tr = c.translated ? ` [${c.translated}]` : '';
   const pages = c.pages ? c.pages.replace('-', '–') : '';
-  const head = `${apaAuthors(authorsOf(pub))} (${year}). `;
+  // Conference papers carry the presentation date, as APA asks
+  const when = c.type === 'conference' && c.date.length === 10
+    ? `${year}, ${MONTHS[+c.date.slice(5, 7) - 1]} ${+c.date.slice(8)}` : year;
+  const head = `${apaAuthors(authorsOf(pub))} (${when}). `;
   let html;
   if (c.type === 'article') {
     html = `${esc(c.sentence)}${esc(tr)}. <i>${esc(c.journal)}, ${esc(c.volume)}</i>(${esc(c.issue)}), ${pages}.`
@@ -78,7 +84,7 @@ function apa(pub) {
   } else if (c.type === 'thesis') {
     html = `<i>${esc(c.sentence)}</i>${esc(tr)} [${esc(c.thesisType)}, ${esc(c.institution)}].`;
   } else if (c.type === 'conference') {
-    html = `<i>${esc(c.sentence)}</i>${esc(tr)} [Paper presentation]. ${esc(c.event)}.`;
+    html = `<i>${esc(c.sentence)}</i>${esc(tr)} [Paper presentation]. ${esc(eventPlace(c))}.`;
   } else {
     html = `<i>${esc(c.sentence)}</i>${esc(tr)} [Unpublished manuscript]. ${esc(c.institution)}.`
       + (c.url ? ` ${esc(c.url)}` : '');
@@ -87,6 +93,9 @@ function apa(pub) {
   const text = html.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"');
   return { html, text };
 }
+
+// "Temu Administrator Muda Indonesia 2024, Universitas Gadjah Mada, Yogyakarta, Indonesia"
+const eventPlace = c => [c.event, c.host, c.place].filter(Boolean).join(', ');
 
 // ---------- BibTeX ----------
 
@@ -115,7 +124,8 @@ function bibtex(pub) {
     f.push(['type', c.thesisType], ['school', c.institution], ['address', c.place], ['year', c.date.slice(0, 4)]);
   } else if (c.type === 'conference') {
     type = 'unpublished';
-    f.push(['note', `Paper presented at ${c.event}`], ['year', c.date.slice(0, 4)]);
+    f.push(['note', `Paper presented at ${eventPlace(c)}`], ['year', c.date.slice(0, 4)]);
+    if (c.date.length === 10) f.push(['date', c.date]); // biblatex and Zotero read the full date
   } else {
     type = 'unpublished';
     f.push(['note', `Unpublished manuscript, ${c.institution}`], ['year', c.date.slice(0, 4)]);
@@ -146,6 +156,8 @@ function ris(pub) {
     r.push(['PB', c.institution], ['CY', c.place], ['M3', c.thesisType]);
   } else if (c.type === 'conference') {
     r.push(['T2', c.event], ['M3', 'Paper presentation']);
+    if (c.place) r.push(['CY', c.place]);
+    if (c.host) r.push(['N1', `Hosted by ${c.host}`]);
   } else {
     r.push(['PB', c.institution], ['M3', 'Unpublished manuscript']);
     if (c.url) r.push(['UR', c.url]);
@@ -216,12 +228,12 @@ function jsonLd(pub, url, dates) {
     author: ME,
     isBasedOn: work
   };
-  return JSON.stringify(doc, null, 2).replace(/</g, '\\u003c');
+  return doc;
 }
 
-// ---------- Explainer body ----------
+// ---------- Article body ----------
 
-marked.setOptions({ breaks: true, gfm: true }); // same options as article.html
+marked.setOptions({ breaks: true, gfm: true }); // same options the site has always used
 
 // Pages live two folders down, so relative links in the Markdown become root-relative
 const rootRelative = html => html.replace(/(\s(?:href|src))="(?!https?:|\/|#|mailto:|data:)([^"]*)"/g, '$1="/$2"');
@@ -232,49 +244,43 @@ function readingTime(md) {
 }
 
 const paperUrl = pub => pub.pdf ? `/${pub.pdf}` : `https://drive.google.com/file/d/${pub.driveId}/view`;
-const pageUrl = slug => `${SITE}/research/${slug}/`;
+const pageUrl = (section, slug) => `${SITE}/${section}/${slug}/`;
+const ldJson = doc => JSON.stringify(doc, null, 2).replace(/</g, '\\u003c');
 
-function page(pub, next) {
-  const md = read(`content/${pub.slug}.md`);
-  const url = pageUrl(pub.slug);
-  const dates = gitDates(`content/${pub.slug}.md`);
-  const c = pub.citation;
-  const title = `${pub.explainerTitle} | Furaihan Kamyl Arnazaye`;
-  const cite = apa(pub);
-  const paperTitle = pub.translation ? `${pub.title} (${pub.translation})` : pub.title;
-
+// One HTML shell for every article page
+function shell(o) {
+  const md = read(`content/${o.slug}.md`);
+  const title = `${o.headline} | Furaihan Kamyl Arnazaye`;
+  const image = o.image || `${SITE}/images/og-cover.jpg`;
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Generated by tools/build.mjs from data.js and content/${pub.slug}.md. Edit those, then run npm run build. -->
+  <!-- Generated by tools/build.mjs from data.js and content/${o.slug}.md. Edit those, then run npm run build. -->
   <title>${esc(title)}</title>
-  <meta name="description" content="${esc(pub.summary)}" />
+  <meta name="description" content="${esc(o.description)}" />
   <meta name="author" content="Furaihan Kamyl Arnazaye" />
-  <link rel="canonical" href="${url}" />
+  <link rel="canonical" href="${o.url}" />
 
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Furaihan Kamyl Arnazaye" />
-  <meta property="og:title" content="${esc(pub.explainerTitle)}" />
-  <meta property="og:description" content="${esc(pub.summary)}" />
-  <meta property="og:url" content="${url}" />
-  <meta property="og:image" content="${SITE}/images/og-cover.jpg" />
-  <meta property="og:image:width" content="1200" />
+  <meta property="og:title" content="${esc(o.headline)}" />
+  <meta property="og:description" content="${esc(o.description)}" />
+  <meta property="og:url" content="${o.url}" />
+  <meta property="og:image" content="${image}" />
+${o.image ? '' : `  <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="article:author" content="Furaihan Kamyl Arnazaye" />
-  <meta property="article:published_time" content="${dates.published}" />
-  <meta property="article:modified_time" content="${dates.modified}" />
+`}  <meta property="article:author" content="Furaihan Kamyl Arnazaye" />
+  <meta property="article:published_time" content="${o.dates.published}" />
+  <meta property="article:modified_time" content="${o.dates.modified}" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="${esc(pub.explainerTitle)}" />
-  <meta name="twitter:description" content="${esc(pub.summary)}" />
-  <meta name="twitter:image" content="${SITE}/images/og-cover.jpg" />
-
-  <!-- Citation data for the paper this explainer is based on -->
-${highwire(pub)}
-
+  <meta name="twitter:title" content="${esc(o.headline)}" />
+  <meta name="twitter:description" content="${esc(o.description)}" />
+  <meta name="twitter:image" content="${image}" />
+${o.extraHead || ''}
   <script type="application/ld+json">
-${jsonLd(pub, url, dates)}
+${ldJson(o.jsonLd)}
   </script>
 
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -289,7 +295,7 @@ ${jsonLd(pub, url, dates)}
 <body>
 
 <nav>
-  <a href="/#publications" class="nav-back">← Publications</a>
+  <a href="${o.back.href}" class="nav-back">← ${o.back.label}</a>
   <a href="/" class="nav-name">Kamyl</a>
   <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀</button>
 </nav>
@@ -298,12 +304,12 @@ ${jsonLd(pub, url, dates)}
 <main class="article-wrap">
   <article>
     <header class="article-meta">
-      <div class="article-category">Research Explainer</div>
-      <h1 class="article-headline">${esc(pub.explainerTitle)}</h1>
+      <div class="article-category">${esc(o.category)}</div>
+      <h1 class="article-headline">${esc(o.headline)}</h1>
       <div class="article-info">
         <span>By Furaihan Kamyl Arnazaye</span>
         <span>·</span>
-        <span>${pub.year}</span>
+        <span>${esc(o.date)}</span>
         <span>·</span>
         <span class="reading-time">${readingTime(md)}</span>
       </div>
@@ -313,7 +319,33 @@ ${jsonLd(pub, url, dates)}
 ${rootRelative(marked.parse(md)).trim()}
     </div>
   </article>
+${o.after || ''}
+  <a class="article-next" href="${o.next.href}">
+    <div class="article-next-label"><span>${o.next.label}</span><span>↗</span></div>
+    <div class="article-next-title">${esc(o.next.title)}</div>
+    <div class="article-next-cat">${esc(o.next.meta)}</div>
+  </a>
 
+  <div class="article-back-bottom">
+    <a href="${o.back.href}" class="back-link">← Back to ${o.back.label}</a>
+  </div>
+</main>
+
+<script src="/article-widgets.js?v=1"></script>
+<script>
+  initWidgets(document.querySelector('.article-wrap'));
+  captionPhotos(document.getElementById('articleContent'));
+${o.script || ''}</script>
+</body>
+</html>
+`;
+}
+
+// The full paper, its authors, and the Cite this paper box
+function paperBox(pub) {
+  const c = pub.citation;
+  const paperTitle = pub.translation ? `${pub.title} (${pub.translation})` : pub.title;
+  return `
   <section class="paper-cta" aria-labelledby="paperTitle">
     <div class="paper-cta-label">The full paper</div>
     <h2 class="paper-cta-title" id="paperTitle">${esc(paperTitle)}</h2>
@@ -324,6 +356,7 @@ ${rootRelative(marked.parse(md)).trim()}
     </dl>
     <div class="paper-cta-actions">
       <a class="back-link" href="${esc(paperUrl(pub))}" target="_blank" rel="noopener">Read the paper ↗</a>
+      ${pub.brief ? `<a class="back-link" href="/${esc(pub.brief)}" target="_blank" rel="noopener">Policy brief ↗</a>` : ''}
       ${pub.doi ? `<a class="back-link" href="https://doi.org/${esc(pub.doi)}" target="_blank" rel="noopener">DOI ↗</a>` : ''}
     </div>
 
@@ -336,7 +369,7 @@ ${rootRelative(marked.parse(md)).trim()}
           <button type="button" role="tab" data-tab="ris" aria-selected="false">RIS</button>
         </div>
       </div>
-      <div class="tab-panel" data-panel="apa"><p class="cite-apa">${cite.html}</p></div>
+      <div class="tab-panel" data-panel="apa"><p class="cite-apa">${apa(pub).html}</p></div>
       <div class="tab-panel" data-panel="bibtex" hidden><pre class="cite-code">${esc(bibtex(pub))}</pre></div>
       <div class="tab-panel" data-panel="ris" hidden><pre class="cite-code">${esc(ris(pub).replace(/\r/g, ''))}</pre></div>
       <div class="paper-cta-actions">
@@ -347,25 +380,11 @@ ${rootRelative(marked.parse(md)).trim()}
       <p class="cite-note">Use .ris for Mendeley and EndNote, and .bib for LaTeX. Zotero's browser extension can also save this page with the paper's citation data.</p>
     </div>
   </section>
+`;
+}
 
-  <a class="article-next" href="/research/${next.slug}/">
-    <div class="article-next-label"><span>Next explainer</span><span>↗</span></div>
-    <div class="article-next-title">${esc(next.explainerTitle)}</div>
-    <div class="article-next-cat">Research Explainer · ${next.year}</div>
-  </a>
-
-  <div class="article-back-bottom">
-    <a href="/#publications" class="back-link">← Back to Publications</a>
-  </div>
-</main>
-
-<script src="/article-widgets.js?v=1"></script>
-<script>
-  const content = document.getElementById('articleContent');
-  initWidgets(document.querySelector('.article-wrap'));
-  captionPhotos(content);
-
-  // Copy the citation in the open tab. APA keeps its italics when pasted into Word or Docs.
+// Copy the citation in the open tab. APA keeps its italics when pasted into Word or Docs.
+const COPY_SCRIPT = `
   const copyBtn = document.getElementById('citeCopy');
   copyBtn.addEventListener('click', async () => {
     const panel = document.querySelector('#cite .tab-panel:not([hidden])');
@@ -386,16 +405,83 @@ ${rootRelative(marked.parse(md)).trim()}
     }
     setTimeout(() => { copyBtn.textContent = 'Copy citation'; }, 2000);
   });
-</script>
-</body>
-</html>
 `;
+
+function researchPage(pub, next) {
+  const url = pageUrl('research', pub.slug);
+  const dates = gitDates(`content/${pub.slug}.md`);
+  return shell({
+    slug: pub.slug, url, dates,
+    headline: pub.explainerTitle,
+    description: pub.summary,
+    category: 'Research Explainer',
+    date: String(pub.year),
+    back: { href: '/#publications', label: 'Publications' },
+    extraHead: `\n  <!-- Citation data for the paper this explainer is based on -->\n${highwire(pub)}\n`,
+    jsonLd: jsonLd(pub, url, dates),
+    after: paperBox(pub),
+    next: { href: `/research/${next.slug}/`, label: 'Next explainer', title: next.explainerTitle, meta: `Research Explainer · ${next.year}` },
+    script: COPY_SCRIPT
+  });
+}
+
+function writingPage(item, next) {
+  const url = pageUrl('writing', item.slug);
+  const dates = gitDates(`content/${item.slug}.md`);
+  const image = item.thumbnail ? `${SITE}/${item.thumbnail}` : null;
+  return shell({
+    slug: item.slug, url, dates, image,
+    headline: item.title,
+    description: item.description,
+    category: item.category,
+    date: item.date,
+    back: { href: '/#activities', label: 'Writing' },
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: item.title,
+      description: item.description,
+      url,
+      mainEntityOfPage: url,
+      image: image || `${SITE}/images/og-cover.jpg`,
+      inLanguage: 'en',
+      articleSection: item.category,
+      datePublished: dates.published,
+      dateModified: dates.modified,
+      author: ME
+    },
+    next: { href: `/writing/${next.slug}/`, label: 'Next article', title: next.title, meta: `${next.category} · ${next.date}` }
+  });
+}
+
+// Person data for the homepage, so search engines tie the name to this site and its work
+function personJsonLd() {
+  const P = DATA.personal;
+  const current = DATA.experience[0];
+  const doc = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: P.name,
+    alternateName: 'Kamyl',
+    url: `${SITE}/`,
+    image: `${SITE}/images/profile.jpg`,
+    description: P.tagline,
+    jobTitle: current.role,
+    worksFor: { '@type': 'Organization', name: current.company },
+    alumniOf: { '@type': 'CollegeOrUniversity', name: 'Universitas Indonesia' },
+    knowsAbout: [...DATA.skills['Policy and Public Affairs'], ...DATA.skills['Research Methods']],
+    sameAs: [`https://www.linkedin.com/in/${P.contact.linkedin}/`]
+  };
+  return `  <script type="application/ld+json">\n${ldJson(doc)}\n  </script>`;
 }
 
 // ---------- Build ----------
 
 const pubs = DATA.publications.filter(p => p.slug && p.citation);
-pubs.forEach((pub, i) => write(`research/${pub.slug}/index.html`, page(pub, pubs[(i + 1) % pubs.length])));
+pubs.forEach((pub, i) => write(`research/${pub.slug}/index.html`, researchPage(pub, pubs[(i + 1) % pubs.length])));
+
+const pieces = DATA.activities.filter(a => a.slug);
+pieces.forEach((item, i) => write(`writing/${item.slug}/index.html`, writingPage(item, pieces[(i + 1) % pieces.length])));
 
 const header = '% Furaihan Kamyl Arnazaye, publications. Generated from https://furaihankamyl.github.io\n\n';
 pubs.forEach(pub => {
@@ -405,10 +491,16 @@ pubs.forEach(pub => {
 write('cite/all.bib', header + pubs.map(bibtex).join('\n'));
 write('cite/all.ris', pubs.map(ris).join('\r\n'));
 
+const index = read('index.html').replace(
+  /(<!-- person-jsonld:start[^>]*-->\n)[\s\S]*?\s*(<!-- person-jsonld:end -->)/,
+  (m, start, end) => `${start}${personJsonLd()}\n  ${end}`
+);
+write('index.html', index);
+
 const urls = [
   { loc: `${SITE}/`, lastmod: gitDates('index.html').modified, priority: '1.0' },
-  ...pubs.map(p => ({ loc: pageUrl(p.slug), lastmod: gitDates(`content/${p.slug}.md`).modified, priority: '0.8' })),
-  ...DATA.activities.map(a => ({ loc: `${SITE}/article.html?slug=${a.slug}`, lastmod: gitDates(`content/${a.slug}.md`).modified, priority: '0.6' }))
+  ...pubs.map(p => ({ loc: pageUrl('research', p.slug), lastmod: gitDates(`content/${p.slug}.md`).modified, priority: '0.8' })),
+  ...pieces.map(a => ({ loc: pageUrl('writing', a.slug), lastmod: gitDates(`content/${a.slug}.md`).modified, priority: '0.6' }))
 ];
 write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -420,4 +512,4 @@ ${urls.map(u => `  <url>
 </urlset>
 `);
 
-console.log(`Built ${pubs.length} explainer pages, ${pubs.length * 2 + 2} citation files, and sitemap.xml (${urls.length} URLs).`);
+console.log(`Built ${pubs.length} explainer pages, ${pieces.length} writing pages, ${pubs.length * 2 + 2} citation files, and sitemap.xml (${urls.length} URLs).`);
