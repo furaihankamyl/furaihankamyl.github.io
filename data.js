@@ -384,7 +384,7 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "why-i-run",
-      title: "Why I Run (and Cafe Hop)",
+      title: "Runningggg (and Cafe Hopping)",
       date: "2026",
       category: "Personal",
       thumbnail: "images/jakim-racepack.jpg",
