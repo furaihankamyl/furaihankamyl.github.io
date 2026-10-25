@@ -2,8 +2,6 @@ This article is dedicated to the children at LPKA, those who still carry hopes a
 
 ---
 
-<div class="takeaways"><div class="takeaways-title">In short</div><ul><li>Our PKM-RSH team asked whether LPKA Jakarta's partnerships were built around what the children inside needed.</li><li>Social network analysis, interviews, observation, and desk study all pointed the same way. Partnerships grew from a general willingness to cooperate, not from program objectives.</li><li>We turned the finding into a policy brief for Ditjenpas, which confirmed it would be considered as input for a legislative review of the SPPA Law.</li><li>The project received the highest score in the PKM-RSH category nationally and a Silver Medal at PIMNAS 37.</li><li>The lesson I kept: research is finished when it reaches the people who can act on it.</li></ul></div>
-
 ## How It Started
 
 I had heard about Program Kreativitas Mahasiswa (PKM) since my first semester at Universitas Indonesia. It was mentioned in orientations, embedded as a requirement in methodology courses, and regularly promoted by the faculty. For most of that time, I treated it as background noise. Something serious students did, but not something I had personally committed to.
@@ -70,7 +68,7 @@ We structured this as a formal policy brief, presented it to Ditjenpas, and rece
 
 That was the moment the work felt like it had weight beyond the academic exercise.
 
-The full analysis, with the network data and charts, is in [the research explainer](research/lpka-coaching-network/). A year later, my thesis rebuilt the same network from 1,789 Instagram posts. That analysis has [its own explainer](research/lpka-network-governance/).
+The numbers and the network maps are in [the research explainer](research/lpka-coaching-network/). A year later, I went back to the same network for my thesis, this time with 1,789 Instagram posts. That one is [here](research/lpka-network-governance/).
 
 ---
 

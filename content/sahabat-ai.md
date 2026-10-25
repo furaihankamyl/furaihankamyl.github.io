@@ -1,5 +1,3 @@
-<div class="takeaways"><div class="takeaways-title">In short</div><ul><li>Sahabat-AI is an open-source LLM from GoTo and Indosat, built for Indonesian, Sundanese, Javanese, Batak, and Balinese.</li><li>I led the university program: seven universities contributing training data, research capacity, and interns.</li><li>Every engagement ran end to end, from account management and negotiation to running the events.</li><li>To source informal Indonesian, GoTo supported a Lentera App writing competition for dialogue-heavy urban short stories, used with creator consent.</li><li>I also made sure the training data did not infringe intellectual property rights.</li></ul></div>
-
 *"Gak begitu, njir."*
 
 Some version of that sentence is sitting in almost every Indonesian's phone right now. It also appears in almost no formal corpus, no academic publication, and no dataset that a large language model would ordinarily be trained on.
@@ -9,8 +7,6 @@ Indonesia has hundreds of living languages, millions of daily conversations in s
 ![GoTo team at Indonesia AI Day, November 14, 2024](images/sahabat-ai-3.jpg)
 
 Sahabat-AI is an open-source Large Language Model developed by PT GoTo Gojek Tokopedia Tbk in collaboration with PT Indosat Ooredoo Hutchison, trained specifically for Bahasa Indonesia and regional languages, currently supporting **Indonesian, Sundanese, Javanese, Batak, and Balinese**. The premise was clear from the start. Indonesia's AI future should be built from Indonesian language and context rather than retrofitted from Western models. Development involved local universities, media groups, language communities, and global research partners including AI Singapore.
-
-<div class="stats"><div class="stat"><div class="stat-value">7</div><div class="stat-label">Universities in the program</div></div><div class="stat"><div class="stat-value">5</div><div class="stat-label">Languages supported, from Indonesian to Balinese</div></div><div class="stat"><div class="stat-value">4</div><div class="stat-label">Forms of collaboration, from training data to research grants</div></div></div>
 
 ## Building the University Program
 

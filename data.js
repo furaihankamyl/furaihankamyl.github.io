@@ -339,7 +339,7 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "workflow-automation",
-      title: "I Automated My Own Job, and It Made Me Better at It",
+      title: "I Automated My Own Job (And Here's Why That Made Me Better at It)",
       date: "2026",
       category: "Work",
       thumbnail: "images/google-alert-automation.jpg",
@@ -366,16 +366,16 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "indonesia-emas-2045",
-      title: "Three Studies for Indonesia Emas 2045",
+      title: "Towards Indonesia Emas 2045 from the Tip of the Pen",
       date: "2024",
       category: "Research journey",
       thumbnail: "images/activity-indonesia-emas-2.png",
-      description: "A correctional institution for children, a reporting app, and a notary's signature. The short version of three 2024 projects.",
+      description: "Four research accomplishments across three projects contributing to Indonesia's national development goals.",
       slug: "indonesia-emas-2045"
     },
     {
       id: "deliberately-unfinished",
-      title: "Deliberately Unfinished: On Growth as a Practice",
+      title: "Deliberately Unfinished: On Continuous Growth as a Professional Practice",
       date: "2026",
       category: "Personal",
       quote: "I am not done. I do not expect to be.",

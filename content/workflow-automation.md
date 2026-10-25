@@ -1,5 +1,3 @@
-<div class="takeaways"><div class="takeaways-title">In short</div><ul><li>It started in 2020 with Excel, and a statistics dashboard I built at UI to answer weekly quizzes faster.</li><li>The lesson I kept: automating a repetitive task frees attention for the parts that need judgment.</li><li>The same discipline carried into research, from meta-analysis for a 1st-place paper to social network analysis for PIMNAS and my thesis.</li><li>At GoTo I have built three workflow automations, including a daily regulatory digest that runs from Google Alerts through Gemini to Google Chat.</li><li>The pipeline decides what deserves attention. It does not decide what is true.</li></ul></div>
-
 The dream is simple. Work calmly, with AI agents handling the repetitive parts, while I occasionally glance at the screen to check the output. That is where I am trying to get to, and it started in a spreadsheet.
 
 ## Learning the Logic
