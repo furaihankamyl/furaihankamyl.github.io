@@ -532,6 +532,52 @@ function observeFadeUps(container) {
   });
 }
 
+/* ===================== SELECTED WORK ===================== */
+function renderSelected() {
+  const el = document.getElementById('selectedList');
+  if (!el) return;
+  const rows = PORTFOLIO_DATA.selected.map(sel => {
+    const research = sel.kind === 'research';
+    const item = research
+      ? PORTFOLIO_DATA.publications.find(p => p.slug === sel.slug)
+      : PORTFOLIO_DATA.activities.find(a => a.slug === sel.slug);
+    if (!item) return '';
+    const title = research ? (item.explainerTitle || item.title) : item.title;
+    const desc = research ? item.summary : item.description;
+    const href = `${research ? 'research' : 'writing'}/${sel.slug}/`;
+    return `
+      <a class="sel-row" href="${href}">
+        <div class="sel-meta">${sel.label}<span>${sel.method}</span></div>
+        <div class="sel-main">
+          <h3 class="sel-title">${title}</h3>
+          <p class="sel-desc">${desc}</p>
+        </div>
+        <span class="sel-arrow" aria-hidden="true">→</span>
+      </a>`;
+  }).join('');
+  el.innerHTML = rows;
+
+  // The row nearest the middle of the screen is fully lit, the others sit back.
+  // Without JS every row stays fully lit.
+  el.classList.add('sel-focus');
+  const focus = new IntersectionObserver(entries => {
+    entries.forEach(e => e.target.classList.toggle('is-focus', e.isIntersecting));
+  }, { rootMargin: '-38% 0px -38% 0px', threshold: 0 });
+  el.querySelectorAll('.sel-row').forEach(r => focus.observe(r));
+}
+
+/* ===================== HERO PROOF LINE ===================== */
+function initHeroProof() {
+  const items = document.querySelectorAll('.hero-proof li');
+  if (!items.length) return;
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.6 });
+  items.forEach((li, i) => { li.style.setProperty('--d', i * 90); io.observe(li); });
+}
+
 /* ===================== SCROLL SPY (active nav) ===================== */
 function initScrollSpy() {
   const links = Array.from(document.querySelectorAll('.nav-links a'));
@@ -559,6 +605,7 @@ function initScrollSpy() {
 /* ===================== INIT ===================== */
 document.addEventListener('DOMContentLoaded', () => {
   renderAbout();
+  renderSelected();
   renderExpList('experienceList', PORTFOLIO_DATA.experience);
   renderExpList('orgList', PORTFOLIO_DATA.organizations, true);
   renderFilterBar();
@@ -573,6 +620,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNetwork();
   initHeroNav();
   initHeroTransition();
+  initHeroProof();
 });
 /* ===================== LIQUID GLASS GLARE ===================== */
 (function () {

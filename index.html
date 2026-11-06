@@ -222,7 +222,7 @@
     /* Bridges the dark backdrop into the page background.
        z-index -1 keeps it under the hero text but over the portrait. */
     .hero-veil {
-      position: absolute; left: 0; right: 0; bottom: 0; height: 300px;
+      position: absolute; left: 0; right: 0; bottom: 0; height: 240px;
       z-index: -1; pointer-events: none;
       background: linear-gradient(to bottom, transparent 0%, var(--veil) 55%, var(--bg) 100%);
     }
@@ -233,7 +233,8 @@
       z-index: -1; pointer-events: none;
       background: linear-gradient(to bottom, transparent 0%, rgba(10,10,10,0.5) 30%, rgba(10,10,10,0.78) 60%, rgba(10,10,10,0.78) 100%);
     }
-    .hero-view1 { height: 100vh; height: 100svh; position: relative; }
+    /* Slightly under one screen, so the main line shows at the bottom of the first view */
+    .hero-view1 { height: 84vh; height: 84svh; position: relative; }
     .hero-intro {
       position: absolute; top: 88px; left: clamp(24px, 8vw, 120px);
       max-width: 240px;
@@ -256,31 +257,26 @@
       font-style: italic; font-weight: 400; font-size: clamp(48px, 9.5vw, 108px);
       top: 54vh; right: clamp(24px, 8vw, 130px);
     }
-    .hero-scroll {
-      position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
-      font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase;
-      color: var(--hero-faint); display: flex; flex-direction: column; align-items: center; gap: 8px;
-    }
-    .hero-scroll::after {
-      content: ''; width: 1px; height: 28px;
-      background: linear-gradient(to bottom, var(--hero-faint), transparent);
-      animation: scrollPulse 2.2s ease-in-out infinite;
-    }
-    @keyframes scrollPulse { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
 
     .hero-view2 {
       max-width: 1200px; margin: 0 auto;
-      padding: 8vh clamp(24px, 8vw, 120px) 320px;
+      padding: 4vh clamp(24px, 8vw, 120px) 220px;
     }
     .hero-headline {
       font-family: var(--font-display); font-weight: 300;
       font-size: clamp(38px, 6.4vw, 82px); line-height: 1.08;
       letter-spacing: -0.01em; color: var(--hero-text);
-      max-width: 15ch; margin-bottom: 44px;
+      max-width: 15ch; margin-bottom: 20px;
     }
     .hero-headline em { font-style: italic; color: var(--hero-dim); }
-    .hero-sub { font-size: 15px; line-height: 1.6; color: var(--hero-dim); font-weight: 300; margin: -28px 0 32px; }
-    .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 72px; }
+    .hero-sub { font-size: 15px; line-height: 1.6; color: var(--hero-dim); font-weight: 300; margin: 0 0 28px; }
+    .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
+    .hero-proof {
+      list-style: none; display: flex; flex-wrap: wrap; gap: 6px 28px; margin: 0 0 36px; padding: 0;
+      font-size: 12px; line-height: 1.5; color: var(--hero-dim);
+    }
+    .hero-proof li { opacity: 0.35; transition: opacity 0.7s ease; transition-delay: calc(var(--d, 0) * 1ms); }
+    .hero-proof li.on { opacity: 1; }
     .hero-chip {
       padding: 8px 16px; border: 1px solid var(--hero-shape); border-radius: var(--radius);
       background: var(--hero-shape); color: #0a0a0a;
@@ -290,7 +286,7 @@
     .hero-chip:hover { background: #ffffff; border-color: #ffffff; }
     .hero-meta {
       display: flex; flex-wrap: wrap;
-      justify-content: space-between; gap: 28px 40px;
+      justify-content: space-between; gap: 24px 28px;
       border-top: 1px solid var(--hero-line); padding-top: 28px;
     }
     .hero-meta-label {
@@ -518,6 +514,34 @@
       .w-card-title { font-size: 20px; }
     }
 
+    /* SELECTED WORK: three plain rows, the one near the middle of the screen is fully lit */
+    .sel-list { border-top: 1px solid var(--border); }
+    .sel-row {
+      display: grid; grid-template-columns: 230px 1fr 24px; gap: 8px 32px; align-items: baseline;
+      padding: 32px 0; border-bottom: 1px solid var(--border);
+    }
+    .sel-meta { font-size: 11px; line-height: 1.6; color: var(--text-3); letter-spacing: 0.04em; }
+    .sel-meta span { display: block; text-transform: uppercase; letter-spacing: 0.12em; font-size: 10px; margin-top: 4px; }
+    .sel-title {
+      font-family: var(--font-display); font-weight: 400; font-size: clamp(22px, 2.6vw, 32px);
+      line-height: 1.2; color: var(--text); margin-bottom: 10px; transition: opacity 0.5s ease;
+    }
+    .sel-desc { font-size: 13px; line-height: 1.7; color: var(--text-2); max-width: 62ch; }
+    .sel-arrow { color: var(--text-3); transition: transform 0.2s, color 0.2s; }
+    .sel-row:hover .sel-arrow { transform: translateX(3px); color: var(--text); }
+    .sel-focus .sel-title, .sel-focus .sel-meta { opacity: 0.55; transition: opacity 0.5s ease; }
+    .sel-focus .sel-row.is-focus .sel-title, .sel-focus .sel-row.is-focus .sel-meta,
+    .sel-focus .sel-row:hover .sel-title, .sel-focus .sel-row:hover .sel-meta,
+    .sel-focus .sel-row:focus-visible .sel-title, .sel-focus .sel-row:focus-visible .sel-meta { opacity: 1; }
+    @media (max-width: 768px) {
+      .sel-row { grid-template-columns: 1fr; padding: 26px 0; }
+      .sel-arrow { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-proof li { opacity: 1; }
+      .sel-focus .sel-title, .sel-focus .sel-meta { opacity: 1; }
+    }
+
     /* PUBLICATIONS */
     .pub-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
     .pub-cite-all { margin-top: 24px; font-size: 12px; color: var(--text-3); }
@@ -644,9 +668,12 @@
       }
       .hero-intro { top: 76px; left: 24px; max-width: 210px; }
       .hero-hey { top: 21vh; left: 24px; }
-      .hero-kamyl { top: 57vh; right: 24px; }
-      .hero-view2 { padding: 6vh 24px 300px; }
+      /* Under the photo, so it never sits on the shirt */
+      .hero-kamyl { top: calc(80vh + 12px); top: calc(80svh + 12px); right: 24px; }
+      .hero-view1 { height: 88vh; height: 88svh; }
+      .hero-view2 { padding: 3vh 24px 240px; }
       .hero-meta { display: grid; grid-template-columns: 1fr 1fr; justify-content: start; }
+      .hero-meta > div:nth-child(4) { grid-column: 1 / -1; }
       .section { padding: 64px 24px; }
       .exp-columns { grid-template-columns: 1fr; gap: 56px; }
       .pub-grid, .awards-grid, .skills-grid { grid-template-columns: 1fr; }
@@ -810,6 +837,7 @@ nav#nav {
   <span class="nav-logo">FKA</span>
   <div class="nav-links" id="navLinks">
     <a href="#about">About</a>
+    <a href="#selected">Work</a>
     <a href="#experience">Experience</a>
     <a href="#publications">Research</a>
     <a href="#skills">Skills</a>
@@ -848,17 +876,23 @@ nav#nav {
       <span class="hero-hey">Hey, I'm</span>
       <span class="hero-kamyl">Kamyl</span>
     </h1>
-    <div class="hero-scroll">Scroll</div>
   </div>
   <div class="hero-view2">
     <h2 class="hero-headline">I make evidence <em>persuasive.</em></h2>
-    <p class="hero-sub">Public affairs and policy research at GoTo Group. 7 published papers.</p>
+    <p class="hero-sub">Public affairs and policy research at GoTo Group. 7 research papers.</p>
     <div class="hero-chips">
       <span class="hero-chip">Public Affairs</span>
       <span class="hero-chip">Policy Research</span>
       <span class="hero-chip">Data Analysis</span>
       <span class="hero-chip">Strategic Communication</span>
     </div>
+    <ul class="hero-proof" aria-label="Highlights">
+      <li>9M+ driver-partners and merchants</li>
+      <li>6 national priority bills</li>
+      <li>7 research papers</li>
+      <li>PIMNAS 2024, Silver Medal</li>
+      <li>Temu AdMI 2024, 1st Place</li>
+    </ul>
     <div class="hero-meta">
       <div>
         <div class="hero-meta-value">Furaihan Kamyl Arnazaye</div>
@@ -905,6 +939,17 @@ nav#nav {
         <div class="about-text" id="aboutText"></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- SELECTED WORK -->
+<section id="selected" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2 class="section-title">Selected work</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="sel-list" id="selectedList"></div>
   </div>
 </section>
 
@@ -995,7 +1040,7 @@ nav#nav {
 
 </main>
 
-<script src="data.js?v=13"></script>
-<script src="main.js?v=10"></script>
+<script src="data.js?v=14"></script>
+<script src="main.js?v=14"></script>
 </body>
 </html>

@@ -3,13 +3,21 @@ const PORTFOLIO_DATA = {
     name: "Furaihan Kamyl Arnazaye",
     tagline: "Public Affairs and Policy Research | Digital Economy, Transport, and AI",
     headline: "I make evidence persuasive.",
-    about: "At GoTo Group, I turn policy analysis into positions for parliament, ministries, and partners, on issues that affect 9+ million driver-partners and merchants.\n\nI have also published 7 papers on network governance, public trust, and public sector reform. Each paper below has an explainer with the method, the data, and the recommendations.",    cv: "cv/Furaihan_Kamyl_Arnazaye_CV.pdf",
+    about: "At GoTo Group, I turn policy analysis into positions for parliament, ministries, and partners, on issues that affect 9+ million driver-partners and merchants.\n\nI joined the team as an intern in February 2024 and became an analyst in July 2025. I draft briefs for senior leadership, run workstreams with media, academia, NGOs, and government, and lead the Sahabat-AI university program across 7 universities.\n\nI studied Public Administration at Universitas Indonesia and graduated cum laude. I have also written 7 research papers on network governance, public trust, and public sector reform. Each has an explainer with the method, the data, and the recommendations.",    cv: "cv/Furaihan_Kamyl_Arnazaye_CV.pdf",
     contact: {
       email: "furaihankamyl.arnazaye@gmail.com",
       whatsapp: "6285159691922",
       linkedin: "furaihankamyl"
     }
   },
+
+  // Selected work: three pieces shown near the top. Title and description come from
+  // the publication or activity with the same slug.
+  selected: [
+    { kind: "research", slug: "lpka-network-governance", label: "Undergraduate thesis · 2025", method: "Social network analysis" },
+    { kind: "research", slug: "notary-business-registration", label: "Temu Administrator Muda Indonesia 2024 · 1st Place, Best Paper", method: "Mixed methods" },
+    { kind: "writing", slug: "sahabat-ai", label: "GoTo Group · 2024 to 2025", method: "Partnerships" }
+  ],
 
   experience: [
     {
