@@ -437,7 +437,6 @@ function renderPublications() {
           onclick="window.location.href='${explainerUrl}'">
           <div class="pub-year">${pub.year}<span class="pub-badge">Explainer</span></div>
           <div class="pub-title">${pub.explainerTitle || pub.title}</div>
-          ${pub.summary ? `<div class="pub-summary">${pub.summary}</div>` : ''}
           <div class="pub-venue">${byline} · ${pub.venue}</div>
           <div class="pub-actions">
             <a class="pub-read-btn pub-read-btn--primary" href="${explainerUrl}"
@@ -543,7 +542,7 @@ function renderSelected() {
       : PORTFOLIO_DATA.activities.find(a => a.slug === sel.slug);
     if (!item) return '';
     const title = research ? (item.explainerTitle || item.title) : item.title;
-    const desc = research ? item.summary : item.description;
+    const desc = sel.line;
     const href = `${research ? 'research' : 'writing'}/${sel.slug}/`;
     return `
       <a class="sel-row" href="${href}">
