@@ -270,13 +270,7 @@
     }
     .hero-headline em { font-style: italic; color: var(--hero-dim); }
     .hero-sub { font-size: 15px; line-height: 1.6; color: var(--hero-dim); font-weight: 300; margin: 0 0 28px; }
-    .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
-    .hero-proof {
-      list-style: none; display: flex; flex-wrap: wrap; gap: 6px 28px; margin: 0 0 36px; padding: 0;
-      font-size: 12px; line-height: 1.5; color: var(--hero-dim);
-    }
-    .hero-proof li { opacity: 0.35; transition: opacity 0.7s ease; transition-delay: calc(var(--d, 0) * 1ms); }
-    .hero-proof li.on { opacity: 1; }
+    .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 48px; }
     .hero-chip {
       padding: 8px 16px; border: 1px solid var(--hero-shape); border-radius: var(--radius);
       background: var(--hero-shape); color: #0a0a0a;
@@ -538,7 +532,6 @@
       .sel-arrow { display: none; }
     }
     @media (prefers-reduced-motion: reduce) {
-      .hero-proof li { opacity: 1; }
       .sel-focus .sel-title, .sel-focus .sel-meta { opacity: 1; }
     }
 
@@ -886,13 +879,6 @@ nav#nav {
       <span class="hero-chip">Data Analysis</span>
       <span class="hero-chip">Strategic Communication</span>
     </div>
-    <ul class="hero-proof" aria-label="Highlights">
-      <li>9M+ driver-partners and merchants</li>
-      <li>6 national priority bills</li>
-      <li>7 research papers</li>
-      <li>PIMNAS 2024, Silver Medal</li>
-      <li>Temu AdMI 2024, 1st Place</li>
-    </ul>
     <div class="hero-meta">
       <div>
         <div class="hero-meta-value">Furaihan Kamyl Arnazaye</div>
@@ -1040,7 +1026,7 @@ nav#nav {
 
 </main>
 
-<script src="data.js?v=15"></script>
-<script src="main.js?v=15"></script>
+<script src="data.js?v=16"></script>
+<script src="main.js?v=16"></script>
 </body>
 </html>

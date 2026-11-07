@@ -565,18 +565,6 @@ function renderSelected() {
   el.querySelectorAll('.sel-row').forEach(r => focus.observe(r));
 }
 
-/* ===================== HERO PROOF LINE ===================== */
-function initHeroProof() {
-  const items = document.querySelectorAll('.hero-proof li');
-  if (!items.length) return;
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.6 });
-  items.forEach((li, i) => { li.style.setProperty('--d', i * 90); io.observe(li); });
-}
-
 /* ===================== SCROLL SPY (active nav) ===================== */
 function initScrollSpy() {
   const links = Array.from(document.querySelectorAll('.nav-links a'));
@@ -619,7 +607,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initNetwork();
   initHeroNav();
   initHeroTransition();
-  initHeroProof();
 });
 /* ===================== LIQUID GLASS GLARE ===================== */
 (function () {
