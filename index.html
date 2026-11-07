@@ -83,7 +83,7 @@
     }
     [data-theme="dark"] {
       --bg: #0d0d0d; --bg-2: #151515; --surface: #1a1a1a;
-      --border: #2a2a2a; --text: #f2f2f2; --text-2: #a6a6a6; --text-3: #6e6e6e;
+      --border: #2a2a2a; --text: #f2f2f2; --text-2: #c0c0c0; --text-3: #9a9a9a;
       --tag-bg: #232323; --tag-text: #bdbdbd;
       --veil: rgba(13, 13, 13, 0.5);
       --shadow: 0 1px 4px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.2);
@@ -160,8 +160,8 @@
     :root {
       --hero-bg: #0a0a0a;
       --hero-text: #f2f2f2;
-      --hero-dim: #b3b3b3;
-      --hero-faint: #787878;
+      --hero-dim: #cfcfcf;
+      --hero-faint: #a0a0a0;
       --hero-shape: #fafafa; /* same as light --bg: the shape "becomes" the page */
       --hero-line: rgba(242, 242, 242, 0.16);
     }
@@ -523,16 +523,16 @@
     .sel-desc { font-size: 13px; line-height: 1.7; color: var(--text-2); max-width: 62ch; }
     .sel-arrow { color: var(--text-3); transition: transform 0.2s, color 0.2s; }
     .sel-row:hover .sel-arrow { transform: translateX(3px); color: var(--text); }
-    .sel-focus .sel-title, .sel-focus .sel-meta { opacity: 0.55; transition: opacity 0.5s ease; }
-    .sel-focus .sel-row.is-focus .sel-title, .sel-focus .sel-row.is-focus .sel-meta,
-    .sel-focus .sel-row:hover .sel-title, .sel-focus .sel-row:hover .sel-meta,
-    .sel-focus .sel-row:focus-visible .sel-title, .sel-focus .sel-row:focus-visible .sel-meta { opacity: 1; }
+    .sel-focus .sel-title { opacity: 0.72; transition: opacity 0.5s ease; }
+    .sel-focus .sel-row.is-focus .sel-title,
+    .sel-focus .sel-row:hover .sel-title,
+    .sel-focus .sel-row:focus-visible .sel-title { opacity: 1; }
     @media (max-width: 768px) {
       .sel-row { grid-template-columns: 1fr; padding: 26px 0; }
       .sel-arrow { display: none; }
     }
     @media (prefers-reduced-motion: reduce) {
-      .sel-focus .sel-title, .sel-focus .sel-meta { opacity: 1; }
+      .sel-focus .sel-title { opacity: 1; }
     }
 
     /* PUBLICATIONS */
@@ -1026,7 +1026,7 @@ nav#nav {
 
 </main>
 
-<script src="data.js?v=16"></script>
-<script src="main.js?v=16"></script>
+<script src="data.js?v=17"></script>
+<script src="main.js?v=17"></script>
 </body>
 </html>
